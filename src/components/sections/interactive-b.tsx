@@ -147,7 +147,7 @@ export function Testimonials() {
         </div>
       </div>
       <div className="flex flex-col justify-between gap-8 lg:col-span-4">
-        <p className="text-ink/60">Testimonials will be published here once clients have approved their words. Until then, the case studies show what we have built.</p>
+        <div className="space-y-3 text-ink/60"><p className="font-mono text-[0.7rem] uppercase tracking-wider text-amber-700">Unverified placeholders</p><p>No client testimonial has been published yet. These cards use sample content only; they are not genuine customer feedback and no client identity is implied.</p><p>Verified quotes will replace them once written permission is received.</p></div>
         <div className="flex items-center gap-3">
           <button onClick={() => go(-1)} aria-label="Previous testimonial" className="grid h-14 w-14 place-items-center rounded-full border border-ink/20 text-ink transition-colors hover:bg-ink hover:text-ivory"><ArrowLeft size={18} /></button>
           <button onClick={() => go(1)} aria-label="Next testimonial" className="grid h-14 w-14 place-items-center rounded-full border border-ink/20 text-ink transition-colors hover:bg-ink hover:text-ivory"><ArrowRight size={18} /></button>

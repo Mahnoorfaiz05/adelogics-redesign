@@ -28,7 +28,7 @@ export default function HomePage() {
               <Reveal variant="clip-up"><Eyebrow num="02" className="text-ink/60">About Adelogix</Eyebrow></Reveal>
               <Reveal variant="mask" className="relative mt-10 hidden aspect-[4/5] overflow-hidden rounded-[28px] lg:block">
                 <Parallax speed={0.25} className="absolute inset-[-12%]">
-                  <Image src="/assets/case-studies/uplift-ai/09-final-showcase.png" alt="Uplift.ai mobile app screens designed by Adelogix" fill sizes="30vw" className="object-cover" />
+                  <Image src="/images/case-studies/uplift-ai/09-final-showcase.webp" alt="Uplift.ai mobile app screens designed by Adelogix" fill sizes="30vw" className="object-cover" />
                 </Parallax>
               </Reveal>
             </div>
@@ -39,7 +39,7 @@ export default function HomePage() {
               />
               <div className="mt-16 grid gap-10 md:grid-cols-2">
                 <Reveal variant="mask" className="relative aspect-[3/2] overflow-hidden rounded-[24px]">
-                  <Image src="/assets/case-studies/oriuspay/05-dashboard.png" alt="OriusPay merchant dashboard designed and developed by Adelogix" fill sizes="(min-width:768px) 33vw, 100vw" className="object-cover" />
+                  <Image src="/images/case-studies/oriuspay/05-dashboard.webp" alt="OriusPay merchant dashboard designed and developed by Adelogix" fill sizes="(min-width:768px) 33vw, 100vw" className="object-cover" />
                 </Reveal>
                 <div className="flex flex-col justify-between gap-8">
                   <Reveal as="ul" stagger={0.1} variant="left" className="space-y-4 text-ink/75">
@@ -100,7 +100,7 @@ export default function HomePage() {
       {/* 09 Testimonials */}
       <section className="surface-light relative py-24 md:py-36">
         <div className="container-x">
-          <SectionHeader light num="09" eyebrow="Client testimonials" title="In our clients' *words.*" />
+          <SectionHeader light num="09" eyebrow="Sample testimonials" title="Reviews, *once approved.*" intro="Nothing below is a real client quote yet. These placeholders show the layout we will use once clients approve their words — until then, the case studies show what we have built." />
           <div className="mt-14"><Testimonials /></div>
         </div>
       </section>

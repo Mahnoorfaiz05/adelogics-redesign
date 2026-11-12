@@ -1,0 +1,642 @@
+[
+ {
+  "project": "emyy",
+  "file": "01-hero.webp",
+  "source_folder": "Emyy all data",
+  "source_file": "01 Hero.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "emyy",
+  "file": "02-overview.webp",
+  "source_folder": "Emyy all data",
+  "source_file": "02 Overview.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "emyy",
+  "file": "03-key-features.webp",
+  "source_folder": "Emyy all data",
+  "source_file": "03 Key features.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "emyy",
+  "file": "04-brand.webp",
+  "source_folder": "Emyy all data",
+  "source_file": "04 Brand.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "emyy",
+  "file": "05-roles.webp",
+  "source_folder": "Emyy all data",
+  "source_file": "05 Roles.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "emyy",
+  "file": "06-quotes.webp",
+  "source_folder": "Emyy all data",
+  "source_file": "06 Quotes.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "emyy",
+  "file": "07-chat-and-booking.webp",
+  "source_folder": "Emyy all data",
+  "source_file": "07 Chat and booking.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "emyy",
+  "file": "08-freelancers.webp",
+  "source_folder": "Emyy all data",
+  "source_file": "08 Freelancers.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "emyy",
+  "file": "09-user-flow.webp",
+  "source_folder": "Emyy all data",
+  "source_file": "09 User flow.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "emyy",
+  "file": "10-website.webp",
+  "source_folder": "Emyy all data",
+  "source_file": "10 Website.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "emyy",
+  "file": "11-web-pages.webp",
+  "source_folder": "Emyy all data",
+  "source_file": "11 Web pages.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "emyy",
+  "file": "12-components.webp",
+  "source_folder": "Emyy all data",
+  "source_file": "12 Components.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "emyy",
+  "file": "13-closing.webp",
+  "source_folder": "Emyy all data",
+  "source_file": "13 Closing.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "fast-vpn",
+  "file": "01-introduction.webp",
+  "source_folder": "Fast VPN ALL DATA",
+  "source_file": "01 Introduction.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "fast-vpn",
+  "file": "02-overview.webp",
+  "source_folder": "Fast VPN ALL DATA",
+  "source_file": "02 Overview.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "fast-vpn",
+  "file": "03-challenge-and-solution.webp",
+  "source_folder": "Fast VPN ALL DATA",
+  "source_file": "03 Challenge and solution.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "fast-vpn",
+  "file": "04-key-features.webp",
+  "source_folder": "Fast VPN ALL DATA",
+  "source_file": "04 Key features.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "fast-vpn",
+  "file": "05-design-system.webp",
+  "source_folder": "Fast VPN ALL DATA",
+  "source_file": "05 Design system.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "fast-vpn",
+  "file": "06-ui-screens.webp",
+  "source_folder": "Fast VPN ALL DATA",
+  "source_file": "06 UI screens.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "fast-vpn",
+  "file": "07-user-flow.webp",
+  "source_folder": "Fast VPN ALL DATA",
+  "source_file": "07 User flow.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "fast-vpn",
+  "file": "08-process.webp",
+  "source_folder": "Fast VPN ALL DATA",
+  "source_file": "08 Process.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "fast-vpn",
+  "file": "09-final-showcase.webp",
+  "source_folder": "Fast VPN ALL DATA",
+  "source_file": "09 Final showcase.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "oriuspay",
+  "file": "01-cover.webp",
+  "source_folder": "Oriuspay all data",
+  "source_file": "01 Cover.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "oriuspay",
+  "file": "02-overview.webp",
+  "source_folder": "Oriuspay all data",
+  "source_file": "02 Overview.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "oriuspay",
+  "file": "03-our-process.webp",
+  "source_folder": "Oriuspay all data",
+  "source_file": "03 Our process.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "oriuspay",
+  "file": "04-information-architecture.webp",
+  "source_folder": "Oriuspay all data",
+  "source_file": "04 Information architecture.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "oriuspay",
+  "file": "05-dashboard.webp",
+  "source_folder": "Oriuspay all data",
+  "source_file": "05 Dashboard.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "oriuspay",
+  "file": "06-horus-ai-and-quick-actions.webp",
+  "source_folder": "Oriuspay all data",
+  "source_file": "06 Horus AI & quick actions.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "oriuspay",
+  "file": "07-money-flows.webp",
+  "source_folder": "Oriuspay all data",
+  "source_file": "07 Money flows.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "oriuspay",
+  "file": "08-compliance-and-control.webp",
+  "source_folder": "Oriuspay all data",
+  "source_file": "08 Compliance & control.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "oriuspay",
+  "file": "09-secure-access.webp",
+  "source_folder": "Oriuspay all data",
+  "source_file": "09 Secure access.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "oriuspay",
+  "file": "10-states-and-feedback.webp",
+  "source_folder": "Oriuspay all data",
+  "source_file": "10 States & feedback.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "oriuspay",
+  "file": "11-design-system.webp",
+  "source_folder": "Oriuspay all data",
+  "source_file": "11 Design system.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "oriuspay",
+  "file": "12-closing.webp",
+  "source_folder": "Oriuspay all data",
+  "source_file": "12 Closing.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "trunext",
+  "file": "01-hero.webp",
+  "source_folder": "Truenext6",
+  "source_file": "01 Hero.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "trunext",
+  "file": "02-overview.webp",
+  "source_folder": "Truenext6",
+  "source_file": "02 Overview.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "trunext",
+  "file": "03-ecosystem.webp",
+  "source_folder": "Truenext6",
+  "source_file": "03 Ecosystem.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "trunext",
+  "file": "04-investment-packages.webp",
+  "source_folder": "Truenext6",
+  "source_file": "04 Investment packages.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "trunext",
+  "file": "05-wallet-and-tokens.webp",
+  "source_folder": "Truenext6",
+  "source_file": "05 Wallet and tokens.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "trunext",
+  "file": "06-skrill-and-cashout.webp",
+  "source_folder": "Truenext6",
+  "source_file": "06 Skrill and cashout.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "trunext",
+  "file": "07-referral-program.webp",
+  "source_folder": "Truenext6",
+  "source_file": "07 Referral program.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "trunext",
+  "file": "08-mobile-app.webp",
+  "source_folder": "Truenext6",
+  "source_file": "08 Mobile app.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "trunext",
+  "file": "09-admin-panel.webp",
+  "source_folder": "Truenext6",
+  "source_file": "09 Admin panel.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "trunext",
+  "file": "10-onboarding.webp",
+  "source_folder": "Truenext6",
+  "source_file": "10 Onboarding.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "trunext",
+  "file": "11-visual-style.webp",
+  "source_folder": "Truenext6",
+  "source_file": "11 Visual style.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "trunext",
+  "file": "12-thank-you.webp",
+  "source_folder": "Truenext6",
+  "source_file": "12 Thank you.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "uplift-ai",
+  "file": "01-introduction.webp",
+  "source_folder": "uplift1 all data",
+  "source_file": "01 Introduction.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "uplift-ai",
+  "file": "02-overview.webp",
+  "source_folder": "uplift1 all data",
+  "source_file": "02 Overview.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "uplift-ai",
+  "file": "03-challenge-and-solution.webp",
+  "source_folder": "uplift1 all data",
+  "source_file": "03 Challenge and solution.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "uplift-ai",
+  "file": "04-key-features.webp",
+  "source_folder": "uplift1 all data",
+  "source_file": "04 Key features.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "uplift-ai",
+  "file": "05-design-system.webp",
+  "source_folder": "uplift1 all data",
+  "source_file": "05 Design system.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "uplift-ai",
+  "file": "06-ui-screens.webp",
+  "source_folder": "uplift1 all data",
+  "source_file": "06 UI screens.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "uplift-ai",
+  "file": "07-user-flow.webp",
+  "source_folder": "uplift1 all data",
+  "source_file": "07 User flow.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "uplift-ai",
+  "file": "08-our-process.webp",
+  "source_folder": "uplift1 all data",
+  "source_file": "08 Our process.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "uplift-ai",
+  "file": "09-final-showcase.webp",
+  "source_folder": "uplift1 all data",
+  "source_file": "09 Final showcase.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "usr-crm",
+  "file": "01-hero.webp",
+  "source_folder": "USR CRM",
+  "source_file": "01 Hero.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "usr-crm",
+  "file": "02-overview.webp",
+  "source_folder": "USR CRM",
+  "source_file": "02 Overview.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "usr-crm",
+  "file": "03-redesign.webp",
+  "source_folder": "USR CRM",
+  "source_file": "03 Redesign.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "usr-crm",
+  "file": "04-event-lifecycle.webp",
+  "source_folder": "USR CRM",
+  "source_file": "04 Event lifecycle.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "usr-crm",
+  "file": "05-dashboard.webp",
+  "source_folder": "USR CRM",
+  "source_file": "05 Dashboard.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "usr-crm",
+  "file": "06-quote-builder.webp",
+  "source_folder": "USR CRM",
+  "source_file": "06 Quote builder.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "usr-crm",
+  "file": "07-event-sheet.webp",
+  "source_folder": "USR CRM",
+  "source_file": "07 Event sheet.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "usr-crm",
+  "file": "08-calendar-and-completed-events.webp",
+  "source_folder": "USR CRM",
+  "source_file": "08 Calendar and completed events.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "usr-crm",
+  "file": "09-reports.webp",
+  "source_folder": "USR CRM",
+  "source_file": "09 Reports.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "usr-crm",
+  "file": "10-operations.webp",
+  "source_folder": "USR CRM",
+  "source_file": "10 Operations.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "usr-crm",
+  "file": "11-mobile.webp",
+  "source_folder": "USR CRM",
+  "source_file": "11 Mobile.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "usr-crm",
+  "file": "12-design-language.webp",
+  "source_folder": "USR CRM",
+  "source_file": "12 Design language.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "usr-crm",
+  "file": "13-closing.webp",
+  "source_folder": "USR CRM",
+  "source_file": "13 Closing.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "xenpop",
+  "file": "01-hero.webp",
+  "source_folder": "xenpop all data",
+  "source_file": "01 Hero.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "xenpop",
+  "file": "02-what-is-xenpop.webp",
+  "source_folder": "xenpop all data",
+  "source_file": "02 What is XENPOP.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "xenpop",
+  "file": "03-three-touchpoints.webp",
+  "source_folder": "xenpop all data",
+  "source_file": "03 Three touchpoints.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "xenpop",
+  "file": "04-mining.webp",
+  "source_folder": "xenpop all data",
+  "source_file": "04 Mining.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "xenpop",
+  "file": "05-everything-in-one-app.webp",
+  "source_folder": "xenpop all data",
+  "source_file": "05 Everything in one app.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "xenpop",
+  "file": "06-verification.webp",
+  "source_folder": "xenpop all data",
+  "source_file": "06 Verification.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "xenpop",
+  "file": "07-wallet.webp",
+  "source_folder": "xenpop all data",
+  "source_file": "07 Wallet.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "xenpop",
+  "file": "08-screen-map.webp",
+  "source_folder": "xenpop all data",
+  "source_file": "08 Screen map.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "xenpop",
+  "file": "09-website.webp",
+  "source_folder": "xenpop all data",
+  "source_file": "09 Website.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "xenpop",
+  "file": "10-admin-panel.webp",
+  "source_folder": "xenpop all data",
+  "source_file": "10 Admin panel.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "xenpop",
+  "file": "11-typography-and-colour.webp",
+  "source_folder": "xenpop all data",
+  "source_file": "11 Typography and colour.png",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "project": "xenpop",
+  "file": "12-closing.webp",
+  "source_folder": "xenpop all data",
+  "source_file": "12 Closing.png",
+  "width": 1200,
+  "height": 800
+ }
+]

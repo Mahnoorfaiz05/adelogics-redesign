@@ -19,13 +19,18 @@ export const site = {
   // Existing working email integration (FormSubmit) used by the original site.
   formEndpoint: "https://formsubmit.co/Adelogixteam@gmail.com",
   ga4Id: process.env.NEXT_PUBLIC_GA4_ID || "",
-  // Social profiles: only add URLs for verified official profiles.
-  // Icons render automatically once a URL is provided.
+  // Social profiles — CENTRAL CONFIG.
+  // Leave a value empty until the official profile is verified. Empty values render
+  // as inactive (non-clickable) icons in the footer with a "Profile coming soon" label.
+  // Activate a platform by pasting its official URL here, or by setting the matching
+  // environment variable in Vercel (NEXT_PUBLIC_SOCIAL_LINKEDIN, ..._FACEBOOK, ..._INSTAGRAM,
+  // ..._X, ..._YOUTUBE) — no other code changes are required.
   socials: {
-    linkedin: "",
-    instagram: "",
-    facebook: "",
-    x: "",
+    linkedin: process.env.NEXT_PUBLIC_SOCIAL_LINKEDIN || "",
+    facebook: process.env.NEXT_PUBLIC_SOCIAL_FACEBOOK || "",
+    instagram: process.env.NEXT_PUBLIC_SOCIAL_INSTAGRAM || "",
+    x: process.env.NEXT_PUBLIC_SOCIAL_X || "",
+    youtube: process.env.NEXT_PUBLIC_SOCIAL_YOUTUBE || "",
   } as Record<string, string>,
 };
 

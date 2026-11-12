@@ -2,9 +2,9 @@ import {
   Globe, Smartphone, Boxes, PenTool, Layers, Sparkles, Users, Database, LayoutTemplate, ServerCog, Rocket, Cloud,
   HeartPulse, GraduationCap, ShoppingBag, Landmark, Building2, Plane, Car, MonitorSmartphone, Server, type LucideIcon,
 } from "lucide-react";
-import { siWordpress, siWoocommerce, siApple, siAndroid, siFigma, siGooglecloud, siStripe, siPaypal, siWhatsapp, siInstagram, siFacebook, siX } from "simple-icons";
+import { siWordpress, siWoocommerce, siApple, siAndroid, siFigma, siGooglecloud, siStripe, siPaypal, siWhatsapp, siInstagram, siFacebook, siX, siYoutube } from "simple-icons";
 
-const si = { siWordpress, siWoocommerce, siApple, siAndroid, siFigma, siGooglecloud, siStripe, siPaypal, siWhatsapp, siInstagram, siFacebook, siX };
+const si = { siWordpress, siWoocommerce, siApple, siAndroid, siFigma, siGooglecloud, siStripe, siPaypal, siWhatsapp, siInstagram, siFacebook, siX, siYoutube };
 
 const lucideMap: Record<string, LucideIcon> = {
   Globe, Smartphone, Boxes, PenTool, Layers, Sparkles, Users, Database, LayoutTemplate, ServerCog, Rocket, Cloud,

@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { ArrowUpRight, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, AlertCircle, Loader2, Info } from "lucide-react";
 import { site, whatsappLink } from "@/lib/site";
 import { services } from "@/data/services";
 
@@ -16,10 +16,16 @@ export default function ContactForm() {
   const [status, setStatus] = useState<{ type: "success" | "error"; title: string; text: string } | null>(null);
   const [loading, setLoading] = useState(false);
   const [service, setService] = useState("");
+  const [subject, setSubject] = useState("New project enquiry");
+  const lastSend = useRef<{ key: string; at: number }>({ key: "", at: 0 });
 
   useEffect(() => {
     const q = new URLSearchParams(window.location.search).get("service");
-    if (q && (services.some((s) => s.slug === q) || q === "not-sure")) setService(q);
+    if (q && (services.some((s) => s.slug === q) || q === "not-sure")) {
+      setService(q);
+      const name = services.find((s) => s.slug === q)?.name;
+      setSubject(name ? `${name} project enquiry` : "New project enquiry");
+    }
   }, []);
 
   const needsPhone = method === "phone" || method === "whatsapp";
@@ -29,6 +35,7 @@ export default function ContactForm() {
     if (!d.name || d.name.trim().length < 2) e.name = "Please enter your name.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.email || "")) e.email = "Please enter a valid email address.";
     if (!d.service) e.service = "Please choose a service.";
+    if (!d.subject || d.subject.trim().length < 3) e.subject = "Please add a short subject.";
     if (!d.details || d.details.trim().length < 10) e.details = "Please tell us a little more (at least 10 characters).";
     if (needsPhone && !/^\+?[0-9\s()-]{7,}$/.test(d.phone || "")) e.phone = "Please enter a phone number so we can reach you.";
     return e;
@@ -44,6 +51,12 @@ export default function ContactForm() {
     if (Object.keys(e).length) {
       const first = Object.keys(e)[0];
       (form.current?.querySelector(`[name="${first}"]`) as HTMLElement | null)?.focus();
+      return;
+    }
+    // Duplicate guard: ignore an identical resend within 20 seconds.
+    const key = JSON.stringify([data.name, data.email, data.subject, data.details]);
+    if (key === lastSend.current.key && Date.now() - lastSend.current.at < 20000) {
+      setStatus({ type: "error", title: "This enquiry was already sent.", text: "We have your message — please wait for our reply before sending it again, or contact us on WhatsApp." });
       return;
     }
     setLoading(true);
@@ -63,7 +76,8 @@ export default function ContactForm() {
       } catch { emailed = false; }
       if (emailed && json.id) fetch("/api/contact/", { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id: json.id }) }).catch(() => {});
       if (emailed || json.id) {
-        form.current?.reset(); setMethod("email"); setService("");
+        lastSend.current = { key, at: Date.now() };
+        form.current?.reset(); setMethod("email"); setService(""); setSubject("New project enquiry");
         setStatus({ type: "success", title: `Thank you${firstName ? ", " + firstName : ""}. Your message has been sent.`, text: emailed ? "We will reply using your preferred contact method. If anything is urgent, message us on WhatsApp." : "Your enquiry has been recorded. For a faster reply, you can also email or WhatsApp us directly." });
       } else throw new Error("not sent");
     } catch {
@@ -89,6 +103,11 @@ export default function ContactForm() {
             <option value="not-sure">Not sure yet</option>
           </select>{err("service")}
         </div>
+        <div className="md:col-span-2">
+          <label htmlFor="f-subject" className={label}>Subject *</label>
+          <input id="f-subject" name="subject" value={subject} onChange={(e) => setSubject(e.target.value)} className="field" aria-invalid={!!errors.subject} aria-describedby={errors.subject ? "e-subject" : undefined} placeholder="e.g. Mobile app for a booking business" />
+          {err("subject")}
+        </div>
       </div>
       <fieldset>
         <legend className={label}>Budget range</legend>
@@ -100,7 +119,7 @@ export default function ContactForm() {
         </div>
       </fieldset>
       <div>
-        <label htmlFor="f-details" className={label}>Project description *</label>
+        <label htmlFor="f-details" className={label}>Project description / message *</label>
         <textarea id="f-details" name="details" rows={6} className="field resize-y" placeholder="What are you building or improving, who is it for, and is there a deadline?" aria-invalid={!!errors.details} aria-describedby={errors.details ? "e-details" : undefined} />
         {err("details")}
       </div>
@@ -126,7 +145,7 @@ export default function ContactForm() {
       </AnimatePresence>
       {/* Honeypot + FormSubmit settings (unchanged from original integration) */}
       <div className="hidden" aria-hidden="true"><label>Website<input name="website" tabIndex={-1} autoComplete="off" /></label></div>
-      <input type="hidden" name="_subject" value="New Project Inquiry – ADELOGIX Website" />
+      <input type="hidden" name="_subject" value={`${subject.trim() || "New project enquiry"} — ADELOGIX Website`} />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="false" />
 
@@ -138,6 +157,11 @@ export default function ContactForm() {
         </button>
         <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="link-u text-sm text-white/60">Prefer WhatsApp? Message us directly →</a>
       </div>
+
+      <p className="flex items-start gap-2 rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-xs leading-relaxed text-white/45">
+        <Info size={15} className="mt-0.5 shrink-0 text-brand-300" />
+        <span>This form sends email through FormSubmit to <a className="underline hover:text-white" href={`mailto:${site.email}`}>{site.email}</a>. The first submission triggers a one-time activation link from FormSubmit to that inbox — email delivery stays pending until the link is confirmed. Every enquiry is also validated and recorded on our side, so nothing is lost.</span>
+      </p>
 
       <div aria-live="polite">
         <AnimatePresence>

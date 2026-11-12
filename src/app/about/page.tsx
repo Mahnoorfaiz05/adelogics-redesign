@@ -47,7 +47,7 @@ export default function AboutPage() {
               <Reveal variant="clip-up"><Eyebrow num="01" className="text-ink/60">Our story</Eyebrow></Reveal>
               <SplitHeading text="The partner we would *hire* ourselves." className="mt-6 display h-md" accentClass="serif-i text-brand-500" />
               <Reveal variant="mask" className="relative mt-10 aspect-[4/3] overflow-hidden rounded-[28px]">
-                <Parallax speed={0.2} className="absolute inset-[-10%]"><Image src="/assets/case-studies/usr-crm/05-dashboard.png" alt="USR CRM dashboard redesigned by Adelogix" fill sizes="40vw" className="object-cover" /></Parallax>
+                <Parallax speed={0.2} className="absolute inset-[-10%]"><Image src="/images/case-studies/usr-crm/05-dashboard.webp" alt="USR CRM dashboard redesigned by Adelogix" fill sizes="40vw" className="object-cover" /></Parallax>
               </Reveal>
             </div>
           </div>

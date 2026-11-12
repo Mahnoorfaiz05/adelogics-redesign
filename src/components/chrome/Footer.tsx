@@ -4,24 +4,19 @@ import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { site, whatsappLink, nav } from "@/lib/site";
 import { services } from "@/data/services";
 import { projects } from "@/data/projects";
-import { BrandIcon, LinkedInIcon, WhatsAppIcon } from "@/components/ui/Icons";
+import { WhatsAppIcon } from "@/components/ui/Icons";
 import { BackToTop, CookieSettingsButton } from "./FooterClient";
+import SocialLinks from "./SocialLinks";
 import { Reveal } from "@/components/anim/primitives";
 
 export default function Footer() {
-  const socialDefs = [
-    { key: "linkedin", label: "LinkedIn", icon: <LinkedInIcon /> },
-    { key: "instagram", label: "Instagram", icon: <BrandIcon name="siInstagram" size={18} /> },
-    { key: "facebook", label: "Facebook", icon: <BrandIcon name="siFacebook" size={18} /> },
-    { key: "x", label: "X", icon: <BrandIcon name="siX" size={16} /> },
-  ].filter((s) => site.socials[s.key]);
-
+  // Contact channels only. Social platforms are handled by <SocialLinks />, which
+  // renders inactive icons until an official profile URL is configured.
   const channels = [
     { label: "WhatsApp", href: whatsappLink(), icon: <WhatsAppIcon size={18} />, ext: true },
     { label: "Email", href: `mailto:${site.email}`, icon: <Mail size={18} />, ext: false },
     { label: "Call", href: site.phoneHref, icon: <Phone size={18} />, ext: false },
     { label: "Location", href: site.mapUrl, icon: <MapPin size={18} />, ext: true },
-    ...socialDefs.map((s) => ({ label: s.label, href: site.socials[s.key], icon: s.icon, ext: true })),
   ];
 
   return (
@@ -61,6 +56,7 @@ export default function Footer() {
               <li><a href={site.phoneHref} className="link-u inline-flex items-center gap-3"><Phone size={15} className="text-brand-300" />{site.phone}</a></li>
               <li><a href={site.mapUrl} target="_blank" rel="noopener noreferrer" className="link-u inline-flex items-start gap-3"><MapPin size={15} className="mt-0.5 shrink-0 text-brand-300" />{site.location}</a></li>
             </ul>
+            <SocialLinks className="mt-9" />
           </div>
           <FooterCol title="Company" className="md:col-span-2" links={[...nav.map((n) => ({ label: n.label, href: n.href })), { label: "Privacy Policy", href: "/privacy-policy/" }]} />
           <FooterCol title="Services" className="md:col-span-3" links={services.map((s) => ({ label: s.name, href: `/services/${s.slug}/` }))} />

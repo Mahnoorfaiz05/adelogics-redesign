@@ -54,6 +54,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+ul, ol { list-style: none; margin: 0; padding: 0; }
+
 ::selection { background: var(--color-brand-400); color: #fff; }
 
 /* Hide the native cursor only when the custom cursor is active */

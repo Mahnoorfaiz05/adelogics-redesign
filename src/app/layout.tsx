@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website", siteName: site.legalName, locale: "en_GB", url: "/",
     title: "Adelogix | Web, Mobile & Custom Software Development", description: site.description,
-    images: [{ url: "/assets/case-studies/oriuspay/01-cover.png", width: 1200, height: 800, alt: "Adelogix — software development" }],
+    images: [{ url: "/images/case-studies/oriuspay/01-cover.webp", width: 1200, height: 800, alt: "Adelogix — software development" }],
   },
-  twitter: { card: "summary_large_image", title: "Adelogix | Software Development", description: site.description, images: ["/assets/case-studies/oriuspay/01-cover.png"] },
+  twitter: { card: "summary_large_image", title: "Adelogix | Software Development", description: site.description, images: ["/images/case-studies/oriuspay/01-cover.webp"] },
   alternates: { canonical: "/" },
 };
 

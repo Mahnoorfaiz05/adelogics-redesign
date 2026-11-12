@@ -7,6 +7,7 @@ export const enquiries = pgTable("enquiries", {
   name: text("name").notNull(),
   email: text("email").notNull(),
   company: text("company"),
+  subject: text("subject"),
   service: text("service").notNull(),
   budget: text("budget"),
   details: text("details").notNull(),

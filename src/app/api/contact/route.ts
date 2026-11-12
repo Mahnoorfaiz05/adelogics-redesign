@@ -21,12 +21,13 @@ export async function POST(req: Request) {
   if (clip(body.website, 200)) return Response.json({ ok: true, id: null });
 
   const data = {
-    name: clip(body.name, 120), email: clip(body.email, 200), company: clip(body.company, 160),
+    name: clip(body.name, 120), email: clip(body.email, 200), company: clip(body.company, 160), subject: clip(body.subject, 200),
     service: clip(body.service, 60), budget: clip(body.budget, 60), details: clip(body.details, 5000),
     contactMethod: clip(body.contact_method, 20) || "email", phone: clip(body.phone, 40),
   };
   const errors: Record<string, string> = {};
   if (data.name.length < 2) errors.name = "Please enter your name.";
+  if (data.subject.length < 3) errors.subject = "Please add a short subject.";
   if (!emailRe.test(data.email)) errors.email = "Please enter a valid email address.";
   if (!SERVICES.has(data.service)) errors.service = "Please choose a service.";
   if (data.details.length < 10) errors.details = "Please tell us a little more (at least 10 characters).";

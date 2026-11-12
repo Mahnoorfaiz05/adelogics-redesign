@@ -25,7 +25,7 @@ export type Project = {
 
 const g = (slug: string, files: string[], name: string) =>
   files.map((f) => ({
-    src: `/assets/case-studies/${slug}/${f}.png`,
+    src: `/images/case-studies/${slug}/${f}.webp`,
     alt: `${name} — ${f.replace(/^\d+-/, "").replace(/-/g, " ")} (case study visual)`,
   }));
 
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     features: ["Six-step fitness assessment", "AI Scan for meal logging from photos", "Chat with an AI coach", "Guided workouts", "Activity tracking", "Design system with colour, type and effect styles"],
     goals: ["Display five types of health data clearly on one small screen", "Create repeatable design patterns across all data screens", "Launch from first screens to live app in about 3–4 months"],
     color: "#6d4bd8",
-    cover: "/assets/case-studies/uplift-ai/01-introduction.png",
+    cover: "/images/case-studies/uplift-ai/01-introduction.webp",
     gallery: g("uplift-ai", ["02-overview", "03-challenge-and-solution", "04-key-features", "05-design-system", "06-ui-screens", "07-user-flow", "08-our-process", "09-final-showcase"], "Uplift.ai"),
   },
   {
@@ -71,7 +71,7 @@ export const projects: Project[] = [
     features: ["One-tap connect with live session timer and IP address", "Server locations with Free and Premium tabs, search and signal strength", "Built-in speed test: download, upload, ping, jitter, packet loss, charts and history", "Premium plans from 1 month to 2 years", "PayPal, Google Pay, Apple Pay and card payments", "Face ID, Touch ID and PIN security", "Full light and dark mode across 193 screens"],
     goals: ["Give users one clear answer: am I protected right now?", "Keep all 193 screens consistent across light and dark mode with one design system", "Deliver from first idea to final app in about 2–2.5 months"],
     color: "#2f6bd6",
-    cover: "/assets/case-studies/fast-vpn/01-introduction.png",
+    cover: "/images/case-studies/fast-vpn/01-introduction.webp",
     gallery: g("fast-vpn", ["02-overview", "03-challenge-and-solution", "04-key-features", "05-design-system", "06-ui-screens", "07-user-flow", "08-process", "09-final-showcase"], "Fast VPN"),
   },
   {
@@ -93,7 +93,7 @@ export const projects: Project[] = [
     features: ["Search freelancers by category, rating and rate", "Request one quote or Multiquote to several freelancers at once", "Chat with text, voice notes and photos", "Confirm and pay through Stripe", "Clear booking states including extra-time requests", "Freelancer workspace for performance, earnings, availability and reviews", "Website with search, categories, freelancer lists and profiles"],
     goals: ["Deliver mobile app and website with 57 mobile screens and 6 web pages", "Support two user roles in one account with real-time status sync", "Launch in February 2026"],
     color: "#e2733b",
-    cover: "/assets/case-studies/emyy/01-hero.png",
+    cover: "/images/case-studies/emyy/01-hero.webp",
     gallery: g("emyy", ["02-overview", "03-key-features", "04-brand", "05-roles", "06-quotes", "07-chat-and-booking", "08-freelancers", "09-user-flow", "10-website", "11-web-pages", "12-components", "13-closing"], "Emyy"),
   },
   {
@@ -115,7 +115,7 @@ export const projects: Project[] = [
     features: ["Action-first dashboard with eight KPI cards, cash flow and transaction pipeline", "Horus AI assistant with ready prompts", "Quick Actions: payment links, QR codes, data exports", "Money flows: transactions, refunds, chargebacks, disputes and payouts", "VAT documents with clear review status", "Roles and permissions", "MFA with ten recovery codes and trusted-device limit", "Designed loading, empty, success and error states on every screen"],
     goals: ["Design and develop 17 modules on one sidebar", "Create one design system built on Outfit and a ten-step colour scale", "Complete 7-step process from discovery to launch"],
     color: "#1d2a8a",
-    cover: "/assets/case-studies/oriuspay/01-cover.png",
+    cover: "/images/case-studies/oriuspay/01-cover.webp",
     gallery: g("oriuspay", ["02-overview", "03-our-process", "04-information-architecture", "05-dashboard", "06-horus-ai-and-quick-actions", "07-money-flows", "08-compliance-and-control", "09-secure-access", "10-states-and-feedback", "11-design-system", "12-closing"], "OriusPay"),
   },
   {
@@ -137,7 +137,7 @@ export const projects: Project[] = [
     features: ["User web app: dashboard, investment packages, GNSE investment, referrals, wallet and cashout", "Mobile app with the same investor flows", "Admin panel: users, investments and package management", "Four investment packages on one comparable card pattern", "USDT and Gold-Backed Token balances side by side", "One money-movement pattern: link Skrill once, then same steps for every deposit, withdrawal and cashout", "Four-step onboarding"],
     goals: ["Design one system across three surfaces with consistent navy-and-white interface", "Make comparing investment packages take seconds", "Create calm visual system for financial trust"],
     color: "#15306b",
-    cover: "/assets/case-studies/trunext/01-hero.png",
+    cover: "/images/case-studies/trunext/01-hero.webp",
     gallery: g("trunext", ["02-overview", "03-ecosystem", "04-investment-packages", "05-wallet-and-tokens", "06-skrill-and-cashout", "07-referral-program", "08-mobile-app", "09-admin-panel", "10-onboarding", "11-visual-style", "12-thank-you"], "TruNext"),
   },
   {
@@ -159,7 +159,7 @@ export const projects: Project[] = [
     features: ["New enquiries with live quote: packages, extras, equipment and running total", "Open enquiry follow-up with email updates, brochures and quotes", "Full event sheet for every confirmed booking", "Completed events with emails, invoices and payment status", "Calendar colour-coded by DJ", "Admin and supplier reports: price, cost, profit and payments", "Users and roles, file uploads, downloads and rig lists"],
     goals: ["Replace dark gradient dashboard with calm stone and sage interface", "Deliver 14 desktop screens each with matching mobile layout", "Redesign and develop in 2026"],
     color: "#6f7f63",
-    cover: "/assets/case-studies/usr-crm/01-hero.png",
+    cover: "/images/case-studies/usr-crm/01-hero.webp",
     gallery: g("usr-crm", ["02-overview", "03-redesign", "04-event-lifecycle", "05-dashboard", "06-quote-builder", "07-event-sheet", "08-calendar-and-completed-events", "09-reports", "10-operations", "11-mobile", "12-design-language", "13-closing"], "USR CRM"),
   },
   {
@@ -181,7 +181,7 @@ export const projects: Project[] = [
     features: ["Mobile app: tap-to-mine sessions with live countdown and hourly rate", "Step-by-step KYC with document photos and face check", "Wallet to send and receive coins", "Website landing page for the platform", "Admin panel for users, verification and platform management", "Shared typography and colour system across all three touchpoints"],
     goals: ["Design and develop a mobile app, website and admin panel as one product", "Make crypto mining approachable for non-experts", "Deliver the complete platform in 2026"],
     color: "#2563eb",
-    cover: "/assets/case-studies/xenpop/01-hero.png",
+    cover: "/images/case-studies/xenpop/01-hero.webp",
     gallery: g("xenpop", ["02-what-is-xenpop", "03-three-touchpoints", "04-mining", "05-everything-in-one-app", "06-verification", "07-wallet", "08-screen-map", "09-website", "10-admin-panel", "11-typography-and-colour", "12-closing"], "XENPOP"),
   },
 ];
