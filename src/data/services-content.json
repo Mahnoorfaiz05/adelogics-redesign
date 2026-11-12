@@ -1,0 +1,924 @@
+[
+ {
+  "slug": "web-development",
+  "name": "Web Development",
+  "headline": "Web platforms that do real work for your business.",
+  "intro": "From a company website that needs to win enquiries to a web application your customers log into every day, we build the frontend, the backend and everything that connects them.",
+  "short": "Websites, portals and web applications built to load fast, rank well and stay easy to change.",
+  "challengesTitle": "Does any of this sound familiar?",
+  "challenges": [
+   {
+    "title": "Your site looks dated and converts poorly",
+    "desc": "Visitors arrive, cannot find what they need quickly, and leave. Slow pages and unclear calls to action quietly cost you leads every week."
+   },
+   {
+    "title": "Every small change needs a developer",
+    "desc": "Content updates sit in a queue because the site was built without a sensible way for your team to manage it."
+   },
+   {
+    "title": "Spreadsheets and email are holding a process together",
+    "desc": "Orders, bookings or approvals pass through inboxes and shared files. It works until volume grows, then mistakes start to show."
+   },
+   {
+    "title": "An existing platform is fragile",
+    "desc": "The original developers have moved on, the code is hard to follow, and nobody wants to touch it before a busy period."
+   }
+  ],
+  "solutionTitle": "One team for the full stack",
+  "solutionText": "We plan the structure around what visitors and users need to do, design the interface, then build it on a stack that suits the job. Marketing sites get clean markup, fast loading and search-friendly structure. Web applications get a properly modelled backend, secure authentication and an admin area your team can actually use.",
+  "solutionPoints": [
+   "Page structure and user flows agreed before development starts",
+   "Responsive layouts tested on real phone, tablet and desktop sizes",
+   "Technical SEO foundations: metadata, sitemaps, clean URLs, structured data",
+   "Documented code and a handover your team or ours can maintain"
+  ],
+  "deliverables": [
+   "Full-stack web development",
+   "Frontend development",
+   "Backend and API development",
+   "Web application development",
+   "Responsive web development",
+   "Customer and partner portals",
+   "Performance and accessibility improvements",
+   "Rebuilds and migrations from legacy platforms"
+  ],
+  "process": [
+   "We review your current site or idea, your audience and the actions that matter, such as enquiries, sign-ups or orders.",
+   "Sitemap, key user flows, content needs and the technical approach are agreed, with a scope and timeline you can plan around.",
+   "Design and development happen in reviewable stages on a staging link, so you see progress instead of waiting for a big reveal.",
+   "We handle deployment, redirects and analytics setup, then stay available for fixes and improvements as agreed."
+  ],
+  "technologies": [
+   "WordPress"
+  ],
+  "caseStudies": [
+   "emyy",
+   "usr-crm",
+   "oriuspay",
+   "xenpop"
+  ],
+  "faqTitle": "Web Development: common questions",
+  "ctaTitle": "Thinking about a new website or web app?",
+  "ctaText": "Share a few details about what you need. We will come back with questions, an initial view on approach and the next practical step.",
+  "faqs": [
+   {
+    "q": "Do you build marketing websites or only web applications?",
+    "a": "Both. A marketing site and a web application have different priorities, so we plan them differently, but the same team can handle either, and many projects include both."
+   },
+   {
+    "q": "Can you work on a website another agency built?",
+    "a": "Yes. We start with a short technical review so we understand the codebase and its risks, then recommend whether to improve it in place or rebuild specific parts."
+   },
+   {
+    "q": "Will we be able to update the content ourselves?",
+    "a": "If you need to, yes. We agree early on which content your team will edit and set up the right editing tools for it, whether that is a CMS or a custom admin area."
+   },
+   {
+    "q": "Who owns the code when the project is finished?",
+    "a": "Ownership terms are set out in the project agreement. Our standard approach is that you receive the source code and access to the accounts your product runs on once the project is paid for."
+   }
+  ]
+ },
+ {
+  "slug": "mobile-app-development",
+  "name": "Mobile App Development",
+  "headline": "Mobile apps people keep on their home screen.",
+  "intro": "We design and develop iOS and Android apps for customers, staff and field teams, with the backend, admin tools and store release handled as part of the same project.",
+  "short": "iOS and Android apps planned around everyday use, from first prototype to store release.",
+  "challengesTitle": "Does any of this sound familiar?",
+  "challenges": [
+   {
+    "title": "Your customers expect an app, not a mobile website",
+    "desc": "Repeat customers want faster access, saved details and notifications. A browser bookmark does not give them that."
+   },
+   {
+    "title": "Field teams work from paper or messaging apps",
+    "desc": "Information gets re-typed back at the office, photos go missing and nobody has a reliable picture of what happened on site."
+   },
+   {
+    "title": "Two platforms feel like two projects",
+    "desc": "Building separately for iOS and Android doubles the cost and the coordination, and features drift apart over time."
+   },
+   {
+    "title": "An earlier app was abandoned or poorly rated",
+    "desc": "Crashes, confusing navigation or slow load times have hurt reviews, and users have stopped opening it."
+   }
+  ],
+  "solutionTitle": "Apps planned around the moment of use",
+  "solutionText": "We start by mapping when and where people will open the app, then design flows that respect that moment: one hand, a poor signal, thirty seconds to spare. Depending on your needs we recommend a cross-platform approach that shares one codebase across iOS and Android, or native development where the product depends on deep device features.",
+  "solutionPoints": [
+   "Clickable prototype tested before development begins",
+   "One shared codebase for iOS and Android where it makes sense",
+   "Backend, APIs and admin panel built alongside the app",
+   "App Store and Google Play submission handled for you"
+  ],
+  "deliverables": [
+   "Mobile app development",
+   "Android app development",
+   "iOS app development",
+   "Mobile app UI design",
+   "Offline-ready data and sync",
+   "Push notifications and in-app messaging",
+   "App backend and admin panel",
+   "Store listing, submission and release management"
+  ],
+  "process": [
+   "We define who uses the app, what they need to do in it and which device features, such as camera, location or payments, are involved.",
+   "Screens, user flows and the platform approach are agreed, along with the backend the app depends on.",
+   "You receive test builds on your own phone throughout development, so feedback happens early and often.",
+   "We prepare store listings, manage review submissions and support OS updates and new releases as agreed."
+  ],
+  "technologies": [
+   "Android",
+   "iOS",
+   "Figma"
+  ],
+  "caseStudies": [
+   "uplift-ai",
+   "fast-vpn",
+   "emyy",
+   "xenpop"
+  ],
+  "faqTitle": "Mobile App Development: common questions",
+  "ctaTitle": "Thinking about a mobile app?",
+  "ctaText": "Share a few details about what you need. We will come back with questions, an initial view on approach and the next practical step.",
+  "faqs": [
+   {
+    "q": "Should we build for iOS, Android or both?",
+    "a": "It depends on who your users are. We look at your audience and budget and usually recommend a cross-platform build so both platforms launch together. Native development makes sense when an app relies heavily on device-specific features."
+   },
+   {
+    "q": "Do you publish the app to the stores?",
+    "a": "Yes. We prepare the listing assets, handle submission and respond to review feedback from Apple and Google. The app is published under your own developer accounts."
+   },
+   {
+    "q": "Can the app work without an internet connection?",
+    "a": "It can, if the use case needs it. Offline support is planned from the start, because it affects how data is stored and synchronised."
+   },
+   {
+    "q": "What happens after launch?",
+    "a": "Mobile platforms change every year. We offer agreed support for fixes, OS compatibility updates and new features, so the app keeps working as devices change."
+   }
+  ]
+ },
+ {
+  "slug": "custom-software-development",
+  "name": "Custom Software Development",
+  "headline": "Software that fits the way your business actually runs.",
+  "intro": "When generic tools force your team into workarounds, we design and build software around your process: internal systems, admin panels, databases and the integrations between them.",
+  "short": "Software shaped around your process when off-the-shelf tools force you to work around them.",
+  "challengesTitle": "Does any of this sound familiar?",
+  "challenges": [
+   {
+    "title": "Off-the-shelf tools almost fit",
+    "desc": "You pay for several subscriptions, use a fraction of each, and still fill the gaps with spreadsheets."
+   },
+   {
+    "title": "Data lives in too many places",
+    "desc": "Sales, operations and finance each hold their own version of the truth, and reconciling them takes hours every month."
+   },
+   {
+    "title": "Manual steps slow everything down",
+    "desc": "Approvals, reports and status updates depend on people remembering to do them, so work stalls whenever someone is away."
+   },
+   {
+    "title": "Growth is exposing the cracks",
+    "desc": "A process that worked for ten clients does not work for a hundred, and hiring more people to paper over it is expensive."
+   }
+  ],
+  "solutionTitle": "Built around your process, not the other way round",
+  "solutionText": "We spend time with the people who will use the software before writing any code. That shows us where the real friction is and which parts of the process are worth automating. We then build in stages, starting with the part that removes the most manual work, so your team gets value early and the next stage is shaped by real use.",
+  "solutionPoints": [
+   "Process mapping with the people who do the work",
+   "Database design that reflects how your business is structured",
+   "Role-based access so each team sees what it needs",
+   "Phased delivery, starting with the highest-impact module"
+  ],
+  "deliverables": [
+   "Custom software development",
+   "Internal tools and workflow systems",
+   "Admin panel development",
+   "Database design and development",
+   "Reporting dashboards",
+   "Data migration from spreadsheets and legacy systems",
+   "API and third-party integrations",
+   "Ongoing maintenance and feature development"
+  ],
+  "process": [
+   "Workshops with the people involved in the process, plus a review of the tools and data you use today.",
+   "We define the modules, data model and integrations, then agree the order in which they will be delivered.",
+   "Each module is developed, tested with real scenarios and reviewed with your team before the next one starts.",
+   "We migrate your data, train the people using the system and support it as your process evolves."
+  ],
+  "technologies": [],
+  "caseStudies": [
+   "usr-crm",
+   "oriuspay",
+   "xenpop"
+  ],
+  "faqTitle": "Custom Software Development: common questions",
+  "ctaTitle": "Thinking about custom software?",
+  "ctaText": "Share a few details about what you need. We will come back with questions, an initial view on approach and the next practical step.",
+  "faqs": [
+   {
+    "q": "How do we know if we need custom software?",
+    "a": "If your team spends significant time on workarounds, duplicate data entry or reconciling information between tools, custom software is worth considering. We will tell you honestly if an existing product would serve you better."
+   },
+   {
+    "q": "Can you connect the new system to tools we already use?",
+    "a": "Usually, yes. Most modern tools offer APIs. During discovery we check which systems need to connect and how reliable their integrations are."
+   },
+   {
+    "q": "How do you price custom software?",
+    "a": "After discovery we provide a scope with an estimate for each phase. Phasing lets you control spend and decide on later stages once the first ones are in use."
+   },
+   {
+    "q": "What happens to our existing data?",
+    "a": "We plan the migration as part of the project, clean and map the data, and run test imports before the final switch-over."
+   }
+  ]
+ },
+ {
+  "slug": "ui-ux-design",
+  "name": "UI/UX Design",
+  "headline": "Interfaces that make complex things feel simple.",
+  "intro": "We design websites, apps, dashboards and admin panels in Figma, starting with structure and user flows before visual polish, and finish with files developers can build from without guessing.",
+  "short": "Research-led interface design in Figma, from wireframes to a developer-ready design system.",
+  "challengesTitle": "Does any of this sound familiar?",
+  "challenges": [
+   {
+    "title": "Users get lost or give up",
+    "desc": "Sign-ups stall halfway, support tickets ask the same questions, and analytics show people dropping off on the same screens."
+   },
+   {
+    "title": "The product grew without a plan",
+    "desc": "Each new feature added its own buttons, colours and patterns, and the interface now feels inconsistent."
+   },
+   {
+    "title": "Developers are guessing",
+    "desc": "Designs arrive without states, edge cases or spacing rules, so the built product drifts from what was approved."
+   },
+   {
+    "title": "Stakeholders cannot picture the idea",
+    "desc": "A written brief is not enough to align a team or convince investors. You need something people can click through."
+   }
+  ],
+  "solutionTitle": "Structure first, then style",
+  "solutionText": "Good interfaces come from clear thinking about who is using them and what they are trying to finish. We map user flows and wireframes first, test them, and only then move to visual design. Everything is built as reusable Figma components, so the design stays consistent as the product grows.",
+  "solutionPoints": [
+   "User flows and wireframes agreed before visual design",
+   "Interactive Figma prototypes for testing and stakeholder review",
+   "Component-based design systems with documented states",
+   "Developer handoff with specs, assets and responsive behaviour"
+  ],
+  "deliverables": [
+   "UI/UX design",
+   "Mobile app design",
+   "Website design",
+   "Web application design",
+   "Landing page design",
+   "Admin panel and CRM dashboard design",
+   "Wireframing and Figma prototyping",
+   "Design systems and developer handoff"
+  ],
+  "process": [
+   "We review your users, goals, existing product and analytics to find where the experience is breaking down.",
+   "Information architecture, user flows and wireframes define what goes where before any styling.",
+   "Visual design, interactive prototypes and a component library are created and reviewed in rounds.",
+   "We hand over organised Figma files, support developers during build and review the result against the design."
+  ],
+  "technologies": [
+   "Figma"
+  ],
+  "caseStudies": [
+   "uplift-ai",
+   "fast-vpn",
+   "usr-crm",
+   "oriuspay",
+   "trunext",
+   "xenpop"
+  ],
+  "faqTitle": "UI/UX Design: common questions",
+  "ctaTitle": "Thinking about a design project?",
+  "ctaText": "Share a few details about what you need. We will come back with questions, an initial view on approach and the next practical step.",
+  "faqs": [
+   {
+    "q": "Do you only design, or can you also build what you design?",
+    "a": "Both. Many clients have us design and develop, which avoids handoff gaps. We are also comfortable handing designs to your in-house developers with full specifications."
+   },
+   {
+    "q": "What do we receive at the end?",
+    "a": "Organised Figma files with all screens and states, a component library, an interactive prototype and handoff notes for development."
+   },
+   {
+    "q": "Can you redesign part of an existing product?",
+    "a": "Yes. We often start with the flows causing the most friction, such as onboarding or checkout, and design improvements that fit your current system."
+   },
+   {
+    "q": "How many revision rounds are included?",
+    "a": "Revision rounds are agreed in the proposal for each project. Because we validate structure with wireframes first, late-stage revisions are usually small."
+   }
+  ]
+ },
+ {
+  "slug": "saas-development",
+  "name": "SaaS Development",
+  "headline": "From product idea to paying subscribers.",
+  "intro": "We help founders and product teams build software-as-a-service products: a focused first version to test with real customers, then the architecture to grow it.",
+  "short": "Subscription products with accounts, billing, roles and the admin tools to run them.",
+  "challengesTitle": "Does any of this sound familiar?",
+  "challenges": [
+   {
+    "title": "The idea is clear, the first version is not",
+    "desc": "Everything feels essential, the feature list keeps growing, and launch keeps moving further away."
+   },
+   {
+    "title": "Billing and accounts are harder than expected",
+    "desc": "Plans, trials, invoices, team seats and permissions all need to work reliably before you can charge anyone."
+   },
+   {
+    "title": "An MVP was built in a hurry",
+    "desc": "It proved the idea, but the codebase now slows down every new feature and makes scaling risky."
+   },
+   {
+    "title": "You need to see what customers do",
+    "desc": "Without usage data and an admin view, decisions about the roadmap are guesses."
+   }
+  ],
+  "solutionTitle": "A focused first release on solid foundations",
+  "solutionText": "We help you separate what the first release must do from what can wait, then build that version properly. Multi-tenant data separation, authentication, subscription billing and an internal admin panel are planned from day one, because retrofitting them later is expensive.",
+  "solutionPoints": [
+   "MVP scoping workshop to define a realistic first release",
+   "Multi-tenant architecture with secure data separation",
+   "Subscription billing, trials, plans and team seats",
+   "Internal admin panel and usage reporting"
+  ],
+  "deliverables": [
+   "SaaS MVP development",
+   "Multi-tenant architecture",
+   "Subscription billing integration",
+   "User roles, teams and permissions",
+   "Onboarding flows",
+   "Admin and support panel",
+   "Product analytics setup",
+   "Scaling, refactoring and feature development"
+  ],
+  "process": [
+   "We work through your market, your customers and the core problem the product solves, then prioritise features.",
+   "A release plan, technical architecture and billing model are agreed, along with what success looks like for the first version.",
+   "Development runs in short cycles with working releases you can show to early users.",
+   "We launch, monitor real usage and keep building the roadmap with you as feedback comes in."
+  ],
+  "technologies": [],
+  "caseStudies": [],
+  "faqTitle": "SaaS Development: common questions",
+  "ctaTitle": "Thinking about a SaaS product?",
+  "ctaText": "Share a few details about what you need. We will come back with questions, an initial view on approach and the next practical step.",
+  "faqs": [
+   {
+    "q": "How long does an MVP take?",
+    "a": "It depends on scope, which is why we start with a scoping workshop. The aim is the smallest version that real customers would pay for, and we give you a timeline once that is defined."
+   },
+   {
+    "q": "Can you take over an existing SaaS codebase?",
+    "a": "Yes. We begin with a code and infrastructure review, fix the most urgent risks, then continue feature development."
+   },
+   {
+    "q": "Which payment providers can you integrate?",
+    "a": "We integrate established subscription billing providers that suit your markets and currencies. The choice is made during planning based on where your customers are."
+   },
+   {
+    "q": "Do you help after the product launches?",
+    "a": "Yes. Most SaaS products need steady iteration after launch, and we offer ongoing development and support arrangements."
+   }
+  ]
+ },
+ {
+  "slug": "ai-development-automation",
+  "name": "AI Development & Automation",
+  "headline": "AI and automation applied to real, repetitive work.",
+  "intro": "We add AI features to applications and automate the routine steps between your tools, starting with tasks where the time saved is easy to measure.",
+  "short": "Practical AI features and workflow automation that remove repetitive work from your team.",
+  "challengesTitle": "Does any of this sound familiar?",
+  "challenges": [
+   {
+    "title": "Your team copies information between systems",
+    "desc": "Leads, orders and documents move by hand from email to CRM to spreadsheet, and each step adds delay and errors."
+   },
+   {
+    "title": "Documents take too long to process",
+    "desc": "Invoices, forms or applications are read and keyed in manually before anyone can act on them."
+   },
+   {
+    "title": "You want to use AI but do not know where to start",
+    "desc": "There is pressure to \"do something with AI\", but no clear use case that is worth the investment."
+   },
+   {
+    "title": "Customers wait for simple answers",
+    "desc": "Your team answers the same questions repeatedly, and response times suffer during busy periods."
+   }
+  ],
+  "solutionTitle": "Start with the task, not the technology",
+  "solutionText": "We look for the specific, repeated tasks where AI or automation can save time reliably, then build them into the systems your team already uses. AI features are designed with human review where accuracy matters, and every automation is logged so you can see what ran and why.",
+  "solutionPoints": [
+   "Use case review to find work worth automating",
+   "AI features built into your existing apps and workflows",
+   "Human review steps where accuracy and judgement matter",
+   "Logging and monitoring so automation stays transparent"
+  ],
+  "deliverables": [
+   "AI development and automation",
+   "AI-powered application development",
+   "Document extraction and classification",
+   "AI assistants trained on your own content",
+   "Workflow automation between business tools",
+   "API integration",
+   "Third-party integrations",
+   "Monitoring, evaluation and improvement"
+  ],
+  "process": [
+   "We review your workflows, data and tools to identify tasks where automation would make a measurable difference.",
+   "We define the use case, the data involved, accuracy expectations and how people will review results.",
+   "A working version is tested on your real examples, refined, and connected to your systems.",
+   "We monitor results after launch, adjust prompts and rules, and extend automation to further tasks as agreed."
+  ],
+  "technologies": [],
+  "caseStudies": [],
+  "faqTitle": "AI Development & Automation: common questions",
+  "ctaTitle": "Thinking about AI or automation?",
+  "ctaText": "Share a few details about what you need. We will come back with questions, an initial view on approach and the next practical step.",
+  "faqs": [
+   {
+    "q": "Is our data safe if we use AI?",
+    "a": "We choose providers and configurations based on your data requirements, avoid sending sensitive data where it is not needed, and document exactly where data flows."
+   },
+   {
+    "q": "What if the AI gets something wrong?",
+    "a": "We design for that. Where mistakes would be costly, results go to a person for review before anything is sent or saved."
+   },
+   {
+    "q": "Do we need a large amount of data to start?",
+    "a": "Not usually. Many useful AI features work with your existing documents and a modest set of real examples for testing."
+   },
+   {
+    "q": "Can you automate work across tools we already pay for?",
+    "a": "In most cases. Where tools have APIs or integration platforms, we can connect them and remove manual handovers."
+   }
+  ]
+ },
+ {
+  "slug": "crm-development",
+  "name": "CRM Development",
+  "headline": "A CRM shaped around how you sell and serve.",
+  "intro": "We build custom CRM systems, and extend existing ones, so your pipeline, customer records and follow-ups match the way your team really works.",
+  "short": "Customer management built around your pipeline, with the integrations your sales team relies on.",
+  "challengesTitle": "Does any of this sound familiar?",
+  "challenges": [
+   {
+    "title": "Your CRM does not match your sales process",
+    "desc": "The team keeps notes elsewhere because the stages, fields and reports do not reflect how deals actually progress."
+   },
+   {
+    "title": "Leads slip through",
+    "desc": "Enquiries arrive from your website, phone and social channels, and some are never followed up."
+   },
+   {
+    "title": "Managers cannot see the pipeline",
+    "desc": "Forecasts are assembled by hand from conversations and spreadsheets."
+   },
+   {
+    "title": "Per-seat pricing is getting expensive",
+    "desc": "Subscription costs climb with every new hire, for features most people never use."
+   }
+  ],
+  "solutionTitle": "Your pipeline, your fields, your reports",
+  "solutionText": "We map your sales and service journey first, then build a CRM that follows it: the stages you use, the information you need at each step, automatic follow-up reminders and dashboards that answer the questions managers ask every week. Where an existing CRM is the right base, we customise and integrate it instead.",
+  "solutionPoints": [
+   "Pipeline stages and fields that mirror your process",
+   "Lead capture from website forms and other channels",
+   "Task reminders and automated follow-ups",
+   "Dashboards for pipeline, activity and team performance"
+  ],
+  "deliverables": [
+   "Custom CRM development",
+   "CRM dashboard design",
+   "Lead capture and routing",
+   "Sales pipeline and deal management",
+   "Customer records and activity history",
+   "Email, calendar and telephony integrations",
+   "Data migration from existing CRMs and spreadsheets",
+   "Customisation of existing CRM platforms"
+  ],
+  "process": [
+   "We follow a lead from first contact to closed deal with your team, and note every tool and handover along the way.",
+   "Pipeline structure, data fields, user roles, reports and integrations are defined and agreed.",
+   "The CRM is built in stages, with your sales team testing each part against real deals.",
+   "We migrate existing contacts and deals, train the team and adjust the system as your process changes."
+  ],
+  "technologies": [
+   "Figma"
+  ],
+  "caseStudies": [
+   "usr-crm"
+  ],
+  "faqTitle": "CRM Development: common questions",
+  "ctaTitle": "Thinking about a CRM that fits?",
+  "ctaText": "Share a few details about what you need. We will come back with questions, an initial view on approach and the next practical step.",
+  "faqs": [
+   {
+    "q": "Should we build a custom CRM or customise an existing one?",
+    "a": "If an established CRM covers most of your process, customising it is often quicker and cheaper. A custom build makes sense when your process is specialised or licence costs no longer make sense. We help you decide."
+   },
+   {
+    "q": "Can you move our data from our current CRM?",
+    "a": "Yes. We export, clean and map your contacts, companies, deals and history, and test the import before switching over."
+   },
+   {
+    "q": "Can website enquiries go straight into the CRM?",
+    "a": "Yes. Forms, chat and other channels can create leads automatically and assign them to the right person."
+   },
+   {
+    "q": "Will it work on mobile?",
+    "a": "We build CRM interfaces to work on phones and tablets, so field and sales teams can update records on the move."
+   }
+  ]
+ },
+ {
+  "slug": "erp-cms-development",
+  "name": "ERP & CMS Development",
+  "headline": "One system for operations. One place for content.",
+  "intro": "We build modular ERP systems that connect inventory, orders, purchasing and finance, and content management systems that let your team publish without waiting on developers.",
+  "short": "Operations and content systems that give each team one reliable place to work.",
+  "challengesTitle": "Does any of this sound familiar?",
+  "challenges": [
+   {
+    "title": "Departments work in separate tools",
+    "desc": "Stock, orders and accounts are tracked in different places, so nobody has a complete picture at any moment."
+   },
+   {
+    "title": "Enterprise ERPs are too heavy",
+    "desc": "Large platforms come with long implementations, high licence fees and features you will never use."
+   },
+   {
+    "title": "Publishing content is slow",
+    "desc": "Every new page, product or article depends on a developer, so content falls behind your plans."
+   },
+   {
+    "title": "Reporting takes days",
+    "desc": "Month-end reports are built by exporting and merging spreadsheets from several systems."
+   }
+  ],
+  "solutionTitle": "Modular systems that grow with you",
+  "solutionText": "For ERP, we start with the module that causes the most friction, often inventory or order management, and connect further modules as your needs grow. For CMS projects, we model your content properly, so editors work with clear fields and previews rather than fragile page builders.",
+  "solutionPoints": [
+   "Modular ERP covering inventory, orders, purchasing and finance",
+   "Role-based access across departments",
+   "Structured content models with editor-friendly interfaces",
+   "Headless or traditional CMS, chosen to suit your channels"
+  ],
+  "deliverables": [
+   "ERP and CMS development",
+   "Inventory and order management",
+   "Purchasing and supplier management",
+   "Finance and invoicing modules",
+   "Custom CMS and content modelling",
+   "Headless CMS implementation",
+   "Admin panel development",
+   "Reporting and data exports"
+  ],
+  "process": [
+   "We map how information moves between departments, or how content is created and approved, and where it gets stuck.",
+   "Modules, content types, user roles and integrations are prioritised into a phased plan.",
+   "Each module or content area is built and tested with the people who will use it every day.",
+   "We migrate data, train staff and add modules or content types as the business needs them."
+  ],
+  "technologies": [
+   "WordPress"
+  ],
+  "caseStudies": [],
+  "faqTitle": "ERP & CMS Development: common questions",
+  "ctaTitle": "Thinking about an ERP or CMS?",
+  "ctaText": "Share a few details about what you need. We will come back with questions, an initial view on approach and the next practical step.",
+  "faqs": [
+   {
+    "q": "Do we have to replace all our systems at once?",
+    "a": "No. A modular approach lets you replace or connect one area at a time while existing tools keep running."
+   },
+   {
+    "q": "Can the ERP connect to our accounting software?",
+    "a": "In most cases. We check the integration options of your accounting platform during discovery and plan the connection."
+   },
+   {
+    "q": "What is a headless CMS and do we need one?",
+    "a": "A headless CMS stores content separately from the website design, so the same content can feed a website, an app and other channels. It is useful when you publish across several channels. For a single website, a traditional CMS is often simpler."
+   },
+   {
+    "q": "How do you handle user permissions?",
+    "a": "We define roles with your team, so each person sees and edits only what is relevant to their job."
+   }
+  ]
+ },
+ {
+  "slug": "wordpress-development",
+  "name": "WordPress Development",
+  "headline": "WordPress, built properly.",
+  "intro": "We build custom WordPress themes and plugins that are fast, secure and easy for your team to edit, without the bloat of heavy page builders and stacks of plugins.",
+  "short": "Custom WordPress themes and plugins that are fast, secure and simple for editors.",
+  "challengesTitle": "Does any of this sound familiar?",
+  "challenges": [
+   {
+    "title": "Your site is slow and plugin-heavy",
+    "desc": "Dozens of plugins and a heavy theme make every page load slowly and every update risky."
+   },
+   {
+    "title": "Editing breaks the layout",
+    "desc": "Your team avoids making changes because one wrong click in the page builder breaks the design."
+   },
+   {
+    "title": "Security worries keep coming up",
+    "desc": "Outdated plugins, unclear hosting and no backup plan leave the site exposed."
+   },
+   {
+    "title": "You need features a theme cannot provide",
+    "desc": "Bookings, member areas or custom product options do not fit the theme you bought."
+   }
+  ],
+  "solutionTitle": "Custom themes, clean editing, fewer plugins",
+  "solutionText": "We build lightweight custom themes based on your design, with editing blocks set up for the content your team actually publishes. Where functionality is needed, we use well-maintained plugins or write focused custom code, and we set up updates, backups and security hardening from the start.",
+  "solutionPoints": [
+   "Custom block-based themes built from your design",
+   "Editor-friendly content blocks with guardrails",
+   "Minimal, well-maintained plugin set",
+   "Speed, security hardening and backups configured at launch"
+  ],
+  "deliverables": [
+   "WordPress development",
+   "Custom theme development",
+   "Custom plugin development",
+   "WooCommerce stores",
+   "Speed and Core Web Vitals improvements",
+   "Migrations and redesigns",
+   "Security hardening and backups",
+   "Maintenance and update plans"
+  ],
+  "process": [
+   "We review your current site, content, plugins and hosting, and agree what the new site needs to do.",
+   "Templates, content blocks, required plugins and the migration approach are defined.",
+   "The theme is developed on a staging site where your team can review pages and try the editor.",
+   "We migrate content, set up redirects, launch and keep WordPress, plugins and backups up to date as agreed."
+  ],
+  "technologies": [
+   "WordPress",
+   "Figma"
+  ],
+  "caseStudies": [],
+  "faqTitle": "WordPress Development: common questions",
+  "ctaTitle": "Thinking about a WordPress site?",
+  "ctaText": "Share a few details about what you need. We will come back with questions, an initial view on approach and the next practical step.",
+  "faqs": [
+   {
+    "q": "Do you use page builders?",
+    "a": "We generally build custom blocks for the WordPress editor instead of heavy page builders. Pages stay fast and editors cannot accidentally break the layout."
+   },
+   {
+    "q": "Can you speed up our existing WordPress site?",
+    "a": "Yes. We audit themes, plugins, images and hosting, then fix the biggest causes of slow loading."
+   },
+   {
+    "q": "Can we move from another platform to WordPress?",
+    "a": "Yes. We migrate pages, posts, media and SEO settings, and set up redirects so you keep your search visibility."
+   },
+   {
+    "q": "Do you offer WordPress maintenance?",
+    "a": "Yes. Maintenance can include core and plugin updates, backups, uptime checks and small content changes, depending on the plan agreed."
+   }
+  ]
+ },
+ {
+  "slug": "it-services",
+  "name": "IT Services",
+  "headline": "Cloud infrastructure and IT support built to scale.",
+  "intro": "We design, deploy and manage cloud infrastructure on AWS and Google Cloud Platform, with DevOps practices, monitoring and support so your systems stay available, secure and easy to change as you grow.",
+  "short": "Cloud infrastructure, DevOps and IT support that keep your systems running, secure and able to grow.",
+  "challengesTitle": "Does any of this sound familiar?",
+  "challenges": [
+   {
+    "title": "Cloud costs keep climbing",
+    "desc": "Resources are left running, environments are over-provisioned and nobody is reviewing the bill, so cloud spend grows every month without anyone noticing."
+   },
+   {
+    "title": "Deployments are slow and risky",
+    "desc": "Changes are applied by hand, mistakes happen during releases, and there is no reliable way to roll back when something goes wrong."
+   },
+   {
+    "title": "No one owns the infrastructure",
+    "desc": "Servers and cloud accounts were set up by someone who has moved on, there is no documentation, and the team is afraid to change anything."
+   },
+   {
+    "title": "Support is reactive, not planned",
+    "desc": "When a site goes down or a server slows down, there is nobody to call, and fixes happen only after users complain."
+   }
+  ],
+  "solutionTitle": "Infrastructure your team can rely on",
+  "solutionText": "We build cloud infrastructure as code, deploy it through automated pipelines and monitor it around the clock. On AWS or Google Cloud Platform, we create environments that are secure by default, easy to reproduce and sized for your actual traffic. Then we keep them running with planned maintenance, security updates and support you can rely on.",
+  "solutionPoints": [
+   "AWS and Google Cloud Platform infrastructure, configured and documented",
+   "DevOps pipelines for integration, delivery and deployment",
+   "Monitoring, alerts and uptime checks so issues are caught early",
+   "Scheduled maintenance, security patches and incident support"
+  ],
+  "deliverables": [
+   "DevOps and cloud infrastructure",
+   "AWS cloud solutions",
+   "Google Cloud Platform (GCP) architecture",
+   "Cloud deployment and management",
+   "Infrastructure as code and configuration management",
+   "IT support and maintenance",
+   "Cloud optimization and scalability",
+   "Backups and disaster recovery"
+  ],
+  "process": [
+   "We review your current infrastructure, traffic and reliability needs, and identify where cloud spend, deployment risk or support gaps are hurting the business.",
+   "We design the cloud environment, choose services and define deployment, backup and monitoring arrangements, with a scope and timeline you can plan around.",
+   "Infrastructure is defined as code, pipelines are implemented and tested on a staging environment, and you see progress before anything touches production.",
+   "We deploy, document access and handover, then provide agreed IT support, monitoring and maintenance as your systems grow."
+  ],
+  "technologies": [],
+  "caseStudies": [],
+  "faqTitle": "IT Services: common questions",
+  "ctaTitle": "Thinking about cloud infrastructure or DevOps support?",
+  "ctaText": "Share a few details about what you need. We will come back with questions, an initial view on approach and the next practical step.",
+  "faqs": [
+   {
+    "q": "Do you work with AWS and Google Cloud Platform?",
+    "a": "Yes. We design and manage infrastructure on both AWS and Google Cloud Platform, and recommend the platform that fits your workload, team and budget."
+   },
+   {
+    "q": "Can you take over infrastructure someone else built?",
+    "a": "Yes. We start with a review of your current cloud accounts, configuration and costs, then recommend improvements or a safe migration."
+   },
+   {
+    "q": "What kind of support do you provide?",
+    "a": "Planned maintenance, security updates, monitoring and incident response, on terms agreed upfront so you know exactly what is covered."
+   },
+   {
+    "q": "Will our systems be able to scale?",
+    "a": "Yes. Infrastructure is designed to handle growth, with autoscaling where it helps and regular reviews of capacity and cost."
+   }
+  ]
+ },
+ {
+  "slug": "product-development",
+  "name": "Product Development",
+  "headline": "Products designed, built and released properly.",
+  "intro": "We take products from concept to launch and beyond: software architecture, design, AI features, quality assurance and release management, all planned around your users and your business goals.",
+  "short": "End-to-end product development: from idea and design to build, testing and release.",
+  "challengesTitle": "Does any of this sound familiar?",
+  "challenges": [
+   {
+    "title": "An idea without a build plan",
+    "desc": "The product concept is clear, but there is no specification, no roadmap and no agreement on what the first version should contain."
+   },
+   {
+    "title": "Features ship without being tested",
+    "desc": "Releases reach users with bugs, confusing workflows or missing features, because quality checks and real-user feedback were skipped."
+   },
+   {
+    "title": "Teams build the wrong things",
+    "desc": "Work starts before priorities are agreed, and development time is spent on features customers do not use."
+   },
+   {
+    "title": "Releases are slow and stressful",
+    "desc": "Code, testing and deployment are handled separately by different people, so every release takes longer than it should."
+   }
+  ],
+  "solutionTitle": "One team for the whole product lifecycle",
+  "solutionText": "We take products from strategy through to release: research and design first, then development and quality assurance in stages, with product management keeping everything coordinated. Every feature is checked with real users and real testing before it reaches your customers.",
+  "solutionPoints": [
+   "Product planning, strategy and roadmap definition",
+   "Software development tailored to your requirements",
+   "AI features, chatbots and intelligent automation",
+   "Quality assurance, user testing and bug reviews",
+   "UX design, user journeys and wireframes",
+   "CI/CD, cloud infrastructure and deployment automation"
+  ],
+  "deliverables": [
+   "Software Development - custom software architecture and development, scalable and reliable solutions tailored to your business requirements.",
+   "AI Development - AI-powered applications, intelligent automation and AI integration into existing platforms.",
+   "Chatbot Development - conversational AI chatbots for customer support automation and business workflows.",
+   "QA and Review - software quality assurance, functional and performance testing, bug identification and quality reviews.",
+   "User Testing - user experience testing, usability evaluation and real-world product feedback.",
+   "Product Management - product planning and strategy, development lifecycle management, feature prioritization and coordination.",
+   "DevOps and Cloud - CI/CD pipeline implementation, cloud infrastructure, deployment automation and monitoring.",
+   "UX Design - user research, user journeys and wireframes for user-centred product experiences."
+  ],
+  "process": [
+   "We review your product idea, users and goals, then agree what the first version must do and what can wait.",
+   "Product managers define features, priorities and the development lifecycle, with designs and technical plans agreed before any code is written.",
+   "Designers and developers work in stages with continuous testing, while QA and user testing validate each step with real people.",
+   "We handle release, deployment automation and monitoring, then keep improving the product with you as feedback comes in."
+  ],
+  "technologies": [
+   "Figma"
+  ],
+  "caseStudies": [
+   "uplift-ai",
+   "fast-vpn",
+   "emyy",
+   "oriuspay",
+   "xenpop"
+  ],
+  "faqTitle": "Product Development: common questions",
+  "ctaTitle": "Thinking about a new product?",
+  "ctaText": "Share a few details about what you need. We will come back with questions, an initial view on approach and the next practical step.",
+  "faqs": [
+   {
+    "q": "Can you build a whole product from scratch?",
+    "a": "Yes. We cover strategy, design, development, testing and release, so you have one team responsible for the complete product."
+   },
+   {
+    "q": "Which of these services do we actually need?",
+    "a": "We work that out during planning. Some products need design and development only; others benefit from AI, QA and user testing from the start."
+   },
+   {
+    "q": "Do you test with real users before launch?",
+    "a": "Yes. User testing and usability evaluation are part of our process, so the product is checked with the people who will use it."
+   },
+   {
+    "q": "What happens after the first release?",
+    "a": "We continue with product management, development and support as agreed, prioritising the next features based on real usage."
+   }
+  ]
+ },
+ {
+  "slug": "devops-cloud",
+  "name": "DevOps & Cloud",
+  "headline": "Systems that deploy themselves and stay online.",
+  "intro": "We automate the path from code to production with CI/CD pipelines, cloud infrastructure on AWS and Google Cloud Platform, and monitoring that catches problems before users do, supported by ongoing IT and cloud support.",
+  "short": "DevOps, cloud infrastructure and support for systems that deploy safely and stay online.",
+  "challengesTitle": "Does any of this sound familiar?",
+  "challenges": [
+   {
+    "title": "Releases take too long",
+    "desc": "Every release is applied by hand, involves long checklists and needs several people to coordinate, so shipping even small changes takes days."
+   },
+   {
+    "title": "Infrastructure is a black box",
+    "desc": "One person knows how the servers are configured, there is no documentation, and any change feels like a risk."
+   },
+   {
+    "title": "Problems arrive without warning",
+    "desc": "There is no monitoring or alerting, so the team finds out about outages from users instead of from their own dashboards."
+   },
+   {
+    "title": "Cloud bills keep growing",
+    "desc": "Resources run when they are not needed, environments are over-sized, and nobody is reviewing usage or costs."
+   }
+  ],
+  "solutionTitle": "Automated delivery, observable systems",
+  "solutionText": "We treat infrastructure as code, automate builds, tests and deployments with CI/CD pipelines, and add monitoring, logging and alerts across AWS and Google Cloud Platform. The result is faster, safer releases, systems your team can support and clear visibility into cost and performance.",
+  "solutionPoints": [
+   "CI/CD pipeline implementation and deployment automation",
+   "Cloud infrastructure and management on AWS and GCP",
+   "Monitoring, alerts and uptime tracking",
+   "IT support and cloud support, planned and on call"
+  ],
+  "deliverables": [
+   "DevOps services",
+   "Cloud infrastructure and management",
+   "Cloud support",
+   "IT support and maintenance",
+   "AWS and GCP infrastructure",
+   "Deployment and monitoring"
+  ],
+  "process": [
+   "We review your current deployment process, cloud accounts and infrastructure, and identify where automation, monitoring or support would reduce risk.",
+   "We design the pipeline, environments and monitoring arrangement, choose AWS or GCP services, and agree a scope and timeline.",
+   "Infrastructure is defined as code, CI/CD pipelines are implemented and tested, and deployments are automated and monitored on staging first.",
+   "We go live with deployment and monitoring in place, then provide cloud support, IT support and maintenance as agreed."
+  ],
+  "technologies": [],
+  "caseStudies": [],
+  "faqTitle": "DevOps & Cloud: common questions",
+  "ctaTitle": "Thinking about DevOps and cloud support?",
+  "ctaText": "Share a few details about what you need. We will come back with questions, an initial view on approach and the next practical step.",
+  "faqs": [
+   {
+    "q": "Which cloud platforms do you support?",
+    "a": "AWS and Google Cloud Platform. We recommend one based on your workload, existing accounts and the team that will maintain it."
+   },
+   {
+    "q": "What is included in cloud support?",
+    "a": "Monitoring, incident response, security updates, cost reviews and help with changes, on terms agreed upfront."
+   },
+   {
+    "q": "Can you automate our current deployment process?",
+    "a": "Yes. We review how releases happen today, then implement CI/CD pipelines so deployments are repeatable, safe and faster."
+   },
+   {
+    "q": "Will you document the infrastructure?",
+    "a": "Yes. Everything is defined as code and documented, so your team is not dependent on one person to understand the environment."
+   }
+  ]
+ }
+]
