@@ -18,7 +18,7 @@ export default function Template({ children }: { children: ReactNode }) {
           className="pointer-events-none fixed inset-0 z-[70] bg-ink"
           initial={{ clipPath: "inset(0% 0% 0% 0%)" }}
           animate={{ clipPath: "inset(0% 0% 100% 0%)" }}
-          transition={{ duration: 0.9, ease: [0.85, 0, 0.15, 1] }}
+          transition={{ duration: 0.45, ease: [0.85, 0, 0.15, 1] }}
         >
           <div className="absolute inset-x-0 bottom-0 h-1 bg-brand-gradient" />
           <div className="absolute inset-0 grid place-items-center">
@@ -27,9 +27,9 @@ export default function Template({ children }: { children: ReactNode }) {
         </motion.div>
       )}
       <motion.div
-        initial={skip ? false : { opacity: 0, y: 40 }}
+        initial={skip ? false : { opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: skip ? 0 : 0.35 }}
+        transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1], delay: skip ? 0 : 0.12 }}
       >
         {children}
       </motion.div>

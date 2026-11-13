@@ -40,7 +40,7 @@ export default function ServicesPage() {
       </nav>
 
       {/* Interactive showcase */}
-      <section className="surface-light py-20 md:py-28">
+      <section className="surface-light py-16 md:py-28">
         <div className="container-x">
           <SectionHeader light eyebrow="All services" num="01" title="Twelve services, *one team.*" intro="Each item links to the page that covers it in detail — scope, process, technologies and common questions." />
           <div className="mt-14"><ServicesShowcase light /></div>
@@ -48,10 +48,10 @@ export default function ServicesPage() {
       </section>
 
       {/* Groups — alternating feature rows */}
-      <section id="groups" className="bg-ink py-20 md:py-28">
+      <section id="groups" className="bg-ink py-16 md:py-28">
         <div className="container-x">
           <SectionHeader num="02" eyebrow="Services by group" title="Related services, *grouped together.*" />
-          <div className="mt-20 space-y-16 md:space-y-20">
+          <div className="mt-12 space-y-12 md:mt-20 md:space-y-20">
             {serviceGroups.map((g, gi) => (
               <div key={g.id} id={`group-${g.id}`} className="scroll-mt-32 grid gap-10 lg:grid-cols-12">
                 <Reveal variant={gi % 2 ? "right" : "left"} className={`lg:col-span-5 ${gi % 2 ? "lg:order-2 lg:col-start-8" : ""}`}>
@@ -68,7 +68,7 @@ export default function ServicesPage() {
                     return (
                       <Reveal key={slug} variant="scale" delay={i * 0.1} className={g.slugs.length === 1 ? "sm:col-span-2" : ""}>
                         <Tilt className="h-full rounded-[28px]">
-                          <Link href={`/services/${slug}/`} className="group relative flex h-full min-h-[300px] flex-col justify-between overflow-hidden rounded-[28px] border border-white/10 bg-ink-3 p-7">
+                          <Link href={`/services/${slug}/`} className="group relative flex h-full min-h-[260px] flex-col justify-between overflow-hidden rounded-[28px] border border-white/10 bg-ink-3 p-6 sm:min-h-[300px] sm:p-7">
                             <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full opacity-30 blur-3xl transition-opacity duration-700 group-hover:opacity-70" style={{ background: s.hue }} />
                             <div className="relative flex items-start justify-between">
                               <span className="grid h-14 w-14 place-items-center rounded-2xl bg-white/[0.06] text-brand-200 transition-all duration-700 group-hover:rotate-[-10deg] group-hover:bg-brand-gradient group-hover:text-white"><LIcon name={s.icon} size={24} /></span>
@@ -92,7 +92,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Deliverables snapshot */}
-      <section className="surface-light py-20 md:py-28">
+      <section className="surface-light py-16 md:py-28">
         <div className="container-x">
           <SectionHeader light num="03" eyebrow="What we deliver" title="Deliverables at a *glance.*" />
           <Reveal stagger={0.04} variant="up" className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -107,7 +107,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Technology ecosystem */}
-      <section className="overflow-hidden bg-ink-2 py-20 md:py-28">
+      <section className="overflow-hidden bg-ink-2 py-16 md:py-28">
         <div className="container-x">
           <SectionHeader num="04" eyebrow="Technology ecosystem" title="Chosen for *fit,* not fashion." action={<Button href="/technologies/" variant="ghost">All technologies</Button>} />
           <div className="mt-14"><TechEcosystem compact /></div>
@@ -116,15 +116,15 @@ export default function ServicesPage() {
       </section>
 
       {/* Process */}
-      <section className="bg-ink py-20 md:py-28">
+      <section className="bg-ink py-16 md:py-28">
         <div className="container-x">
           <SectionHeader num="05" eyebrow="Development process" title="Four clear *stages.*" />
-          <div className="mt-20"><ProcessTimeline stages={processStages} /></div>
+          <div className="mt-12 md:mt-20"><ProcessTimeline stages={processStages} /></div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="surface-light py-20 md:py-28">
+      <section className="surface-light py-16 md:py-28">
         <div className="container-x">
           <SectionHeader light num="06" eyebrow="FAQ" title="Common *questions.*" />
           <div className="mt-14"><FAQ light items={generalFaqs.slice(0, 6)} /></div>

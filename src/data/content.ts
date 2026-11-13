@@ -47,11 +47,21 @@ export const testimonials = [
 ];
 
 // Original team artwork supplied in the repository. Names and roles below are
-// used only where they are printed on the source artwork; the remaining portrait
-// stays deliberately unnamed until the company confirms its profile details.
+// used only where they are printed on the source artwork. The source portrait
+// below is the original CEO & Founder photograph; no personal name was supplied.
+export const founder = {
+  confirmed: true,
+  role: "CEO & Founder",
+  name: "Name not published",
+  bio: "Original Adelogix leadership portrait; the supplied material confirms the CEO & Founder designation but does not publish a name.",
+  image: "/images/team/team-member-01.jpeg",
+  position: "50% 28%",
+};
+
+// Leadership is intentionally first everywhere the team is presented.
 export const team = [
+  founder,
   { confirmed: true, role: "UI UX Designer", name: "Eman Fatima", bio: "Team profile supplied by Adelogix.", image: "/images/team/eman-fatima.jpeg", position: "50% 42%" },
-  { confirmed: true, role: "CEO & Founder", name: "Name not published", bio: "Original Adelogix leadership portrait; the supplied material confirms the CEO & Founder designation but does not publish a name.", image: "/images/team/team-member-01.jpeg", position: "50% 28%" },
   { confirmed: true, role: "Business Developer", name: "Aimen Irshad", bio: "Team profile supplied by Adelogix.", image: "/images/team/aimen-irshad.jpeg", position: "50% 43%" },
   { confirmed: true, role: "UI UX Designer", name: "Maria Fatima", bio: "Team profile supplied by Adelogix.", image: "/images/team/maria-fatima.jpeg", position: "50% 42%" },
   { confirmed: true, role: "Business Developer", name: "Aqsa Rehman", bio: "Team profile supplied by Adelogix.", image: "/images/team/aqsa-rehman.jpeg", position: "50% 40%" },

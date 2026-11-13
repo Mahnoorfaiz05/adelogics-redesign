@@ -28,12 +28,12 @@ export default function Preloader() {
         setDone(true);
       },
     });
-    tl.from(".pl-mark", { scale: 0.6, opacity: 0, rotate: -30, duration: 0.9, ease: "expo.out" })
-      .from(".pl-letter", { yPercent: 110, stagger: 0.04, duration: 0.8, ease: "expo.out" }, "-=0.6")
-      .to(counter, { v: 100, duration: 1.3, ease: "power2.inOut", onUpdate: () => { if (num.current) num.current.textContent = String(Math.round(counter.v)).padStart(3, "0"); } }, 0.1)
-      .to(".pl-bar", { scaleX: 1, duration: 1.3, ease: "power2.inOut" }, 0.1)
-      .add(() => markReady(), "-=0.1")
-      .to(root.current, { clipPath: "inset(0% 0% 100% 0%)", duration: 1, ease: "expo.inOut" }, "+=0.05");
+    tl.from(".pl-mark", { scale: 0.82, opacity: 0, rotate: -12, duration: 0.45, ease: "expo.out" })
+      .from(".pl-letter", { yPercent: 105, stagger: 0.025, duration: 0.45, ease: "expo.out" }, "-=0.28")
+      .to(counter, { v: 100, duration: 0.75, ease: "power2.inOut", onUpdate: () => { if (num.current) num.current.textContent = String(Math.round(counter.v)).padStart(3, "0"); } }, 0.05)
+      .to(".pl-bar", { scaleX: 1, duration: 0.75, ease: "power2.inOut" }, 0.05)
+      .add(() => markReady(), "-=0.05")
+      .to(root.current, { clipPath: "inset(0% 0% 100% 0%)", duration: 0.6, ease: "expo.inOut" }, "+=0.02");
     return () => { tl.kill(); };
   }, [logoLoaded]);
 

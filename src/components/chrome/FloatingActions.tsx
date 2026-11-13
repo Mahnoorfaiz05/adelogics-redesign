@@ -14,15 +14,13 @@ type Msg = { role: "bot" | "user"; text: string; links?: Link_[]; chips?: string
 /* Floating WhatsApp button + the existing Adelogix assistant (same knowledge base
    and keyword-scoring logic as the original site, now lazy-loaded on first open). */
 export default function FloatingActions() {
-  const [ready, setReady] = useState(false);
+  const [ready] = useState(true);
   const [open, setOpen] = useState(false);
   const [kb, setKb] = useState<KB | null>(null);
   const [msgs, setMsgs] = useState<Msg[]>([]);
   const [typing, setTyping] = useState(false);
   const [input, setInput] = useState("");
   const listRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => { const t = setTimeout(() => setReady(true), 1800); return () => clearTimeout(t); }, []);
 
   const welcome = (k: KB): Msg[] => [{ role: "bot", text: k.welcomeMessage.text, links: k.welcomeMessage.links, chips: k.suggestedQuestions }];
 
@@ -83,7 +81,6 @@ export default function FloatingActions() {
               initial={{ scale: 0, opacity: 0, rotate: -90 }} animate={{ scale: 1, opacity: 1, rotate: 0 }} transition={{ type: "spring", stiffness: 260, damping: 16 }}
               className="group relative grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-white shadow-[0_12px_40px_-8px_rgba(37,211,102,.6)] transition-transform duration-300 hover:scale-110"
             >
-              <span className="absolute inset-0 rounded-full bg-[#25D366]" style={{ animation: "pulse-ring 2.4s cubic-bezier(.2,.7,.2,1) infinite" }} />
               <WhatsAppIcon size={28} className="relative" />
               <span className="pointer-events-none absolute right-[calc(100%+12px)] top-1/2 hidden -translate-y-1/2 translate-x-2 whitespace-nowrap rounded-full bg-ivory px-4 py-2 text-sm font-medium text-ink opacity-0 shadow-lg transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 md:block">
                 Chat With Us

@@ -19,7 +19,7 @@ export const site = {
   ga4Id: process.env.NEXT_PUBLIC_GA4_ID || "",
   socials: {
     linkedin: "https://www.linkedin.com/company/adelogix-software-solutions/home/",
-    facebook: "http://facebook.com/adelogix",
+    facebook: "https://facebook.com/adelogix",
     instagram: "https://www.instagram.com/adelogix/",
   },
 } as const;

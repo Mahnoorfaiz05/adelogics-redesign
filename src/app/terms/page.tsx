@@ -17,7 +17,7 @@ export default function TermsPage() {
         { h: "Accuracy of information", body: <p>We aim to keep the website accurate and up to date, but we do not guarantee that all information is complete or current. Nothing on this website is professional advice for your specific circumstances.</p> },
         { h: "Third-party links", body: <p>The website may link to third-party sites and tools, such as booking or social media platforms. We are not responsible for their content or privacy practices.</p> },
         { h: "Liability", body: <p>To the extent permitted by law, we are not liable for any loss arising from the use of, or inability to use, this website. Nothing in these terms limits liability that cannot be limited by law.</p> },
-        { h: "Governing law", body: <p>These terms are governed by [governing law, e.g. the laws of the country where Adelogix is registered].</p> },
+        { h: "Governing law", body: <p>The governing law and dispute process for any client project are set out in its separate written agreement. If you have a question about these website terms, please contact us before relying on them for a project decision.</p> },
         { h: "Contact", body: <p>Questions about these terms can be sent through our <Link href="/contact/">contact page</Link>.</p> },
       ]}
     />

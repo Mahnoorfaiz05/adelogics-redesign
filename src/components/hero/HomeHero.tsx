@@ -25,19 +25,23 @@ export default function HomeHero() {
     const el = root.current!;
     const { gsap } = registerGsap();
     const reduced = prefersReducedMotion();
+    const desktopMotion = window.matchMedia("(min-width: 1024px)").matches;
     const ctx = gsap.context(() => {
       if (!reduced) {
         gsap.set([".hh-fade", ".hh-card", ".hh-quick"], { opacity: 0 });
         onReady(() => {
-          const tl = gsap.timeline({ delay: 0.2 });
-          tl.fromTo(".hh-fade", { y: 30, opacity: 0, filter: "blur(10px)" }, { y: 0, opacity: 1, filter: "blur(0px)", stagger: 0.12, duration: 1.1, ease: "expo.out" }, 0.5)
-            .fromTo(".hh-card", { y: 60, opacity: 0, scale: 0.85, rotateX: 30 }, { y: 0, opacity: 1, scale: 1, rotateX: 0, stagger: 0.15, duration: 1.4, ease: "expo.out" }, 0.4)
-            .fromTo(".hh-quick", { y: 20, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.05, duration: 0.8, ease: "expo.out" }, 0.9)
-            .fromTo(".hh-visual", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 2.2, ease: "expo.out" }, 0);
+          const tl = gsap.timeline({ delay: 0.1 });
+          tl.fromTo(".hh-fade", { y: 24, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.09, duration: 0.75, ease: "expo.out" }, 0.35)
+            .fromTo(".hh-card", { y: 40, opacity: 0, scale: 0.92 }, { y: 0, opacity: 1, scale: 1, stagger: 0.1, duration: 0.9, ease: "expo.out" }, 0.3)
+            .fromTo(".hh-quick", { y: 14, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.04, duration: 0.55, ease: "expo.out" }, 0.65)
+            .fromTo(".hh-visual", { scale: 0.82, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.15, ease: "expo.out" }, 0);
         });
-        // Scroll exit
-        gsap.to(content.current, { yPercent: -18, opacity: 0.2, ease: "none", scrollTrigger: { trigger: el, start: "top top", end: "bottom top", scrub: true } });
-        gsap.to(visual.current, { scale: 1.25, yPercent: 10, ease: "none", scrollTrigger: { trigger: el, start: "top top", end: "bottom top", scrub: true } });
+        // Keep the richer scroll parallax for large screens only. On phones it
+        // competes with reading and creates extra work during a touch scroll.
+        if (desktopMotion) {
+          gsap.to(content.current, { yPercent: -12, opacity: 0.35, ease: "none", scrollTrigger: { trigger: el, start: "top top", end: "bottom top", scrub: true } });
+          gsap.to(visual.current, { scale: 1.12, yPercent: 6, ease: "none", scrollTrigger: { trigger: el, start: "top top", end: "bottom top", scrub: true } });
+        }
       }
     }, el);
 
@@ -57,7 +61,7 @@ export default function HomeHero() {
   }, []);
 
   return (
-    <section ref={root} className="noise relative isolate flex min-h-[calc(100svh-var(--header-h))] flex-col justify-end overflow-hidden bg-ink pt-20 md:pt-24">
+    <section ref={root} className="noise relative isolate flex min-h-[calc(100svh-var(--header-h))] flex-col justify-end overflow-hidden bg-ink pt-16 sm:pt-20 md:pt-24">
       <div className="absolute inset-0 -z-20 grid-lines" />
       <div className="orb -left-40 top-1/4 -z-10 h-[520px] w-[520px] bg-brand-700/60" />
       <div className="orb right-[-10%] top-[-10%] -z-10 h-[600px] w-[600px] bg-brand-400/25" />
@@ -65,7 +69,7 @@ export default function HomeHero() {
 
       {/* 3D particle globe */}
       <div ref={visual} className="hh-visual absolute inset-0 -z-10 lg:left-[38%]">
-        <ParticleCanvas shape="sphere" hue="#b9a6ff" density={1.3} scale={1.05} />
+        <ParticleCanvas shape="sphere" hue="#b9a6ff" density={0.85} links={false} scale={1.05} />
       </div>
 
       {/* Floating glass cards */}
@@ -84,9 +88,9 @@ export default function HomeHero() {
         </div>
       </div>
 
-      <div ref={content} className="container-x relative pb-10 md:pb-14">
+      <div ref={content} className="container-x relative pb-8 sm:pb-10 md:pb-14">
         <p className="hh-fade eyebrow inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.04] px-4 py-2 text-brand-200 backdrop-blur">
-          <span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-300 opacity-60" /><span className="relative inline-flex h-2 w-2 rounded-full bg-brand-300" /></span>
+          <span className="inline-flex h-2 w-2 rounded-full bg-brand-300" />
           Software development partner
         </p>
         <SplitHeading as="h1" immediate delay={0.3} stagger={0.07} text="Software built around how your *business* really works." className="mt-8 max-w-[15ch] display h-xl" />
@@ -108,7 +112,7 @@ export default function HomeHero() {
             ))}
           </ul>
         </div>
-        <div className="mt-12 flex items-center justify-between border-t border-white/10 pt-6 text-xs text-white/45">
+        <div className="mt-9 flex items-center justify-between border-t border-white/10 pt-5 text-xs text-white/45 sm:mt-12 sm:pt-6">
           <span className="hh-fade flex items-center gap-3">
             <span className="relative h-9 w-5 rounded-full border border-white/25"><span className="absolute left-1/2 top-1.5 h-1.5 w-1 -translate-x-1/2 rounded-full bg-white/70" style={{ animation: "scroll-dot 1.8s ease-in-out infinite" }} /></span>
             Scroll to explore
