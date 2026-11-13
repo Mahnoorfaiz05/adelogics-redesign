@@ -2,9 +2,6 @@ name: Import original case-study assets
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - arena/87decc4d-adelogics-redesign
 
 permissions:
   contents: write

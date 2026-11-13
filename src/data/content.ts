@@ -51,7 +51,7 @@ export const testimonials = [
 // stays deliberately unnamed until the company confirms its profile details.
 export const team = [
   { confirmed: true, role: "UI UX Designer", name: "Eman Fatima", bio: "Team profile supplied by Adelogix.", image: "/images/team/eman-fatima.jpeg", position: "50% 42%" },
-  { confirmed: false, role: "Adelogix team member", name: "Profile to be confirmed", bio: "Original team portrait; name and designation have not been published in the supplied material.", image: "/images/team/team-member-01.jpeg", position: "50% 28%" },
+  { confirmed: true, role: "CEO & Founder", name: "Name not published", bio: "Original Adelogix leadership portrait; the supplied material confirms the CEO & Founder designation but does not publish a name.", image: "/images/team/team-member-01.jpeg", position: "50% 28%" },
   { confirmed: true, role: "Business Developer", name: "Aimen Irshad", bio: "Team profile supplied by Adelogix.", image: "/images/team/aimen-irshad.jpeg", position: "50% 43%" },
   { confirmed: true, role: "UI UX Designer", name: "Maria Fatima", bio: "Team profile supplied by Adelogix.", image: "/images/team/maria-fatima.jpeg", position: "50% 42%" },
   { confirmed: true, role: "Business Developer", name: "Aqsa Rehman", bio: "Team profile supplied by Adelogix.", image: "/images/team/aqsa-rehman.jpeg", position: "50% 40%" },
