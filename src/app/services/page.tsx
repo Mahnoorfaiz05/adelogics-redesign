@@ -29,8 +29,8 @@ export default function ServicesPage() {
         intro="Groups of services covering websites, apps, product design, business software and AI. Tell us what you need to achieve and we will recommend where to start."
         crumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
       >
-        <Button href="/contact/" magnetic={false}>Discuss your needs</Button>
-        <Button href="#groups" variant="ghost" magnetic={false}>Browse by group</Button>
+        <Button href="/contact/">Discuss your needs</Button>
+        <Button href="#groups" variant="ghost">Browse by group</Button>
       </PageHero>
 
       <nav aria-label="Service groups" className="sticky top-[var(--header-h)] z-30 border-y border-white/10 bg-ink/95">
@@ -98,7 +98,7 @@ export default function ServicesPage() {
 
       <section className="bg-ink-2 section-space">
         <div className="container-x">
-          <div className="flex flex-wrap items-end justify-between gap-5"><div><Eyebrow num="04" className="text-white/60">Technology ecosystem</Eyebrow><h2 className="mt-5 display h-md">Chosen for <AccentText text="*fit,* not fashion." /></h2></div><Button href="/technologies/" variant="ghost" magnetic={false}>All technologies</Button></div>
+          <div className="flex flex-wrap items-end justify-between gap-5"><div><Eyebrow num="04" className="text-white/60">Technology ecosystem</Eyebrow><h2 className="mt-5 display h-md">Chosen for <AccentText text="*fit,* not fashion." /></h2></div><Button href="/technologies/" variant="ghost">All technologies</Button></div>
           <p className="mt-4 max-w-2xl text-white/60">The stack is selected during planning for the product, its integrations and the team that will maintain it.</p>
           <div className="content-gap"><TechnologyGrid categories={techCategories} /></div>
         </div>
