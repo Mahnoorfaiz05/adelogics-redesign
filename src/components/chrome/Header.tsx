@@ -14,25 +14,23 @@ type W = Window & { __lenis?: { stop: () => void; start: () => void } };
 
 export default function Header() {
   const pathname = usePathname();
-  const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mega, setMega] = useState(false);
   const [mobile, setMobile] = useState(false);
   const [mobileServices, setMobileServices] = useState(false);
-  const last = useRef(0);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    const onScroll = () => {
-      const y = scrollY;
-      setScrolled(y > 30);
-      if (Math.abs(y - last.current) > 6) { setHidden(y > last.current && y > 160); last.current = y; }
-    };
-    addEventListener("scroll", onScroll, { passive: true }); onScroll();
+    const onScroll = () => setScrolled(scrollY > 12);
+    addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
     return () => removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => { setMega(false); setMobile(false); }, [pathname]);
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => { setMega(false); setMobile(false); });
+    return () => cancelAnimationFrame(frame);
+  }, [pathname]);
 
   useEffect(() => {
     const w = window as W;
@@ -46,18 +44,17 @@ export default function Header() {
   const openMega = () => { if (closeTimer.current) clearTimeout(closeTimer.current); setMega(true); };
   const closeMega = () => { closeTimer.current = setTimeout(() => setMega(false), 140); };
   const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
-  const show = !hidden || mega || mobile;
 
   return (
     <>
       <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-ivory focus:px-4 focus:py-2 focus:text-ink">Skip to content</a>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-transform duration-500 ease-[cubic-bezier(.16,1,.3,1)] ${show ? "translate-y-0" : "-translate-y-[110%]"}`}
+        className={`sticky top-0 z-50 border-b transition-colors duration-300 ${scrolled || mega ? "border-white/10 bg-ink/85 shadow-[0_14px_40px_-25px_rgba(0,0,0,.8)] backdrop-blur-xl" : "border-transparent bg-ink/35 backdrop-blur-sm"}`}
         onMouseLeave={closeMega}
       >
-        <div className={`mx-auto mt-3 flex max-w-[1440px] items-center justify-between gap-4 rounded-full px-4 py-2.5 transition-all duration-500 sm:mx-4 md:px-6 xl:mx-auto ${scrolled || mega ? "glass mx-3 shadow-[0_20px_60px_-20px_rgba(0,0,0,.6)]" : "mx-3 border border-transparent"}`}>
+        <div className="mx-auto flex min-h-[var(--header-h)] max-w-[1440px] items-center justify-between gap-4 px-4 py-2.5 sm:mx-4 md:px-6 xl:mx-auto">
           <Link href="/" className="relative z-10 flex shrink-0 items-center" aria-label="Adelogix home">
-            <Image src="/assets/brand/adelogix-logo-white.png" alt="Adelogix" width={150} height={34} className="h-7 w-auto md:h-8" priority />
+            <span className="rounded-lg bg-ivory px-2 py-1"><Image src="/images/brand/adelogix-logo-original.png" alt="Adelogix" width={234} height={51} className="h-6 w-auto md:h-7" priority /></span>
           </Link>
 
           <nav aria-label="Primary" className="hidden lg:block">

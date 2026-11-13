@@ -17,8 +17,8 @@ export async function POST(req: Request) {
   let body: Record<string, unknown>;
   try { body = await req.json(); } catch { return Response.json({ ok: false, error: "Invalid request." }, { status: 400 }); }
 
-  // Honeypot: silently accept bots without storing.
-  if (clip(body.website, 200)) return Response.json({ ok: true, id: null });
+  // Honeypot: silently accept bots without storing or forwarding.
+  if (clip(body.website, 200)) return Response.json({ ok: true, id: null, stored: false });
 
   const data = {
     name: clip(body.name, 120), email: clip(body.email, 200), company: clip(body.company, 160), subject: clip(body.subject, 200),
@@ -32,27 +32,33 @@ export async function POST(req: Request) {
   if (!SERVICES.has(data.service)) errors.service = "Please choose a service.";
   if (data.details.length < 10) errors.details = "Please tell us a little more (at least 10 characters).";
   if (!METHODS.has(data.contactMethod)) errors.contact_method = "Please choose a contact method.";
-  if ((data.contactMethod === "phone" || data.contactMethod === "whatsapp") && !/^\+?[0-9\s()-]{7,}$/.test(data.phone))
+  if ((data.contactMethod === "phone" || data.contactMethod === "whatsapp") && !/^\+?[0-9\s()-]{7,}$/.test(data.phone)) {
     errors.phone = "Please enter a phone number so we can reach you.";
+  }
   if (Object.keys(errors).length) return Response.json({ ok: false, errors }, { status: 422 });
+
+  // EmailJS remains the delivery mechanism. Postgres is an optional backup, so
+  // missing database credentials never make a valid website enquiry fail.
+  if (!db) return Response.json({ ok: true, id: null, stored: false });
 
   try {
     const [row] = await db.insert(enquiries).values({
       ...data, company: data.company || null, budget: data.budget || null, phone: data.phone || null,
     }).returning({ id: enquiries.id });
-    return Response.json({ ok: true, id: row.id });
-  } catch (e) {
-    console.error("enquiry insert failed", e);
-    // Validation passed — let the client continue with email delivery.
+    return Response.json({ ok: true, id: row.id, stored: true });
+  } catch (error) {
+    console.error("enquiry backup insert failed", error);
     return Response.json({ ok: true, id: null, stored: false });
   }
 }
 
-// Mark that the email (FormSubmit) delivery succeeded for a stored enquiry.
+// The browser calls this only after EmailJS has accepted a validated submission.
 export async function PATCH(req: Request) {
   try {
     const { id } = (await req.json()) as { id?: number };
-    if (typeof id === "number") await db.update(enquiries).set({ emailDelivered: true }).where(eq(enquiries.id, id));
+    if (typeof id === "number" && db) {
+      await db.update(enquiries).set({ emailDelivered: true }).where(eq(enquiries.id, id));
+    }
     return Response.json({ ok: true });
   } catch {
     return Response.json({ ok: false }, { status: 400 });

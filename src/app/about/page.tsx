@@ -27,7 +27,7 @@ export default function AboutPage() {
         crumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
         aside={
           <div className="glass rounded-[28px] p-7">
-            <Image src="/assets/brand/adelogix-mark-white.png" alt="" width={56} height={48} />
+            <span className="inline-grid h-14 w-16 place-items-center rounded-xl bg-ivory p-2"><Image src="/images/brand/adelogix-mark-original.png" alt="" width={54} height={47} /></span>
             <p className="mt-6 display text-2xl">Design, development and support from one team.</p>
             <div className="mt-6 grid grid-cols-3 gap-3 border-t border-white/10 pt-6 text-center">
               {[["12", "Services"], ["4", "Stages"], ["7", "Sectors"]].map(([n, l]) => <div key={l}><p className="display text-3xl text-gradient">{n}</p><p className="text-xs text-white/50">{l}</p></div>)}
@@ -40,7 +40,7 @@ export default function AboutPage() {
       </PageHero>
 
       {/* Story — sticky editorial */}
-      <section className="surface-light py-24 md:py-40">
+      <section className="surface-light py-20 md:py-32">
         <div className="container-x grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-32">
@@ -74,7 +74,7 @@ export default function AboutPage() {
       </section>
 
       {/* Core values — stacking cards */}
-      <section className="bg-ink py-24 md:py-36">
+      <section className="bg-ink py-20 md:py-28">
         <div className="container-x">
           <SectionHeader num="04" eyebrow="Core values" title="Four principles behind *every project.*" intro="The working habits that shape how we plan, build and communicate, whatever the size of the project." />
           <div className="mt-16 space-y-6">
@@ -91,8 +91,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Leadership introduction (placeholder) */}
-      <section className="surface-light py-24 md:py-36">
+      {/* Leadership profile remains unpublished until the company confirms the name and biography. */}
+      <section className="surface-light py-20 md:py-28">
         <div className="container-x grid gap-12 lg:grid-cols-12 lg:items-center">
           <Reveal variant="mask" className="relative lg:col-span-5">
             <div className="relative grid aspect-[4/5] place-items-center overflow-hidden rounded-[32px] bg-ink">
@@ -113,7 +113,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="bg-ink py-24 md:py-36">
+      <section className="bg-ink py-20 md:py-28">
         <div className="container-x">
           <SectionHeader num="06" eyebrow="Team" title="Roles that carry your project from *idea to release.*" />
           <div className="mt-14"><Team /></div>
@@ -121,7 +121,7 @@ export default function AboutPage() {
       </section>
 
       {/* Expertise */}
-      <section className="border-t border-white/10 bg-ink-2 py-24 md:py-36">
+      <section className="border-t border-white/10 bg-ink-2 py-20 md:py-28">
         <div className="container-x">
           <SectionHeader num="07" eyebrow="Company expertise" title="Six areas of *expertise.*" action={<Button href="/services/" variant="ghost">Explore services</Button>} />
           <Reveal stagger={0.08} variant="up" className="mt-14 grid gap-px overflow-hidden rounded-[28px] bg-white/10 md:grid-cols-2 lg:grid-cols-3">
@@ -140,7 +140,7 @@ export default function AboutPage() {
       </section>
 
       {/* Approach — horizontal rail */}
-      <section id="approach" className="surface-light py-24 md:py-36">
+      <section id="approach" className="surface-light py-20 md:py-28">
         <div className="container-x">
           <SectionHeader light num="08" eyebrow="Development approach" title="How we work *with you.*" intro="One point of contact, regular progress updates at an agreed rhythm, and decisions recorded in writing." />
           <Reveal stagger={0.1} variant="right" className="mt-16 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -161,7 +161,7 @@ export default function AboutPage() {
       </section>
 
       {/* Why Adelogix */}
-      <section className="relative overflow-hidden bg-ink py-24 md:py-36">
+      <section className="relative overflow-hidden bg-ink py-20 md:py-28">
         <Marquee speed={50} className="mb-16 opacity-90">
           {strengths.map((s) => <span key={s.title} className="mx-8 display text-5xl text-white/10 md:text-7xl">{s.title} <span className="text-brand-400/50">✦</span></span>)}
         </Marquee>

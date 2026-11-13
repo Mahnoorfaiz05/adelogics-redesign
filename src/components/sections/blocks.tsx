@@ -54,7 +54,7 @@ export function ProjectCard({ p, size = "md", index }: { p: Project; size?: "md"
 /* Industries — expanding panels on desktop, stacked tiles on mobile */
 export function Industries({ num = "07", light = true }: { num?: string; light?: boolean }) {
   return (
-    <section className={`${light ? "surface-light" : "bg-ink"} relative py-24 md:py-36`}>
+    <section className={`${light ? "surface-light" : "bg-ink"} relative py-20 md:py-28`}>
       <div className="container-x">
         <SectionHeader light={light} num={num} eyebrow="Industries we serve" title="Sectors with their own *rules* and pressures." intro="Each sector has its own users, rules and pressures. These are the industries we design and develop for, with the services that most often apply." />
         <Reveal stagger={0.07} variant="up" className="mt-16 flex flex-col gap-3 lg:h-[520px] lg:flex-row">
@@ -92,7 +92,7 @@ export function Industries({ num = "07", light = true }: { num?: string; light?:
 /* Highlights — verified facts only */
 export function Highlights({ num = "08" }: { num?: string }) {
   return (
-    <section className="relative overflow-hidden bg-ink py-24 md:py-36">
+    <section className="relative overflow-hidden bg-ink py-20 md:py-28">
       <div className="orb left-1/3 top-0 h-[400px] w-[400px] bg-brand-600/30" />
       <div className="container-x relative">
         <SectionHeader num={num} eyebrow="Company highlights" title="Why teams choose to *work with us.*" intro="Most software projects that struggle do so because of unclear scope, poor communication or the wrong technology. These are the habits we use to avoid all three." />
@@ -122,7 +122,7 @@ export function Highlights({ num = "08" }: { num?: string }) {
 /* Final CTA */
 export function FinalCTA({ title = "Let's Build Something *Great Together.*", text = "Tell us what you are working on. We will ask the right questions and suggest a practical way forward, whether that is a full project or a short discovery phase." }: { title?: string; text?: string }) {
   return (
-    <section className="relative isolate overflow-hidden bg-ink py-28 md:py-44">
+    <section className="relative isolate overflow-hidden bg-ink py-20 md:py-32">
       <div className="absolute inset-0 -z-10 opacity-80"><ParticleCanvas shape="galaxy" hue="#b9a6ff" density={1.2} /></div>
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,transparent_0%,#0d0b13_72%)]" />
       <Marquee speed={60} className="pointer-events-none absolute top-10 -z-10 opacity-[0.05]">

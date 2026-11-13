@@ -1,11 +1,11 @@
 "use client";
-import { createElement, useEffect, useRef, type ElementType, type ReactNode, type CSSProperties } from "react";
+import { useEffect, useRef, type ReactNode, type CSSProperties } from "react";
 import { registerGsap, prefersReducedMotion, isFinePointer, onReady } from "@/lib/motion";
 
 /* ───────── SplitHeading: word-masked reveal. Wrap words in *asterisks* for serif accent ───────── */
 export function SplitHeading({
   text, as = "h2", className = "", immediate = false, delay = 0, accentClass = "serif-i text-gradient", stagger = 0.06,
-}: { text: string; as?: ElementType; className?: string; immediate?: boolean; delay?: number; accentClass?: string; stagger?: number }) {
+}: { text: string; as?: "h1" | "h2" | "p"; className?: string; immediate?: boolean; delay?: number; accentClass?: string; stagger?: number }) {
   const ref = useRef<HTMLElement>(null);
   useEffect(() => {
     const el = ref.current; if (!el) return;
@@ -41,14 +41,19 @@ export function SplitHeading({
       );
     });
   });
-  return createElement(as, { ref, className, "aria-label": text.replace(/\*/g, "") }, <span aria-hidden="true">{nodes}</span>);
+  const setElement = (node: HTMLElement | null) => { ref.current = node; };
+  const content = <span aria-hidden="true">{nodes}</span>;
+  const label = text.replace(/\*/g, "");
+  if (as === "h1") return <h1 ref={setElement} className={className} aria-label={label}>{content}</h1>;
+  if (as === "p") return <p ref={setElement} className={className} aria-label={label}>{content}</p>;
+  return <h2 ref={setElement} className={className} aria-label={label}>{content}</h2>;
 }
 
 /* ───────── Reveal: several distinct treatments (not just fade) ───────── */
 type RevealVariant = "up" | "fade" | "mask" | "scale" | "left" | "right" | "blur" | "clip-up";
 export function Reveal({
   children, variant = "up", className = "", delay = 0, stagger = 0, as = "div", start = "top 86%", style, duration = 1.1,
-}: { children: ReactNode; variant?: RevealVariant; className?: string; delay?: number; stagger?: number; as?: ElementType; start?: string; style?: CSSProperties; duration?: number }) {
+}: { children: ReactNode; variant?: RevealVariant; className?: string; delay?: number; stagger?: number; as?: "div" | "li" | "ul" | "article" | "nav"; start?: string; style?: CSSProperties; duration?: number }) {
   const ref = useRef<HTMLElement>(null);
   useEffect(() => {
     const el = ref.current; if (!el) return;
@@ -69,7 +74,13 @@ export function Reveal({
     const tw = gsap.fromTo(targets, from, to);
     return () => { tw.scrollTrigger?.kill(); tw.kill(); };
   }, [variant, delay, stagger, start, duration]);
-  return createElement(as, { ref, className, style }, children);
+  const setElement = (node: HTMLElement | null) => { ref.current = node; };
+  const props = { ref: setElement, className, style };
+  if (as === "li") return <li {...props}>{children}</li>;
+  if (as === "ul") return <ul {...props}>{children}</ul>;
+  if (as === "article") return <article {...props}>{children}</article>;
+  if (as === "nav") return <nav {...props}>{children}</nav>;
+  return <div {...props}>{children}</div>;
 }
 
 /* ───────── Magnetic ───────── */

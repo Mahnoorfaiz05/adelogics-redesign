@@ -43,7 +43,7 @@ export default function WorkPage() {
       </div>
 
       {/* Featured project */}
-      <section className="relative overflow-hidden bg-ink py-24 md:py-32">
+      <section className="relative overflow-hidden bg-ink py-20 md:py-28">
         <div className="container-x">
           <Reveal variant="clip-up"><p className="eyebrow text-brand-300">Featured project</p></Reveal>
           <Link href={`/work/${featured.slug}/`} className="group mt-8 grid gap-10 lg:grid-cols-12 lg:items-center" data-cursor="view">
@@ -62,7 +62,7 @@ export default function WorkPage() {
         </div>
       </section>
 
-      <section id="projects" className="surface-light scroll-mt-20 py-24 md:py-36">
+      <section id="projects" className="surface-light scroll-mt-20 py-20 md:py-28">
         <div className="container-x">
           <SectionHeader light num="01" eyebrow="All projects" title="Filter by *what we did.*" />
           <div className="mt-12"><WorkGrid /></div>

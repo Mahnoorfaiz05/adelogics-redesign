@@ -46,15 +46,15 @@ export const testimonials = [
   { verified: false, name: "Client Name", company: "Company Name", country: "Country", project: "Project / Service", feedback: "Placeholder feedback. Keep testimonials specific and honest — what was built, how communication felt, what happened after launch.", image: "" },
 ];
 
-// TEAM PLACEHOLDERS — roles proposed; names, photos and bios must be confirmed
-// before publishing. Set confirmed: true once real details are added.
+// Original team artwork supplied in the repository. Names and roles below are
+// used only where they are printed on the source artwork; the remaining portrait
+// stays deliberately unnamed until the company confirms its profile details.
 export const team = [
-  { confirmed: false, role: "Founder & CEO", name: "Name to be confirmed", bio: "Leads company direction, client partnerships and delivery standards.", image: "" },
-  { confirmed: false, role: "CTO", name: "Name to be confirmed", bio: "Owns technical architecture, code quality and technology choices.", image: "" },
-  { confirmed: false, role: "Lead Software Engineer", name: "Name to be confirmed", bio: "Guides development across web, mobile and backend systems.", image: "" },
-  { confirmed: false, role: "UI/UX Designer", name: "Name to be confirmed", bio: "Shapes user flows, interfaces and design systems in Figma.", image: "" },
-  { confirmed: false, role: "Project Manager", name: "Name to be confirmed", bio: "Keeps scope, milestones and communication clear and on track.", image: "" },
-  { confirmed: false, role: "Business Development Manager", name: "Name to be confirmed", bio: "First point of contact for new enquiries and proposals.", image: "" },
+  { confirmed: true, role: "UI UX Designer", name: "Eman Fatima", bio: "Team profile supplied by Adelogix.", image: "/images/team/eman-fatima.jpeg", position: "50% 42%" },
+  { confirmed: false, role: "Adelogix team member", name: "Profile to be confirmed", bio: "Original team portrait; name and designation have not been published in the supplied material.", image: "/images/team/team-member-01.jpeg", position: "50% 28%" },
+  { confirmed: true, role: "Business Developer", name: "Aimen Irshad", bio: "Team profile supplied by Adelogix.", image: "/images/team/aimen-irshad.jpeg", position: "50% 43%" },
+  { confirmed: true, role: "UI UX Designer", name: "Maria Fatima", bio: "Team profile supplied by Adelogix.", image: "/images/team/maria-fatima.jpeg", position: "50% 42%" },
+  { confirmed: true, role: "Business Developer", name: "Aqsa Rehman", bio: "Team profile supplied by Adelogix.", image: "/images/team/aqsa-rehman.jpeg", position: "50% 40%" },
 ];
 
 export const generalFaqs = [

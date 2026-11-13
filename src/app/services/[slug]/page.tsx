@@ -64,7 +64,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </PageHero>
 
       {/* Introduction */}
-      <section className="surface-light py-24 md:py-36">
+      <section className="surface-light py-20 md:py-28">
         <div className="container-x grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-3"><Reveal variant="clip-up"><Eyebrow num="01" className="text-ink/60">Introduction</Eyebrow></Reveal></div>
           <div className="lg:col-span-9">
@@ -74,7 +74,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </section>
 
       {/* Problems we solve — three layout variants */}
-      <section className="bg-ink py-24 md:py-36">
+      <section className="bg-ink py-20 md:py-28">
         <div className="container-x">
           <SectionHeader num="02" eyebrow="Problems we solve" title={s.challengesTitle.replace("familiar?", "*familiar?*")} />
           {variant === 0 && (
@@ -114,7 +114,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </section>
 
       {/* Our solution */}
-      <section className="relative overflow-hidden bg-brand-900 py-24 md:py-36">
+      <section className="relative overflow-hidden bg-brand-900 py-20 md:py-28">
         <div className="absolute inset-0 grid-lines opacity-40" />
         <div className="orb -right-20 top-0 h-[420px] w-[420px]" style={{ background: s.hue, opacity: 0.35 }} />
         <div className="container-x relative grid gap-12 lg:grid-cols-12">
@@ -135,7 +135,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </section>
 
       {/* Features & deliverables */}
-      <section id="included" className="surface-light scroll-mt-24 py-24 md:py-36">
+      <section id="included" className="surface-light scroll-mt-24 py-20 md:py-28">
         <div className="container-x">
           <SectionHeader light num="04" eyebrow="Features & deliverables" title="What we can *deliver.*" intro="Every project is scoped individually. These are the deliverables most often included in this service." />
           <Reveal stagger={0.06} variant={variant === 1 ? "scale" : "up"} className="mt-14 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -150,7 +150,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </section>
 
       {/* Technology stack */}
-      <section className="bg-ink-2 py-24 md:py-32">
+      <section className="bg-ink-2 py-20 md:py-28">
         <div className="container-x">
           <SectionHeader num="05" eyebrow="Technology stack" title="Tools we use for *this work.*" intro="The final stack is chosen during planning, based on your requirements and the team that will maintain the product." action={<Link href="/technologies/" className="link-u text-sm text-brand-200">All technologies →</Link>} />
           <Reveal stagger={0.06} variant="scale" className="mt-14 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5">
@@ -166,7 +166,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </section>
 
       {/* Process */}
-      <section className="bg-ink py-24 md:py-36">
+      <section className="bg-ink py-20 md:py-28">
         <div className="container-x">
           <SectionHeader num="06" eyebrow="Development process" title="How the work runs, *stage by stage.*" />
           <div className="mt-20"><ProcessTimeline stages={stages} /></div>
@@ -175,18 +175,18 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
       {/* Case studies */}
       {cases.length > 0 && (
-        <section className="surface-light py-24 md:py-36">
+        <section className="surface-light py-20 md:py-28">
           <div className="container-x">
             <SectionHeader light num="07" eyebrow={s.caseStudies.length ? "Selected case studies" : "Related work"} title="Case studies for *this service.*" action={<Button href="/work/" variant="dark">All work</Button>} />
             <div className="mt-14 grid gap-x-8 gap-y-14 md:grid-cols-2">
-              {cases.map((p, i) => <Reveal key={p.slug} variant="up" delay={(i % 2) * 0.1} className={i % 2 ? "md:mt-20" : ""}><ProjectCard p={p} /></Reveal>)}
+              {cases.map((p, i) => <Reveal key={p.slug} variant="up" delay={(i % 2) * 0.1} className={i % 2 ? "md:mt-16" : ""}><ProjectCard p={p} /></Reveal>)}
             </div>
           </div>
         </section>
       )}
 
       {/* FAQ */}
-      <section className="bg-ink-2 py-24 md:py-36">
+      <section className="bg-ink-2 py-20 md:py-28">
         <div className="container-x grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <Reveal variant="clip-up"><Eyebrow num="08" className="text-white/60">FAQ</Eyebrow></Reveal>
@@ -198,7 +198,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </section>
 
       {/* Related services */}
-      <section className="bg-ink py-24 md:py-32">
+      <section className="bg-ink py-20 md:py-28">
         <div className="container-x">
           <SectionHeader num="09" eyebrow="Related services" title="Often paired *with this.*" />
           <Reveal stagger={0.08} variant="up" className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

@@ -21,7 +21,7 @@ export default function HomePage() {
       <HomeHero />
 
       {/* 02 About introduction — editorial */}
-      <section className="surface-light relative overflow-hidden py-24 md:py-40">
+      <section className="surface-light relative overflow-hidden py-20 md:py-32">
         <div className="container-x">
           <div className="grid gap-14 lg:grid-cols-12">
             <div className="lg:col-span-4">
@@ -56,7 +56,7 @@ export default function HomePage() {
       </section>
 
       {/* 03 Services */}
-      <section className="relative bg-ink py-24 md:py-36">
+      <section className="relative bg-ink py-20 md:py-28">
         <div className="orb right-0 top-20 h-[400px] w-[400px] bg-brand-600/25" />
         <div className="container-x relative">
           <SectionHeader num="03" eyebrow="Services" title="What we *design* and build." intro="Twelve core services covering websites, apps, product design, business systems and AI. Each one has its own page with scope, process and common questions." action={<Button href="/services/" variant="ghost">All services</Button>} />
@@ -65,7 +65,7 @@ export default function HomePage() {
       </section>
 
       {/* 04 Technology ecosystem */}
-      <section className="relative overflow-hidden border-t border-white/10 bg-ink-2 py-24 md:py-36">
+      <section className="relative overflow-hidden border-t border-white/10 bg-ink-2 py-20 md:py-28">
         <div className="absolute inset-0 grid-lines opacity-50" />
         <div className="container-x relative">
           <SectionHeader num="04" eyebrow="Technology ecosystem" title="The *tools* we build with." intro="The stack for each project is chosen for what it has to do, who will maintain it and how it is expected to grow." action={<Button href="/technologies/" variant="ghost">Explore technologies</Button>} />
@@ -84,7 +84,7 @@ export default function HomePage() {
       </section>
 
       {/* 06 Process */}
-      <section className="surface-light relative py-24 md:py-36">
+      <section className="surface-light relative py-20 md:py-28">
         <div className="container-x">
           <SectionHeader light num="06" eyebrow="Development process" title="From first conversation to *launch.*" intro="Every project follows the same four stages, so you always know where things stand and what comes next." />
           <div className="mt-20"><ProcessTimeline light stages={processStages} /></div>
@@ -98,7 +98,7 @@ export default function HomePage() {
       <Highlights num="08" />
 
       {/* 09 Testimonials */}
-      <section className="surface-light relative py-24 md:py-36">
+      <section className="surface-light relative py-20 md:py-28">
         <div className="container-x">
           <SectionHeader light num="09" eyebrow="Sample testimonials" title="Reviews, *once approved.*" intro="Nothing below is a real client quote yet. These placeholders show the layout we will use once clients approve their words — until then, the case studies show what we have built." />
           <div className="mt-14"><Testimonials /></div>
@@ -106,15 +106,15 @@ export default function HomePage() {
       </section>
 
       {/* 10 Team */}
-      <section className="relative bg-ink py-24 md:py-36">
+      <section className="relative bg-ink py-20 md:py-28">
         <div className="container-x">
-          <SectionHeader num="10" eyebrow="Our team" title="The people behind the *product.*" intro="Design, development and delivery under one roof. Team profiles will be published once confirmed." />
+          <SectionHeader num="10" eyebrow="Our team" title="The people behind the *product.*" intro="Design, development and delivery under one roof. Profiles are shown only with the information supplied by the team." />
           <div className="mt-14"><Team /></div>
         </div>
       </section>
 
       {/* 11 FAQ */}
-      <section className="relative border-t border-white/10 bg-ink-2 py-24 md:py-36">
+      <section className="relative border-t border-white/10 bg-ink-2 py-20 md:py-28">
         <div className="container-x grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <Reveal variant="clip-up"><Eyebrow num="11" className="text-white/60">FAQ</Eyebrow></Reveal>
