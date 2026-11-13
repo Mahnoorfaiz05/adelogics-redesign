@@ -1,0 +1,44 @@
+name: Import original case-study assets
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - arena/87decc4d-adelogics-redesign
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out selected branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          persist-credentials: true
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install image tools
+        run: npm ci
+
+      - name: Download and optimise original project visuals
+        run: node scripts/import-case-study-assets.mjs
+
+      - name: Commit imported images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/images/case-studies
+          if git diff --cached --quiet; then
+            echo "No case-study image changes to commit."
+          else
+            git commit -m "Add original case study visuals"
+            git push origin HEAD:${{ github.ref_name }}
+          fi
