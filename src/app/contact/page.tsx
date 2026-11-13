@@ -54,7 +54,7 @@ export default function ContactPage() {
             </Reveal>
             <Reveal variant="up" className="pt-4">
               <Magnetic>
-                <a href={whatsappLink("Hello Adelogix, I would like to discuss a project.")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 rounded-full bg-[#25D366] px-6 py-3.5 font-medium text-white shadow-[0_10px_40px_-10px_rgba(37,211,102,.7)]">
+                <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 rounded-full bg-[#25D366] px-6 py-3.5 font-medium text-white shadow-[0_10px_40px_-10px_rgba(37,211,102,.7)]">
                   <WhatsAppIcon size={20} /> Chat on WhatsApp
                 </a>
               </Magnetic>
@@ -79,7 +79,7 @@ export default function ContactPage() {
       </section>
 
       {/* What happens next */}
-      <section className="surface-light py-24 md:py-36">
+      <section className="surface-light py-20 md:py-28">
         <div className="container-x">
           <SectionHeader light eyebrow="What happens next" title="After you get *in touch.*" />
           <div className="relative mt-16 grid gap-6 md:grid-cols-3">
@@ -95,7 +95,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-ink py-24 md:py-32">
+      <section className="bg-ink py-20 md:py-28">
         <div className="container-x grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4"><SectionHeader eyebrow="Before you write" title="Quick *answers.*" className="!block" /></div>
           <div className="lg:col-span-8"><FAQ items={generalFaqs.filter((f) => ["Pricing", "Timelines", "Communication", "Support"].includes(f.topic))} /></div>

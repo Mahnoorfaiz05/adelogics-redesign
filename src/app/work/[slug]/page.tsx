@@ -73,7 +73,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       </section>
 
       {/* Overview */}
-      <section id="overview" className="surface-light scroll-mt-20 py-24 md:py-36">
+      <section id="overview" className="surface-light scroll-mt-20 py-20 md:py-28">
         <div className="container-x grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-3"><Reveal variant="clip-up"><Eyebrow num="01" className="text-ink/60">Project overview</Eyebrow></Reveal></div>
           <div className="lg:col-span-9">
@@ -95,7 +95,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       </section>
 
       {/* Challenge / Approach / Solution */}
-      <section className="bg-ink py-24 md:py-36">
+      <section className="bg-ink py-20 md:py-28">
         <div className="container-x">
           <div className="grid gap-4 lg:grid-cols-3">
             {[["02", "The challenge", p.challenge, "bg-ink-2"], ["03", "Our approach", `We worked across ${p.services.map((s) => getService(s)?.name).join(", ")}, keeping one goal in front of every decision: ${p.goals[0].charAt(0).toLowerCase() + p.goals[0].slice(1)}.`, "bg-ink-3"], ["04", "The solution", p.solution, "bg-brand-gradient"]].map(([n, t, d, bg], k) => (
@@ -112,7 +112,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       </section>
 
       {/* Key features + technology */}
-      <section className="surface-light py-24 md:py-36">
+      <section className="surface-light py-20 md:py-28">
         <div className="container-x grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <Reveal variant="clip-up"><Eyebrow num="05" className="text-ink/60">Key features</Eyebrow></Reveal>
@@ -149,7 +149,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       </section>
 
       {/* Screenshots & mockups */}
-      <section className="bg-ink py-24 md:py-36">
+      <section className="bg-ink py-20 md:py-28">
         <div className="container-x">
           <SectionHeader num="07" eyebrow="Screens & mockups" title="Inside the *product.*" />
           <div className="mt-14 grid gap-4 md:grid-cols-2">
@@ -175,7 +175,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       </nav>
 
       {/* Related */}
-      <section className="surface-light py-24 md:py-36">
+      <section className="surface-light py-20 md:py-28">
         <div className="container-x">
           <SectionHeader light num="08" eyebrow="Relevant projects" title="Related *work.*" action={<Button href="/work/" variant="dark">All work</Button>} />
           <div className="mt-14 grid gap-x-6 gap-y-14 md:grid-cols-3">

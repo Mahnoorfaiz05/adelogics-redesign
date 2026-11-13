@@ -1,5 +1,5 @@
-// Central, verified company details. Values here come from the existing
-// Adelogix website (adelogics.vercel.app). Do not add unverified details.
+// Central, verified company details. Keep customer-facing contact information and
+// official profile URLs in one place so every page stays in sync.
 export const site = {
   name: "Adelogix",
   legalName: "Adelogix Software Technology",
@@ -16,26 +16,18 @@ export const site = {
     "https://www.google.com/maps/search/?api=1&query=Commercial%20Area%2C%20Bahawalpur%2C%20Punjab%2C%20Pakistan",
   mapEmbed:
     "https://www.google.com/maps?q=Commercial%20Area%2C%20Bahawalpur%2C%20Punjab%2C%20Pakistan&output=embed&hl=en",
-  // Existing working email integration (FormSubmit) used by the original site.
-  formEndpoint: "https://formsubmit.co/Adelogixteam@gmail.com",
   ga4Id: process.env.NEXT_PUBLIC_GA4_ID || "",
-  // Social profiles — CENTRAL CONFIG.
-  // Leave a value empty until the official profile is verified. Empty values render
-  // as inactive (non-clickable) icons in the footer with a "Profile coming soon" label.
-  // Activate a platform by pasting its official URL here, or by setting the matching
-  // environment variable in Vercel (NEXT_PUBLIC_SOCIAL_LINKEDIN, ..._FACEBOOK, ..._INSTAGRAM,
-  // ..._X, ..._YOUTUBE) — no other code changes are required.
   socials: {
-    linkedin: process.env.NEXT_PUBLIC_SOCIAL_LINKEDIN || "",
-    facebook: process.env.NEXT_PUBLIC_SOCIAL_FACEBOOK || "",
-    instagram: process.env.NEXT_PUBLIC_SOCIAL_INSTAGRAM || "",
-    x: process.env.NEXT_PUBLIC_SOCIAL_X || "",
-    youtube: process.env.NEXT_PUBLIC_SOCIAL_YOUTUBE || "",
-  } as Record<string, string>,
-};
+    linkedin: "https://www.linkedin.com/company/adelogix-software-solutions/home/",
+    facebook: "http://facebook.com/adelogix",
+    instagram: "https://www.instagram.com/adelogix/",
+  },
+} as const;
 
-export const whatsappLink = (message = "Hello Adelogix, I would like to discuss a project.") =>
-  `https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(message)}`;
+// This is the approved click-to-chat message used by the floating control and
+// every WhatsApp CTA. The Cloud API is optional; this link always works without it.
+export const whatsappLink = () =>
+  "https://wa.me/923138711670?text=Hello%20Adelogix%20Team!%20I%20visited%20your%20website%20and%20would%20like%20to%20discuss%20a%20project";
 
 export const nav = [
   { label: "Home", href: "/" },

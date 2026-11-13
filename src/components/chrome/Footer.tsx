@@ -10,8 +10,7 @@ import SocialLinks from "./SocialLinks";
 import { Reveal } from "@/components/anim/primitives";
 
 export default function Footer() {
-  // Contact channels only. Social platforms are handled by <SocialLinks />, which
-  // renders inactive icons until an official profile URL is configured.
+  // Contact channels; the verified social profile links are rendered by <SocialLinks />.
   const channels = [
     { label: "WhatsApp", href: whatsappLink(), icon: <WhatsAppIcon size={18} />, ext: true },
     { label: "Email", href: `mailto:${site.email}`, icon: <Mail size={18} />, ext: false },
@@ -47,7 +46,7 @@ export default function Footer() {
 
         <div className="grid grid-cols-2 gap-x-6 gap-y-12 py-16 md:grid-cols-12">
           <div className="col-span-2 md:col-span-4">
-            <Image src="/assets/brand/adelogix-logo-white.png" alt="Adelogix" width={170} height={39} className="h-9 w-auto" />
+            <span className="inline-flex rounded-xl bg-ivory p-2.5"><Image src="/images/brand/adelogix-logo-original.png" alt="Adelogix" width={234} height={51} className="h-8 w-auto" /></span>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/60">
               {site.legalName} designs, builds and supports web platforms, mobile apps and custom business software for startups, growing companies and established teams.
             </p>

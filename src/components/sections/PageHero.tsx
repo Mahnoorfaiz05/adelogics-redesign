@@ -14,7 +14,7 @@ export default function PageHero({
 }) {
   const center = align === "center";
   return (
-    <section className="noise relative isolate flex min-h-[92svh] items-end overflow-hidden bg-ink pb-16 pt-36 md:pb-24">
+    <section className="noise relative isolate flex min-h-[82svh] items-end overflow-hidden bg-ink pb-12 pt-24 md:pb-20 md:pt-28">
       <div className="absolute inset-0 -z-10 grid-lines opacity-70" />
       <div className="orb -left-32 top-10 -z-10 h-[460px] w-[460px] bg-brand-700/50" />
       <div className="orb right-0 bottom-0 -z-10 h-[380px] w-[380px]" style={{ background: hue, opacity: 0.18 }} />

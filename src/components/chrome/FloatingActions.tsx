@@ -78,7 +78,7 @@ export default function FloatingActions() {
           )}
           {ready && (
             <motion.a
-              key="wa" href={whatsappLink("Hello Adelogix, I found you through your website and would like to discuss a project.")}
+              key="wa" href={whatsappLink()}
               target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp"
               initial={{ scale: 0, opacity: 0, rotate: -90 }} animate={{ scale: 1, opacity: 1, rotate: 0 }} transition={{ type: "spring", stiffness: 260, damping: 16 }}
               className="group relative grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-white shadow-[0_12px_40px_-8px_rgba(37,211,102,.6)] transition-transform duration-300 hover:scale-110"

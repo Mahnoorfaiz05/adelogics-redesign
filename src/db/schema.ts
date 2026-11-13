@@ -1,7 +1,7 @@
 import { pgTable, serial, text, timestamp, boolean } from "drizzle-orm/pg-core";
 
-// Project enquiries submitted through the contact form (backup record alongside
-// the existing FormSubmit email delivery).
+// Project enquiries submitted through the contact form (optional backup record
+// alongside EmailJS delivery).
 export const enquiries = pgTable("enquiries", {
   id: serial("id").primaryKey(),
   name: text("name").notNull(),

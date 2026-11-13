@@ -159,21 +159,23 @@ export function Testimonials() {
   );
 }
 
-/* ───────── Team (placeholders — names/photos to be confirmed) ───────── */
+/* ───────── Team (original supplied team photographs) ───────── */
 export function Team({ light = false }: { light?: boolean }) {
   const [active, setActive] = useState(0);
+  const member = team[active];
+  const imageAlt = member.confirmed ? `${member.name}, ${member.role} at Adelogix` : "Original Adelogix team portrait; profile details pending confirmation";
   return (
     <div className="grid gap-8 lg:grid-cols-12">
       <ul className="lg:col-span-5">
         {team.map((m, i) => (
-          <li key={m.role}>
+          <li key={`${m.name}-${i}`}>
             <button onMouseEnter={() => setActive(i)} onFocus={() => setActive(i)} onClick={() => setActive(i)}
-              className={`group flex w-full items-center justify-between border-b py-5 text-left transition-colors ${light ? "border-ink/10" : "border-white/10"} ${active === i ? "" : "opacity-50 hover:opacity-100"}`}>
-              <span className="flex items-center gap-4">
+              className={`group flex w-full items-center justify-between border-b py-4 text-left transition-colors md:py-5 ${light ? "border-ink/10" : "border-white/10"} ${active === i ? "" : "opacity-50 hover:opacity-100"}`}>
+              <span className="flex min-w-0 items-center gap-4">
                 <span className="font-mono text-xs">0{i + 1}</span>
-                <span className="display text-2xl md:text-3xl">{m.role}</span>
+                <span className="min-w-0"><span className="block display text-xl md:text-2xl">{m.name}</span><span className={`mt-1 block text-xs ${light ? "text-ink/55" : "text-white/50"}`}>{m.role}</span></span>
               </span>
-              <ArrowRight size={18} className={`transition-all duration-500 ${active === i ? "translate-x-0 opacity-100" : "-translate-x-3 opacity-0"}`} />
+              <ArrowRight size={18} className={`shrink-0 transition-all duration-500 ${active === i ? "translate-x-0 opacity-100" : "-translate-x-3 opacity-0"}`} />
             </button>
           </li>
         ))}
@@ -182,17 +184,15 @@ export function Team({ light = false }: { light?: boolean }) {
         <AnimatePresence mode="wait">
           <motion.div key={active} initial={{ opacity: 0, clipPath: "inset(0 0 100% 0 round 28px)" }} animate={{ opacity: 1, clipPath: "inset(0 0 0% 0 round 28px)" }} exit={{ opacity: 0 }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className={`relative overflow-hidden rounded-[28px] ${light ? "bg-ink text-ivory" : "bg-ink-3"}`}>
-            <div className="relative grid aspect-[4/3] place-items-center overflow-hidden bg-[radial-gradient(circle_at_30%_20%,#523a95,transparent_60%),radial-gradient(circle_at_80%_90%,#2a2063,transparent_55%)]">
-              <div className="absolute inset-0 grid-lines opacity-60" />
-              <div className="relative grid h-32 w-32 place-items-center rounded-full border border-white/20 bg-white/5 backdrop-blur">
-                <UserRound size={56} strokeWidth={1} className="text-white/60" />
-              </div>
-              <span className="absolute left-5 top-5 rounded-full bg-amber-100 px-3 py-1 font-mono text-[0.65rem] uppercase tracking-wider text-amber-800">Placeholder · to be confirmed</span>
+            <div className="relative aspect-[4/3] overflow-hidden bg-ink-2">
+              <Image src={member.image} alt={imageAlt} fill sizes="(min-width: 1024px) 42vw, 100vw" className="object-cover" style={{ objectPosition: member.position }} />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-ink/65 to-transparent" />
+              {!member.confirmed && <span className="absolute left-4 top-4 rounded-full bg-ivory px-3 py-1 font-mono text-[0.62rem] uppercase tracking-wider text-ink">Profile details pending</span>}
             </div>
-            <div className="p-7">
-              <p className="eyebrow text-brand-300">{team[active].role}</p>
-              <p className="mt-2 display text-2xl">{team[active].name}</p>
-              <p className="mt-3 text-sm text-white/60">{team[active].bio}</p>
+            <div className="p-6 md:p-7">
+              <p className="eyebrow text-brand-300">{member.role}</p>
+              <p className="mt-2 display text-2xl">{member.name}</p>
+              <p className="mt-3 text-sm text-white/60">{member.bio}</p>
             </div>
           </motion.div>
         </AnimatePresence>
@@ -251,11 +251,11 @@ export function WorkGrid() {
           </button>
         ))}
       </div>
-      <motion.div layout className="mt-14 grid gap-x-8 gap-y-16 md:grid-cols-2">
+      <motion.div layout className="mt-14 grid gap-x-8 gap-y-12 md:grid-cols-2">
         <AnimatePresence mode="popLayout">
           {list.map((p, i) => (
             <motion.div key={p.slug} layout initial={{ opacity: 0, y: 40, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, scale: 0.94 }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.04 }}
-              className={i % 2 === 1 ? "md:mt-24" : ""}>
+              className={i % 2 === 1 ? "md:mt-16" : ""}>
               <ProjectCard p={p} index={projects.indexOf(p)} />
             </motion.div>
           ))}

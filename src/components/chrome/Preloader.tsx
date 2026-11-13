@@ -3,16 +3,23 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { registerGsap, markReady, prefersReducedMotion } from "@/lib/motion";
 
-/* Branded preloader — once per session. Return visits skip it via an inline
-   head script that sets html[data-seen] before paint (see layout.tsx). */
+/* Branded preloader — once per session. The timeline waits for the local, official
+   logo asset to load so there is never a blank logo at the start of the animation. */
 export default function Preloader() {
   const root = useRef<HTMLDivElement>(null);
   const num = useRef<HTMLSpanElement>(null);
   const [done, setDone] = useState(false);
+  const [logoLoaded, setLogoLoaded] = useState(false);
 
   useEffect(() => {
     const seen = document.documentElement.dataset.seen === "1";
-    if (seen || prefersReducedMotion()) { setDone(true); markReady(); return; }
+    if (seen || prefersReducedMotion()) {
+      markReady();
+      const timer = window.setTimeout(() => setDone(true), 0);
+      return () => window.clearTimeout(timer);
+    }
+    if (!logoLoaded) return;
+
     const { gsap } = registerGsap();
     const counter = { v: 0 };
     const tl = gsap.timeline({
@@ -28,14 +35,16 @@ export default function Preloader() {
       .add(() => markReady(), "-=0.1")
       .to(root.current, { clipPath: "inset(0% 0% 100% 0%)", duration: 1, ease: "expo.inOut" }, "+=0.05");
     return () => { tl.kill(); };
-  }, []);
+  }, [logoLoaded]);
 
   if (done) return null;
   return (
     <div ref={root} className="preloader fixed inset-0 z-[10000] grid place-items-center bg-ink" style={{ clipPath: "inset(0% 0% 0% 0%)" }} role="status" aria-label="Loading Adelogix">
       <div className="absolute inset-0 grid-lines opacity-60" />
       <div className="relative flex flex-col items-center gap-6">
-        <Image src="/assets/brand/adelogix-mark-white.png" alt="" width={84} height={72} className="pl-mark" priority />
+        <span className="grid min-h-[76px] min-w-[250px] place-items-center rounded-2xl bg-ivory px-5 py-3 shadow-[0_16px_50px_rgba(0,0,0,.24)]">
+          <Image src="/images/brand/adelogix-logo-original.png" alt="Adelogix" width={234} height={51} className="pl-mark h-auto w-[min(234px,56vw)]" priority onLoad={() => setLogoLoaded(true)} onError={() => setLogoLoaded(true)} />
+        </span>
         <div className="flex overflow-hidden text-3xl font-semibold tracking-[-0.04em] display">
           {"Adelogix".split("").map((c, i) => <span key={i} className="pl-letter inline-block">{c}</span>)}
         </div>

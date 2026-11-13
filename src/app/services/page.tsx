@@ -31,7 +31,7 @@ export default function ServicesPage() {
       </PageHero>
 
       {/* Category navigation (sticky) */}
-      <nav aria-label="Service groups" className="sticky top-0 z-30 border-y border-white/10 bg-ink/85 backdrop-blur-xl">
+      <nav aria-label="Service groups" className="sticky top-[var(--header-h)] z-30 border-y border-white/10 bg-ink/85 backdrop-blur-xl">
         <div className="container-x flex gap-2 overflow-x-auto py-3 [scrollbar-width:none]">
           {serviceGroups.map((g) => (
             <a key={g.id} href={`#group-${g.id}`} className="shrink-0 rounded-full border border-white/10 px-4 py-2 text-sm text-white/70 transition-colors hover:border-brand-300 hover:text-white">{g.name}</a>
@@ -40,7 +40,7 @@ export default function ServicesPage() {
       </nav>
 
       {/* Interactive showcase */}
-      <section className="surface-light py-24 md:py-36">
+      <section className="surface-light py-20 md:py-28">
         <div className="container-x">
           <SectionHeader light eyebrow="All services" num="01" title="Twelve services, *one team.*" intro="Each item links to the page that covers it in detail — scope, process, technologies and common questions." />
           <div className="mt-14"><ServicesShowcase light /></div>
@@ -48,10 +48,10 @@ export default function ServicesPage() {
       </section>
 
       {/* Groups — alternating feature rows */}
-      <section id="groups" className="bg-ink py-24 md:py-36">
+      <section id="groups" className="bg-ink py-20 md:py-28">
         <div className="container-x">
           <SectionHeader num="02" eyebrow="Services by group" title="Related services, *grouped together.*" />
-          <div className="mt-20 space-y-24 md:space-y-32">
+          <div className="mt-20 space-y-16 md:space-y-20">
             {serviceGroups.map((g, gi) => (
               <div key={g.id} id={`group-${g.id}`} className="scroll-mt-32 grid gap-10 lg:grid-cols-12">
                 <Reveal variant={gi % 2 ? "right" : "left"} className={`lg:col-span-5 ${gi % 2 ? "lg:order-2 lg:col-start-8" : ""}`}>
@@ -92,7 +92,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Deliverables snapshot */}
-      <section className="surface-light py-24 md:py-36">
+      <section className="surface-light py-20 md:py-28">
         <div className="container-x">
           <SectionHeader light num="03" eyebrow="What we deliver" title="Deliverables at a *glance.*" />
           <Reveal stagger={0.04} variant="up" className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -107,7 +107,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Technology ecosystem */}
-      <section className="overflow-hidden bg-ink-2 py-24 md:py-36">
+      <section className="overflow-hidden bg-ink-2 py-20 md:py-28">
         <div className="container-x">
           <SectionHeader num="04" eyebrow="Technology ecosystem" title="Chosen for *fit,* not fashion." action={<Button href="/technologies/" variant="ghost">All technologies</Button>} />
           <div className="mt-14"><TechEcosystem compact /></div>
@@ -116,7 +116,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Process */}
-      <section className="bg-ink py-24 md:py-36">
+      <section className="bg-ink py-20 md:py-28">
         <div className="container-x">
           <SectionHeader num="05" eyebrow="Development process" title="Four clear *stages.*" />
           <div className="mt-20"><ProcessTimeline stages={processStages} /></div>
@@ -124,7 +124,7 @@ export default function ServicesPage() {
       </section>
 
       {/* FAQ */}
-      <section className="surface-light py-24 md:py-36">
+      <section className="surface-light py-20 md:py-28">
         <div className="container-x">
           <SectionHeader light num="06" eyebrow="FAQ" title="Common *questions.*" />
           <div className="mt-14"><FAQ light items={generalFaqs.slice(0, 6)} /></div>
