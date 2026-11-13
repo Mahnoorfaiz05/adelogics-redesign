@@ -146,17 +146,10 @@ export function Parallax({ children, speed = 0.2, className = "" }: { children: 
 }
 
 /* ───────── Counter ───────── */
+// Render verified numbers in the server HTML instead of briefly exposing “0”
+// until hydration. This is clearer for visitors, assistive technology and search.
 export function Counter({ value, suffix = "", className = "" }: { value: number; suffix?: string; className?: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  useEffect(() => {
-    const el = ref.current; if (!el) return;
-    const { gsap } = registerGsap();
-    if (prefersReducedMotion() || window.matchMedia("(max-width: 767px)").matches) { el.textContent = value + suffix; return; }
-    const obj = { v: 0 };
-    const tw = gsap.to(obj, { v: value, duration: 1.2, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 90%", once: true }, onUpdate: () => { el.textContent = Math.round(obj.v) + suffix; } });
-    return () => { tw.scrollTrigger?.kill(); tw.kill(); };
-  }, [value, suffix]);
-  return <span ref={ref} className={className}>0{suffix}</span>;
+  return <span className={className}>{value}{suffix}</span>;
 }
 
 /* ───────── Marquee ───────── */
