@@ -104,7 +104,7 @@ export function TechEcosystem({ compact = false }: { compact?: boolean }) {
         </div>
       </div>
 
-      <div className={`mt-10 grid gap-10 lg:grid-cols-2 lg:items-center ${compact ? "" : "lg:min-h-[560px]"}`} role="tabpanel">
+      <div className={`mt-10 grid gap-10 lg:grid-cols-2 lg:items-center ${compact ? "" : "lg:min-h-[440px]"}`} role="tabpanel">
         {/* Orbit visual */}
         <div className="relative mx-auto aspect-square w-full max-w-[520px]">
           <div className="absolute inset-[6%] rounded-full border border-dashed border-white/10 spin-slow" />

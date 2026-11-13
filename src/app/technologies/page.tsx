@@ -4,10 +4,11 @@ import PageHero from "@/components/sections/PageHero";
 import { Reveal } from "@/components/anim/primitives";
 import { Button } from "@/components/ui/Button";
 import { LIcon, TechMark } from "@/components/ui/Icons";
-import { SectionHeader, FinalCTA } from "@/components/sections/blocks";
+import { SectionHeader } from "@/components/sections/blocks";
 import { TechEcosystem, ToolsMarquee } from "@/components/sections/interactive-a";
 import { techCategories, allTools } from "@/data/technologies";
 import { getService } from "@/data/services";
+import FinalCTA from "@/components/sections/FinalCTA";
 
 export const metadata: Metadata = {
   title: "Technologies We Use",
@@ -30,7 +31,7 @@ export default function TechnologiesPage() {
 
       <div className="border-y border-white/10 bg-ink py-6"><ToolsMarquee /></div>
 
-      <section id="ecosystem" className="relative overflow-hidden bg-ink py-16 md:py-28">
+      <section id="ecosystem" className="relative overflow-hidden bg-ink section-space">
         <div className="absolute inset-0 grid-lines opacity-50" />
         <div className="container-x relative">
           <SectionHeader num="01" eyebrow="Interactive ecosystem" title="Eight areas, *one connected* stack." intro="Select a category, then hover or tap an orbiting node for details. Named tools are ones we have used on client work; capabilities describe what we deliver in that area." />
@@ -39,7 +40,7 @@ export default function TechnologiesPage() {
       </section>
 
       {/* Categorised showcase — bento */}
-      <section className="surface-light py-16 md:py-28">
+      <section className="surface-light section-space">
         <div className="container-x">
           <SectionHeader light num="02" eyebrow="Categorised showcase" title="Everything, *at a glance.*" />
           <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -72,7 +73,7 @@ export default function TechnologiesPage() {
       </section>
 
       {/* Related services by category */}
-      <section className="bg-ink py-16 md:py-28">
+      <section className="bg-ink section-space">
         <div className="container-x">
           <SectionHeader num="03" eyebrow="Related services" title="Where each area *shows up.*" />
           <ul className="mt-14 border-t border-white/10">

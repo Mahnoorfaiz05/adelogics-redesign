@@ -7,11 +7,12 @@ import { Reveal, SplitHeading, Parallax, Counter } from "@/components/anim/primi
 import ScrollText from "@/components/anim/ScrollText";
 import { Button, Eyebrow } from "@/components/ui/Button";
 import { TechMark } from "@/components/ui/Icons";
-import { SectionHeader, ProjectCard, FinalCTA } from "@/components/sections/blocks";
+import { SectionHeader, ProjectCard } from "@/components/sections/blocks";
 import ParticleCanvas from "@/components/hero/ParticleCanvas";
 import { projects, getProject, relatedProjects } from "@/data/projects";
 import { getService } from "@/data/services";
 import { allTools } from "@/data/technologies";
+import FinalCTA from "@/components/sections/FinalCTA";
 
 export const dynamicParams = false;
 export function generateStaticParams() { return projects.map((p) => ({ slug: p.slug })); }
@@ -39,7 +40,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   return (
     <>
       {/* Project-specific hero */}
-      <section className="noise relative isolate overflow-hidden bg-ink pb-12 pt-24 sm:pt-28 md:pb-24 md:pt-36">
+      <section className="noise relative isolate overflow-hidden bg-ink pb-10 pt-22 sm:pt-24 md:pb-16 md:pt-28">
         <div className="absolute inset-0 -z-10" style={{ background: `radial-gradient(ellipse at 70% 20%, ${p.color}66, transparent 60%)` }} />
         <div className="absolute inset-0 -z-10 opacity-60"><ParticleCanvas shape="wave" hue="#cfc3ee" density={0.8} links={false} /></div>
         <div className="container-x">
@@ -73,7 +74,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       </section>
 
       {/* Overview */}
-      <section id="overview" className="surface-light scroll-mt-20 py-16 md:py-28">
+      <section id="overview" className="surface-light scroll-mt-20 section-space">
         <div className="container-x grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-3"><Reveal variant="clip-up"><Eyebrow num="01" className="text-ink/60">Project overview</Eyebrow></Reveal></div>
           <div className="lg:col-span-9">
@@ -88,18 +89,18 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
           </div>
         </div>
         {g0 && (
-          <div className="container-x mt-12 md:mt-20">
+          <div className="container-x mt-10 md:mt-14">
             <Reveal variant="mask" className="relative aspect-[3/2] overflow-hidden rounded-[28px]"><Image src={g0.src} alt={g0.alt} fill sizes="100vw" className="object-cover" /></Reveal>
           </div>
         )}
       </section>
 
       {/* Challenge / Approach / Solution */}
-      <section className="bg-ink py-16 md:py-28">
+      <section className="bg-ink section-space">
         <div className="container-x">
           <div className="grid gap-4 lg:grid-cols-3">
             {[["02", "The challenge", p.challenge, "bg-ink-2"], ["03", "Our approach", `We worked across ${p.services.map((s) => getService(s)?.name).join(", ")}, keeping one goal in front of every decision: ${p.goals[0].charAt(0).toLowerCase() + p.goals[0].slice(1)}.`, "bg-ink-3"], ["04", "The solution", p.solution, "bg-brand-gradient"]].map(([n, t, d, bg], k) => (
-              <Reveal key={t} variant="up" delay={k * 0.12} className={`flex min-h-[280px] flex-col justify-between rounded-[26px] p-6 sm:min-h-[320px] sm:p-8 md:min-h-[340px] md:rounded-[28px] md:p-10 ${bg}`}>
+              <Reveal key={t} variant="up" delay={k * 0.12} className={`flex min-h-[280px] flex-col justify-between rounded-[26px] p-6 sm:min-h-[280px] sm:p-7 md:min-h-[300px] md:rounded-[28px] md:p-8 ${bg}`}>
                 <span className="font-mono text-xs text-white/60">{n}</span>
                 <div><h2 className="display text-3xl md:text-4xl">{t}</h2><p className="mt-4 text-white/75">{d}</p></div>
               </Reveal>
@@ -112,7 +113,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       </section>
 
       {/* Key features + technology */}
-      <section className="surface-light py-16 md:py-28">
+      <section className="surface-light section-space">
         <div className="container-x grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <Reveal variant="clip-up"><Eyebrow num="05" className="text-ink/60">Key features</Eyebrow></Reveal>
@@ -149,7 +150,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       </section>
 
       {/* Screenshots & mockups */}
-      <section className="bg-ink py-16 md:py-28">
+      <section className="bg-ink section-space">
         <div className="container-x">
           <SectionHeader num="07" eyebrow="Screens & mockups" title="Inside the *product.*" />
           <div className="mt-14 grid gap-4 md:grid-cols-2">
@@ -175,7 +176,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       </nav>
 
       {/* Related */}
-      <section className="surface-light py-16 md:py-28">
+      <section className="surface-light section-space">
         <div className="container-x">
           <SectionHeader light num="08" eyebrow="Relevant projects" title="Related *work.*" action={<Button href="/work/" variant="dark">All work</Button>} />
           <div className="mt-14 grid gap-x-6 gap-y-14 md:grid-cols-3">
