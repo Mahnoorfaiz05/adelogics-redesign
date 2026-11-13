@@ -9,6 +9,7 @@ import { getService } from "@/data/services";
 import { testimonials, team } from "@/data/content";
 import { registerGsap, prefersReducedMotion } from "@/lib/motion";
 import { ProjectCard } from "./blocks";
+import { Reveal } from "@/components/anim/primitives";
 
 /* ───────── Featured projects: pinned horizontal scroll (desktop) ───────── */
 export function FeaturedProjects({ list = projects }: { list?: Project[] }) {
@@ -161,42 +162,33 @@ export function Testimonials() {
 
 /* ───────── Team (original supplied team photographs) ───────── */
 export function Team({ light = false }: { light?: boolean }) {
-  const [active, setActive] = useState(0);
-  const member = team[active];
-  const imageAlt = member.confirmed ? `${member.name}, ${member.role} at Adelogix` : "Original Adelogix team portrait; profile details pending confirmation";
   return (
-    <div className="grid gap-8 lg:grid-cols-12">
-      <ul className="lg:col-span-5">
-        {team.map((m, i) => (
-          <li key={`${m.name}-${i}`}>
-            <button onMouseEnter={() => setActive(i)} onFocus={() => setActive(i)} onClick={() => setActive(i)}
-              className={`group flex w-full items-center justify-between border-b py-4 text-left transition-colors md:py-5 ${light ? "border-ink/10" : "border-white/10"} ${active === i ? "" : "opacity-50 hover:opacity-100"}`}>
-              <span className="flex min-w-0 items-center gap-4">
-                <span className="font-mono text-xs">0{i + 1}</span>
-                <span className="min-w-0"><span className="block display text-xl md:text-2xl">{m.name}</span><span className={`mt-1 block text-xs ${light ? "text-ink/55" : "text-white/50"}`}>{m.role}</span></span>
-              </span>
-              <ArrowRight size={18} className={`shrink-0 transition-all duration-500 ${active === i ? "translate-x-0 opacity-100" : "-translate-x-3 opacity-0"}`} />
-            </button>
-          </li>
-        ))}
-      </ul>
-      <div className="lg:col-span-6 lg:col-start-7">
-        <AnimatePresence mode="wait">
-          <motion.div key={active} initial={{ opacity: 0, clipPath: "inset(0 0 100% 0 round 28px)" }} animate={{ opacity: 1, clipPath: "inset(0 0 0% 0 round 28px)" }} exit={{ opacity: 0 }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className={`relative overflow-hidden rounded-[28px] ${light ? "bg-ink text-ivory" : "bg-ink-3"}`}>
-            <div className="relative aspect-[4/3] overflow-hidden bg-ink-2">
-              <Image src={member.image} alt={imageAlt} fill sizes="(min-width: 1024px) 42vw, 100vw" className="object-cover" style={{ objectPosition: member.position }} />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-ink/65 to-transparent" />
-              {!member.confirmed && <span className="absolute left-4 top-4 rounded-full bg-ivory px-3 py-1 font-mono text-[0.62rem] uppercase tracking-wider text-ink">Profile details pending</span>}
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      {team.map((member, index) => {
+        const imageAlt = member.name === "Name not published"
+          ? "Adelogix CEO and Founder"
+          : `${member.name}, ${member.role} at Adelogix`;
+        return (
+          <Reveal as="article" key={`${member.name}-${index}`} variant="up" delay={index * 0.06}
+            className={`group overflow-hidden rounded-[24px] border transition-all duration-500 hover:-translate-y-1 ${light ? "border-ink/10 bg-white text-ink shadow-sm" : "border-white/10 bg-ink-3 text-ivory"}`}>
+            <div className="relative aspect-[4/5] overflow-hidden bg-ink-2">
+              <Image
+                src={member.image}
+                alt={imageAlt}
+                fill
+                sizes="(min-width: 1280px) 18vw, (min-width: 640px) 42vw, 100vw"
+                className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.025]"
+                style={{ objectPosition: member.position }}
+              />
             </div>
-            <div className="p-6 md:p-7">
-              <p className="eyebrow text-brand-300">{member.role}</p>
-              <p className="mt-2 display text-2xl">{member.name}</p>
-              <p className="mt-3 text-sm text-white/60">{member.bio}</p>
+            <div className="min-h-[142px] p-5">
+              <p className={`eyebrow ${light ? "text-brand-600" : "text-brand-300"}`}>{member.role}</p>
+              <h3 className="mt-3 display text-xl leading-none">{member.name}</h3>
+              <p className={`mt-3 text-xs leading-relaxed ${light ? "text-ink/60" : "text-white/60"}`}>{member.bio}</p>
             </div>
-          </motion.div>
-        </AnimatePresence>
-      </div>
+          </Reveal>
+        );
+      })}
     </div>
   );
 }
