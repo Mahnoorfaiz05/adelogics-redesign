@@ -11,6 +11,16 @@ export default function Preloader() {
   const [done, setDone] = useState(false);
   const [logoLoaded, setLogoLoaded] = useState(false);
 
+  // A cached image resolves immediately through onLoad. On a failed or unusually
+  // slow image request, release the sequence after a short grace period so the
+  // first visit can never become a blank, permanently blocked page.
+  useEffect(() => {
+    const seen = document.documentElement.dataset.seen === "1";
+    if (seen || prefersReducedMotion() || logoLoaded) return;
+    const fallback = window.setTimeout(() => setLogoLoaded(true), 1500);
+    return () => window.clearTimeout(fallback);
+  }, [logoLoaded]);
+
   useEffect(() => {
     const seen = document.documentElement.dataset.seen === "1";
     if (seen || prefersReducedMotion()) {

@@ -8,6 +8,7 @@ import { Button, Eyebrow } from "@/components/ui/Button";
 import AccentText from "@/components/ui/AccentText";
 import { LIcon } from "@/components/ui/Icons";
 import { CompactProjectCard, ProcessSteps, StaticFAQ, TechnologyGrid } from "@/components/sections/static-content";
+import { Tilt } from "@/components/anim/primitives";
 import { services, getService, serviceGroups, processStages } from "@/data/services";
 import { projects } from "@/data/projects";
 import { techCategories } from "@/data/technologies";
@@ -53,19 +54,21 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         intro={service.intro}
         crumbs={[{ label: "Home", href: "/" }, { label: "Services", href: "/services/" }, { label: service.name }]}
         aside={
-          <div className="glass relative overflow-hidden rounded-[26px] p-6">
-            <div className="absolute -right-14 -top-14 h-44 w-44 rounded-full blur-3xl" style={{ background: service.hue, opacity: 0.4 }} />
-            <span className="relative grid h-14 w-14 place-items-center rounded-2xl bg-brand-gradient"><LIcon name={service.icon} size={25} className="text-white" /></span>
-            <p className="relative mt-5 eyebrow text-white/50">Most often included</p>
-            <ul className="relative mt-3 space-y-2 text-sm text-white/80">
-              {service.deliverables.slice(1, 5).map((deliverable) => <li key={deliverable} className="flex items-start gap-2"><Check size={14} className="mt-0.5 shrink-0 text-brand-300" />{deliverable}</li>)}
-            </ul>
-            <div className="relative mt-5 flex flex-wrap gap-2 border-t border-white/10 pt-4">{service.tags.map((tag) => <span key={tag} className="rounded-full bg-white/10 px-3 py-1 text-xs">{tag}</span>)}</div>
-          </div>
+          <Tilt className="rounded-[28px]">
+            <div className="glass relative overflow-hidden rounded-[28px] p-7">
+              <div className="absolute -right-14 -top-14 h-48 w-48 rounded-full blur-3xl" style={{ background: service.hue, opacity: 0.45 }} />
+              <span className="relative grid h-16 w-16 place-items-center rounded-2xl bg-brand-gradient float"><LIcon name={service.icon} size={28} className="text-white" /></span>
+              <p className="relative mt-6 eyebrow text-white/50">Most often included</p>
+              <ul className="relative mt-4 space-y-2.5 text-sm text-white/80">
+                {service.deliverables.slice(1, 5).map((deliverable) => <li key={deliverable} className="flex items-start gap-2"><Check size={14} className="mt-0.5 shrink-0 text-brand-300" />{deliverable}</li>)}
+              </ul>
+              <div className="relative mt-6 flex flex-wrap gap-2 border-t border-white/10 pt-5">{service.tags.map((tag) => <span key={tag} className="rounded-full bg-white/10 px-3 py-1 text-xs">{tag}</span>)}</div>
+            </div>
+          </Tilt>
         }
       >
-        <Button href={`/contact/?service=${service.slug}`} magnetic={false}>Discuss your project</Button>
-        <Button href="#included" variant="ghost" magnetic={false}>What is included</Button>
+        <Button href={`/contact/?service=${service.slug}`}>Discuss your project</Button>
+        <Button href="#included" variant="ghost">What is included</Button>
       </PageHero>
 
       <section className="surface-light section-space">
@@ -153,7 +156,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <div className="container-x">
             <div className="flex flex-wrap items-end justify-between gap-5">
               <div><Eyebrow num="07" className="text-ink/60">{service.caseStudies.length ? "Selected case studies" : "Related work"}</Eyebrow><h2 className="mt-5 display h-md text-ink">Case studies for <AccentText text="*this service.*" className="serif-i text-brand-500" /></h2></div>
-              <Button href="/work/" variant="dark" magnetic={false}>All work</Button>
+              <Button href="/work/" variant="dark">All work</Button>
             </div>
             <div className="content-gap grid gap-x-6 gap-y-10 md:grid-cols-2">
               {cases.map((project) => <CompactProjectCard key={project.slug} project={project} />)}
