@@ -19,6 +19,8 @@ export default function Header() {
   const [mobile, setMobile] = useState(false);
   const [mobileServices, setMobileServices] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(scrollY > 12);
@@ -28,17 +30,43 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    const frame = requestAnimationFrame(() => { setMega(false); setMobile(false); });
+    const frame = requestAnimationFrame(() => { setMega(false); setMobile(false); setMobileServices(false); });
     return () => cancelAnimationFrame(frame);
   }, [pathname]);
 
   useEffect(() => {
     const w = window as W;
-    if (mobile) { w.__lenis?.stop(); document.body.style.overflow = "hidden"; }
-    else { w.__lenis?.start(); document.body.style.overflow = ""; }
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") { setMega(false); setMobile(false); } };
+    if (!mobile) {
+      w.__lenis?.start();
+      document.body.style.overflow = "";
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    w.__lenis?.stop();
+    document.body.style.overflow = "hidden";
+    const focusMenu = () => menuRef.current?.querySelector<HTMLElement>("a, button")?.focus();
+    const focusTimer = window.setTimeout(focusMenu, 0);
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setMobile(false);
+        window.setTimeout(() => menuButtonRef.current?.focus(), 0);
+        return;
+      }
+      if (e.key !== "Tab" || !menuRef.current) return;
+      const items = Array.from(menuRef.current.querySelectorAll<HTMLElement>("a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex='-1'])"));
+      if (!items.length) return;
+      const first = items[0], last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    };
     addEventListener("keydown", onKey);
-    return () => removeEventListener("keydown", onKey);
+    return () => {
+      clearTimeout(focusTimer);
+      removeEventListener("keydown", onKey);
+      document.body.style.overflow = previousOverflow;
+      w.__lenis?.start();
+    };
   }, [mobile]);
 
   const openMega = () => { if (closeTimer.current) clearTimeout(closeTimer.current); setMega(true); };
@@ -96,8 +124,10 @@ export default function Header() {
               </Magnetic>
             </div>
             <button
+              ref={menuButtonRef}
               className="relative z-10 grid h-11 w-11 place-items-center rounded-full border border-white/15 lg:hidden"
-              aria-label={mobile ? "Close menu" : "Open menu"} aria-expanded={mobile} aria-controls="mobile-menu" onClick={() => setMobile((m) => !m)}
+              aria-label={mobile ? "Close menu" : "Open menu"} aria-expanded={mobile} aria-controls="mobile-menu"
+              onClick={() => { setMobile((m) => !m); setMobileServices(false); }}
             >
               <span className="relative block h-3 w-5">
                 <span className={`absolute left-0 h-px w-5 bg-white transition-all duration-500 ${mobile ? "top-1.5 rotate-45" : "top-0"}`} />
@@ -155,6 +185,7 @@ export default function Header() {
       <AnimatePresence>
         {mobile && (
           <motion.div
+            ref={menuRef}
             id="mobile-menu" role="dialog" aria-modal="true" aria-label="Site menu"
             initial={{ clipPath: "circle(0% at 92% 5%)" }} animate={{ clipPath: "circle(150% at 92% 5%)" }} exit={{ clipPath: "circle(0% at 92% 5%)" }}
             transition={{ duration: 0.8, ease: [0.85, 0, 0.15, 1] }}
@@ -162,12 +193,12 @@ export default function Header() {
           >
             <div className="absolute inset-0 grid-lines opacity-50" />
             <div className="orb -right-20 top-20 h-72 w-72 bg-brand-500/40" />
-            <div className="relative flex min-h-full flex-col px-6 pb-10 pt-28">
+            <div className="relative flex min-h-full flex-col px-5 pb-8 pt-24 sm:px-6 sm:pb-10 sm:pt-28">
               <ul className="flex flex-col">
                 {nav.map((item, i) => (
                   <motion.li key={item.href} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25 + i * 0.06, duration: 0.7, ease: [0.16, 1, 0.3, 1] }} className="border-b border-white/10">
                     <div className="flex items-center justify-between">
-                      <Link href={item.href} className={`flex items-baseline gap-3 py-4 display text-[2.4rem] ${isActive(item.href) ? "text-brand-200" : "text-white"}`}>
+                      <Link href={item.href} onClick={() => setMobile(false)} className={`flex min-w-0 items-baseline gap-3 py-4 display text-[clamp(2rem,10vw,2.4rem)] ${isActive(item.href) ? "text-brand-200" : "text-white"}`}>
                         <span className="font-mono text-xs text-white/40">0{i + 1}</span>{item.label}
                       </Link>
                       {item.mega && (
@@ -182,7 +213,7 @@ export default function Header() {
                           <motion.ul initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="grid grid-cols-1 gap-1 overflow-hidden pb-4 sm:grid-cols-2">
                             {services.map((s) => (
                               <li key={s.slug}>
-                                <Link href={`/services/${s.slug}/`} className="flex items-center gap-3 rounded-xl px-2 py-2.5 text-white/75 hover:bg-white/5">
+                                <Link href={`/services/${s.slug}/`} onClick={() => setMobile(false)} className="flex min-h-11 items-center gap-3 rounded-xl px-2 py-2.5 text-white/75 hover:bg-white/5">
                                   <LIcon name={s.icon} size={16} className="text-brand-300" />{s.name}
                                 </Link>
                               </li>
@@ -195,7 +226,7 @@ export default function Header() {
                 ))}
               </ul>
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }} className="mt-auto space-y-3 pt-10 text-sm text-white/70">
-                <Link href="/contact/" className="flex w-full items-center justify-between rounded-full bg-brand-gradient px-6 py-4 font-medium text-white">Discuss Your Project <ArrowUpRight size={18} /></Link>
+                <Link href="/contact/" onClick={() => setMobile(false)} className="flex min-h-12 w-full items-center justify-between rounded-full bg-brand-gradient px-6 py-3.5 font-medium text-white">Discuss Your Project <ArrowUpRight size={18} /></Link>
                 <div className="grid grid-cols-3 gap-2">
                   <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-1 rounded-2xl border border-white/10 py-3"><WhatsAppIcon size={18} />WhatsApp</a>
                   <a href={site.phoneHref} className="flex flex-col items-center gap-1 rounded-2xl border border-white/10 py-3"><Phone size={18} />Call</a>

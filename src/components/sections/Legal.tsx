@@ -6,8 +6,8 @@ export default function Legal({ title, intro, updated, sections }: { title: stri
   return (
     <>
       <PageHero eyebrow="Legal" title={title} intro={intro} shape="cube" hue="#7d6ad0" crumbs={[{ label: "Home", href: "/" }, { label: title.replace(/\*/g, "") }]} />
-      <section className="surface-light py-20 md:py-32">
-        <div className="container-x grid gap-12 lg:grid-cols-12">
+      <section className="surface-light py-16 md:py-32">
+        <div className="container-x grid gap-10 md:gap-12 lg:grid-cols-12">
           <aside className="lg:col-span-3">
             <div className="lg:sticky lg:top-32">
               <p className="eyebrow text-ink/50">Last updated</p>

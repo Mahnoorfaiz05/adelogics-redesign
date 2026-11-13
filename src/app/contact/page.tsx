@@ -35,7 +35,7 @@ export default function ContactPage() {
         <Button href={whatsappLink()} external variant="ghost" icon={<WhatsAppIcon size={15} />}>WhatsApp us</Button>
       </PageHero>
 
-      <section id="form" className="relative scroll-mt-20 bg-ink-2 py-20 md:py-32">
+      <section id="form" className="relative scroll-mt-20 bg-ink-2 py-16 md:py-32">
         <div className="absolute inset-0 grid-lines opacity-40" />
         <div className="container-x relative grid gap-12 lg:grid-cols-12">
           <aside className="space-y-3 lg:col-span-4">
@@ -69,7 +69,7 @@ export default function ContactPage() {
 
       {/* Map */}
       <section className="bg-ink">
-        <div className="container-x py-20 md:py-28">
+        <div className="container-x py-16 md:py-28">
           <SectionHeader eyebrow="Office location" title="Based in *Bahawalpur,* working worldwide." intro={site.location} />
           <Reveal variant="mask" className="relative mt-12 overflow-hidden rounded-[28px] border border-white/10">
             <iframe title="Adelogix office location map" src={site.mapEmbed} loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="h-[360px] w-full grayscale invert-[0.92] hue-rotate-180 md:h-[460px]" />
@@ -79,10 +79,10 @@ export default function ContactPage() {
       </section>
 
       {/* What happens next */}
-      <section className="surface-light py-20 md:py-28">
+      <section className="surface-light py-16 md:py-28">
         <div className="container-x">
           <SectionHeader light eyebrow="What happens next" title="After you get *in touch.*" />
-          <div className="relative mt-16 grid gap-6 md:grid-cols-3">
+          <div className="relative mt-12 grid gap-6 md:mt-16 md:grid-cols-3">
             <div className="absolute left-0 right-0 top-7 hidden h-px bg-ink/10 md:block" />
             {nextSteps.map((s, i) => (
               <Reveal key={s.title} variant="up" delay={i * 0.15} className="relative">
@@ -95,7 +95,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-ink py-20 md:py-28">
+      <section className="bg-ink py-16 md:py-28">
         <div className="container-x grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4"><SectionHeader eyebrow="Before you write" title="Quick *answers.*" className="!block" /></div>
           <div className="lg:col-span-8"><FAQ items={generalFaqs.filter((f) => ["Pricing", "Timelines", "Communication", "Support"].includes(f.topic))} /></div>

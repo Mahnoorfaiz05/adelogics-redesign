@@ -43,12 +43,12 @@ export default function WorkPage() {
       </div>
 
       {/* Featured project */}
-      <section className="relative overflow-hidden bg-ink py-20 md:py-28">
+      <section className="relative overflow-hidden bg-ink py-16 md:py-28">
         <div className="container-x">
           <Reveal variant="clip-up"><p className="eyebrow text-brand-300">Featured project</p></Reveal>
           <Link href={`/work/${featured.slug}/`} className="group mt-8 grid gap-10 lg:grid-cols-12 lg:items-center" data-cursor="view">
             <Reveal variant="mask" className="relative aspect-[3/2] overflow-hidden rounded-[32px] lg:col-span-8">
-              <Parallax speed={0.15} className="absolute inset-[-8%]"><Image src={featured.cover} alt={`${featured.name} cover`} fill sizes="(min-width:1024px) 66vw, 100vw" className="object-cover transition-transform duration-[1.4s] group-hover:scale-105" priority /></Parallax>
+              <Parallax speed={0.15} className="absolute inset-[-8%]"><Image src={featured.cover} alt={`${featured.name} cover`} fill sizes="(min-width:1024px) 66vw, 100vw" className="object-cover transition-transform duration-[1.4s] group-hover:scale-105" /></Parallax>
             </Reveal>
             <div className="lg:col-span-4">
               <p className="font-mono text-xs uppercase tracking-wider text-white/45">{featured.category} · {featured.industry} · {featured.year}</p>
@@ -62,7 +62,7 @@ export default function WorkPage() {
         </div>
       </section>
 
-      <section id="projects" className="surface-light scroll-mt-20 py-20 md:py-28">
+      <section id="projects" className="surface-light scroll-mt-20 py-16 md:py-28">
         <div className="container-x">
           <SectionHeader light num="01" eyebrow="All projects" title="Filter by *what we did.*" />
           <div className="mt-12"><WorkGrid /></div>

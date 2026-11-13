@@ -39,7 +39,7 @@ export function FeaturedProjects({ list = projects }: { list?: Project[] }) {
 
   return (
     <div ref={section} className="relative overflow-hidden lg:h-screen">
-      <div ref={track} className="flex flex-col gap-14 px-[var(--gutter)] lg:h-full lg:w-max lg:flex-row lg:items-center lg:gap-10 lg:pr-[30vw]">
+      <div ref={track} className="flex flex-col gap-8 px-[var(--gutter)] sm:gap-10 lg:h-full lg:w-max lg:flex-row lg:items-center lg:gap-10 lg:pr-[30vw]">
         {list.map((p, i) => (
           <Link key={p.slug} href={`/work/${p.slug}/`} data-cursor="view" className="group relative block w-full shrink-0 lg:w-[min(62vw,980px)]">
             <div className="relative aspect-[3/2] overflow-hidden rounded-[30px] bg-ink-3">
@@ -75,18 +75,28 @@ export function FeaturedProjects({ list = projects }: { list?: Project[] }) {
 export function ProcessTimeline({ stages, light = false }: { stages: { name: string; text: string; items?: string[] }[]; light?: boolean }) {
   const root = useRef<HTMLDivElement>(null);
   const line = useRef<HTMLDivElement>(null);
+  const activeRef = useRef(0);
   const [active, setActive] = useState(0);
   useEffect(() => {
+    const el = root.current;
+    if (!el) return;
+    if (prefersReducedMotion() || window.matchMedia("(max-width: 1023px)").matches) {
+      // Keep the timeline legible and static on touch/reduced-motion views.
+      el.dataset.staticTimeline = "true";
+      if (line.current) line.current.style.transform = "scaleY(1)";
+      return () => { delete el.dataset.staticTimeline; };
+    }
     const { gsap, ScrollTrigger } = registerGsap();
-    const el = root.current!;
     const st = ScrollTrigger.create({
       trigger: el, start: "top 65%", end: "bottom 60%", scrub: true,
       onUpdate: (self) => {
         if (line.current) line.current.style.transform = `scaleY(${self.progress})`;
-        setActive(Math.min(stages.length - 1, Math.floor(self.progress * stages.length * 0.999)));
+        const next = Math.min(stages.length - 1, Math.floor(self.progress * stages.length * 0.999));
+        // ScrollTrigger can fire many times per frame; only re-render when the stage changes.
+        if (next !== activeRef.current) { activeRef.current = next; setActive(next); }
       },
     });
-    const tw = gsap.from(el.querySelectorAll(".pt-card"), { opacity: 0, x: 60, stagger: 0.15, duration: 1, ease: "expo.out", scrollTrigger: { trigger: el, start: "top 80%", once: true } });
+    const tw = gsap.from(el.querySelectorAll(".pt-card"), { opacity: 0, x: 40, stagger: 0.12, duration: 0.75, ease: "expo.out", scrollTrigger: { trigger: el, start: "top 80%", once: true } });
     return () => { st.kill(); tw.scrollTrigger?.kill(); tw.kill(); };
   }, [stages.length]);
   const muted = light ? "text-ink/55" : "text-white/55";
@@ -98,7 +108,7 @@ export function ProcessTimeline({ stages, light = false }: { stages: { name: str
       <ol className="space-y-12 md:space-y-24">
         {stages.map((s, i) => (
           <li key={s.name} className={`relative md:grid md:grid-cols-2 md:gap-20 ${i % 2 ? "" : ""}`}>
-            <span className={`absolute -left-12 top-1 grid h-8 w-8 -translate-x-[-0.25rem] place-items-center rounded-full border font-mono text-[0.7rem] transition-all duration-500 md:left-1/2 md:-translate-x-1/2 ${i <= active ? "scale-110 border-transparent bg-brand-gradient text-white shadow-[0_0_30px_rgba(123,73,158,.7)]" : light ? "border-ink/20 bg-ivory text-ink/50" : "border-white/20 bg-ink text-white/50"}`}>{i + 1}</span>
+            <span className={`timeline-step absolute -left-12 top-1 grid h-8 w-8 place-items-center rounded-full border font-mono text-[0.7rem] transition-all duration-500 md:left-1/2 md:-translate-x-1/2 ${i <= active ? "scale-110 border-transparent bg-brand-gradient text-white shadow-[0_0_30px_rgba(123,73,158,.7)]" : light ? "border-ink/20 bg-ivory text-ink/50" : "border-white/20 bg-ink text-white/50"}`}>{i + 1}</span>
             <div className={`pt-card ${i % 2 ? "md:col-start-2" : "md:col-start-1 md:text-right"}`}>
               <p className={`font-mono text-xs uppercase tracking-widest ${i <= active ? "text-brand-400" : muted}`}>Stage {i + 1} of {stages.length}</p>
               <h3 className="mt-3 display text-4xl md:text-6xl">{s.name}</h3>
@@ -176,7 +186,7 @@ export function Team({ light = false }: { light?: boolean }) {
                 src={member.image}
                 alt={imageAlt}
                 fill
-                sizes="(min-width: 1280px) 18vw, (min-width: 640px) 42vw, 100vw"
+                sizes="(min-width: 1024px) 18vw, (min-width: 640px) 42vw, 100vw"
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.025]"
                 style={{ objectPosition: member.position }}
               />
@@ -205,9 +215,9 @@ export function FAQ({ items, light = false }: { items: { q: string; a: string; t
             <h3>
               <button onClick={() => setOpen(isOpen ? null : i)} aria-expanded={isOpen} aria-controls={`faq-${i}`} id={`faq-q-${i}`}
                 className="group flex w-full items-center justify-between gap-6 py-6 text-left md:py-7">
-                <span className="flex items-baseline gap-4">
+                <span className="flex min-w-0 items-baseline gap-4">
                   {f.topic && <span className={`hidden w-28 shrink-0 font-mono text-xs uppercase tracking-wider md:inline ${light ? "text-ink/40" : "text-white/40"}`}>{f.topic}</span>}
-                  <span className="text-lg font-medium transition-transform duration-500 group-hover:translate-x-1 md:text-xl">{f.q}</span>
+                  <span className="block min-w-0 text-lg font-medium leading-snug transition-transform duration-500 group-hover:translate-x-1 md:text-xl">{f.q}</span>
                 </span>
                 <span className={`grid h-10 w-10 shrink-0 place-items-center rounded-full border transition-all duration-500 ${isOpen ? "rotate-180 border-transparent bg-brand-gradient text-white" : light ? "border-ink/20" : "border-white/20"}`}>
                   {isOpen ? <Minus size={16} /> : <Plus size={16} />}

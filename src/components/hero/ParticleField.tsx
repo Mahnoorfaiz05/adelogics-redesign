@@ -74,11 +74,16 @@ export default function ParticleField({
     const ctx = canvas.getContext("2d"); if (!ctx) return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const mobile = window.innerWidth < 768;
-    const base = shape === "cube" ? 216 : shape === "grid" || shape === "wave" ? 324 : 260;
-    const count = Math.round(base * density * (mobile ? 0.5 : 1));
+    const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    // The previous particle counts plus an O(n²) link pass were expensive on
+    // mid-range phones. Keep the visual depth while using a smaller, capped scene.
+    const base = shape === "cube" ? 150 : shape === "grid" || shape === "wave" ? 180 : 160;
+    const count = Math.max(48, Math.round(base * density * (mobile ? 0.55 : 1)));
+    const drawLinks = links && !mobile;
+    const frameInterval = mobile ? 33 : 22;
     const pts = build(shape, count);
-    const dpr = Math.min(window.devicePixelRatio || 1, 1.75);
-    let w = 0, h = 0, raf = 0, visible = true, t = 0;
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    let w = 0, h = 0, raf = 0, visible = true, t = 0, lastDraw = 0;
     const mouse = { x: 0, y: 0, tx: 0, ty: 0, sx: -9999, sy: -9999 };
     const rgb = hexToRgb(hue);
 
@@ -88,14 +93,17 @@ export default function ParticleField({
     };
     resize();
     const ro = new ResizeObserver(resize); ro.observe(canvas);
-    const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible && !raf) loop(); }, { threshold: 0 });
+    const io = new IntersectionObserver(([e]) => {
+      visible = e.isIntersecting;
+      if (visible && !raf && !reduced) raf = requestAnimationFrame(loop);
+    }, { threshold: 0 });
     io.observe(canvas);
     const onMove = (e: PointerEvent) => {
       const r = canvas.getBoundingClientRect();
       mouse.tx = ((e.clientX - r.left) / r.width - 0.5) * 2; mouse.ty = ((e.clientY - r.top) / r.height - 0.5) * 2;
       mouse.sx = e.clientX - r.left; mouse.sy = e.clientY - r.top;
     };
-    window.addEventListener("pointermove", onMove, { passive: true });
+    if (finePointer) window.addEventListener("pointermove", onMove, { passive: true });
 
     const proj = new Float32Array(pts.length * 3);
     const linkDist = shape === "cube" ? 0.32 : shape === "grid" || shape === "wave" ? 0.2 : shape === "helix" ? 0.36 : 0.3;
@@ -123,7 +131,7 @@ export default function ParticleField({
         if (d2 < 14000) { const k = (1 - d2 / 14000) * 18; const d = Math.sqrt(d2) || 1; sx += (dx / d) * k; sy += (dy / d) * k; }
         proj[i * 3] = sx; proj[i * 3 + 1] = sy; proj[i * 3 + 2] = z2;
       }
-      if (links) {
+      if (drawLinks) {
         ctx!.lineWidth = 0.6;
         const ld2 = linkDist * linkDist;
         for (let i = 0; i < pts.length; i++) {
@@ -148,17 +156,24 @@ export default function ParticleField({
         ctx!.beginPath(); ctx!.arc(proj[i * 3], proj[i * 3 + 1], near ? size * 1.6 : size, 0, Math.PI * 2); ctx!.fill();
       }
     }
-    function loop() {
+    function loop(now: number) {
       if (!visible || document.hidden) { raf = 0; return; }
-      frame(); raf = requestAnimationFrame(loop);
+      if (!lastDraw || now - lastDraw >= frameInterval) {
+        frame();
+        lastDraw = now;
+      }
+      raf = requestAnimationFrame(loop);
     }
-    const onVis = () => { if (!document.hidden && visible && !raf) loop(); };
+    const onVis = () => {
+      if (!document.hidden && visible && !raf && !reduced) raf = requestAnimationFrame(loop);
+    };
     document.addEventListener("visibilitychange", onVis);
-    if (reduced) frame(); else loop();
+    if (reduced) frame(); else raf = requestAnimationFrame(loop);
 
     return () => {
       cancelAnimationFrame(raf); ro.disconnect(); io.disconnect();
-      window.removeEventListener("pointermove", onMove); document.removeEventListener("visibilitychange", onVis);
+      if (finePointer) window.removeEventListener("pointermove", onMove);
+      document.removeEventListener("visibilitychange", onVis);
     };
   }, [shape, density, hue, links, scale, offsetX]);
 

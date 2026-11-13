@@ -44,7 +44,7 @@ export function ServicesShowcase({ list = services, light = false }: { list?: Se
                 <span className={`hidden text-sm leading-relaxed md:block ${light ? "text-ink/60" : "text-white/55"}`}>{svc.short}</span>
                 <span className={`grid h-11 w-11 place-items-center rounded-full border transition-all duration-500 group-hover:rotate-45 group-hover:bg-brand-500 group-hover:text-white ${light ? "border-ink/15" : "border-white/15"}`}><ArrowUpRight size={18} /></span>
               </Link>
-              <button className="absolute right-14 top-1/2 -translate-y-1/2 p-2 text-xs underline opacity-60 md:hidden" onClick={() => setOpen(open === i ? null : i)} aria-expanded={open === i} aria-label={`More about ${svc.name}`}>
+              <button className="absolute right-12 top-1/2 inline-flex h-11 -translate-y-1/2 items-center rounded-full px-3 text-xs underline underline-offset-4 opacity-70 transition-opacity hover:opacity-100 md:hidden" onClick={() => setOpen(open === i ? null : i)} aria-expanded={open === i} aria-label={`${open === i ? "Hide" : "Show"} details for ${svc.name}`}>
                 {open === i ? "Less" : "More"}
               </button>
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-brand-gradient transition-transform duration-700 group-hover:scale-x-100" />

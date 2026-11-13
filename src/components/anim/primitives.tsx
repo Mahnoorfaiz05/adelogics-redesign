@@ -11,7 +11,9 @@ export function SplitHeading({
     const el = ref.current; if (!el) return;
     const { gsap } = registerGsap();
     const words = el.querySelectorAll<HTMLElement>(".split-word");
-    if (prefersReducedMotion()) { gsap.set(words, { yPercent: 0, opacity: 1 }); return; }
+    // On compact touch screens a large number of word-level triggers delays
+    // reading and scrolling. The headings remain fully visible there.
+    if (prefersReducedMotion() || window.matchMedia("(max-width: 767px)").matches) { gsap.set(words, { yPercent: 0, opacity: 1 }); return; }
     gsap.set(words, { yPercent: 115, rotate: 4 });
     let tween: gsap.core.Tween | undefined;
     const run = () => {
@@ -59,7 +61,7 @@ export function Reveal({
     const el = ref.current; if (!el) return;
     const { gsap } = registerGsap();
     const targets = stagger ? el.querySelectorAll<HTMLElement>(":scope > *") : [el];
-    if (prefersReducedMotion()) return;
+    if (prefersReducedMotion() || window.matchMedia("(max-width: 767px)").matches) return;
     const from: gsap.TweenVars = {
       up: { y: 60, opacity: 0 }, fade: { opacity: 0 }, scale: { scale: 0.88, opacity: 0 },
       left: { x: -80, opacity: 0 }, right: { x: 80, opacity: 0 }, blur: { opacity: 0, filter: "blur(14px)", y: 20 },
@@ -135,7 +137,7 @@ export function Tilt({ children, className = "", max = 8, glare = true }: { chil
 export function Parallax({ children, speed = 0.2, className = "" }: { children: ReactNode; speed?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const el = ref.current; if (!el || prefersReducedMotion()) return;
+    const el = ref.current; if (!el || prefersReducedMotion() || window.matchMedia("(max-width: 1023px)").matches) return;
     const { gsap } = registerGsap();
     const tw = gsap.fromTo(el, { yPercent: -speed * 50 }, { yPercent: speed * 50, ease: "none", scrollTrigger: { trigger: el, start: "top bottom", end: "bottom top", scrub: true } });
     return () => { tw.scrollTrigger?.kill(); tw.kill(); };
@@ -149,9 +151,9 @@ export function Counter({ value, suffix = "", className = "" }: { value: number;
   useEffect(() => {
     const el = ref.current; if (!el) return;
     const { gsap } = registerGsap();
-    if (prefersReducedMotion()) { el.textContent = value + suffix; return; }
+    if (prefersReducedMotion() || window.matchMedia("(max-width: 767px)").matches) { el.textContent = value + suffix; return; }
     const obj = { v: 0 };
-    const tw = gsap.to(obj, { v: value, duration: 2, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 90%", once: true }, onUpdate: () => { el.textContent = Math.round(obj.v) + suffix; } });
+    const tw = gsap.to(obj, { v: value, duration: 1.2, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 90%", once: true }, onUpdate: () => { el.textContent = Math.round(obj.v) + suffix; } });
     return () => { tw.scrollTrigger?.kill(); tw.kill(); };
   }, [value, suffix]);
   return <span ref={ref} className={className}>0{suffix}</span>;

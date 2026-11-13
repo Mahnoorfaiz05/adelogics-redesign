@@ -9,8 +9,8 @@ export default function ScrollText({ text, className = "", dim = "rgba(245,244,2
     const el = ref.current; if (!el) return;
     const { gsap } = registerGsap();
     const words = el.querySelectorAll<HTMLElement>("span[data-w]");
-    if (prefersReducedMotion()) { gsap.set(words, { color: bright }); return; }
-    const tw = gsap.fromTo(words, { color: dim }, { color: bright, stagger: 0.1, ease: "none", scrollTrigger: { trigger: el, start: "top 80%", end: "bottom 45%", scrub: true } });
+    if (prefersReducedMotion() || window.matchMedia("(max-width: 767px)").matches) { gsap.set(words, { color: bright }); return; }
+    const tw = gsap.fromTo(words, { color: dim }, { color: bright, stagger: 0.08, ease: "none", scrollTrigger: { trigger: el, start: "top 80%", end: "bottom 45%", scrub: true } });
     return () => { tw.scrollTrigger?.kill(); tw.kill(); };
   }, [dim, bright]);
   return (
