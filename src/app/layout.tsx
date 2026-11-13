@@ -1,13 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
-import "lenis/dist/lenis.css";
 import "./globals.css";
 import { site } from "@/lib/site";
-import SmoothScroll from "@/components/providers/SmoothScroll";
 import Header from "@/components/chrome/Header";
 import Footer from "@/components/chrome/Footer";
-import Cursor from "@/components/chrome/Cursor";
-import Preloader from "@/components/chrome/Preloader";
 import ScrollProgress from "@/components/chrome/ScrollProgress";
 import FloatingActions from "@/components/chrome/FloatingActions";
 import Consent from "@/components/chrome/Consent";
@@ -44,15 +40,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: `try{if(sessionStorage.getItem('adx-seen'))document.documentElement.dataset.seen='1'}catch(e){}` }} />
-        <style>{`html[data-seen="1"] .preloader{display:none!important}`}</style>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }} />
       </head>
       <body>
-        <Preloader />
-        <SmoothScroll />
         <ScrollProgress />
-        <Cursor />
         <Header />
         <main id="main">{children}</main>
         <Footer />

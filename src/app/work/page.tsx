@@ -5,10 +5,11 @@ import { ArrowUpRight } from "lucide-react";
 import PageHero from "@/components/sections/PageHero";
 import { Reveal, Marquee, Parallax } from "@/components/anim/primitives";
 import { Button } from "@/components/ui/Button";
-import { SectionHeader, FinalCTA } from "@/components/sections/blocks";
+import { SectionHeader } from "@/components/sections/blocks";
 import { WorkGrid } from "@/components/sections/interactive-b";
 import { projects, getProject } from "@/data/projects";
 import { getService } from "@/data/services";
+import FinalCTA from "@/components/sections/FinalCTA";
 
 export const metadata: Metadata = {
   title: "Our Work: Case Studies",
@@ -43,7 +44,7 @@ export default function WorkPage() {
       </div>
 
       {/* Featured project */}
-      <section className="relative overflow-hidden bg-ink py-16 md:py-28">
+      <section className="relative overflow-hidden bg-ink section-space">
         <div className="container-x">
           <Reveal variant="clip-up"><p className="eyebrow text-brand-300">Featured project</p></Reveal>
           <Link href={`/work/${featured.slug}/`} className="group mt-8 grid gap-10 lg:grid-cols-12 lg:items-center" data-cursor="view">
@@ -62,7 +63,7 @@ export default function WorkPage() {
         </div>
       </section>
 
-      <section id="projects" className="surface-light scroll-mt-20 py-16 md:py-28">
+      <section id="projects" className="surface-light scroll-mt-20 section-space">
         <div className="container-x">
           <SectionHeader light num="01" eyebrow="All projects" title="Filter by *what we did.*" />
           <div className="mt-12"><WorkGrid /></div>

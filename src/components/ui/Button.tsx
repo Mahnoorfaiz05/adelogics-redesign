@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { Magnetic } from "@/components/anim/primitives";
 
 type Props = { href: string; children: ReactNode; variant?: "primary" | "ghost" | "light" | "dark"; external?: boolean; className?: string; icon?: ReactNode; magnetic?: boolean };
 
@@ -31,7 +30,10 @@ export function Button({ href, children, variant = "primary", external, classNam
   ) : (
     <Link href={href} className={cls}>{inner}</Link>
   );
-  return magnetic ? <Magnetic strength={0.25}>{el}</Magnetic> : el;
+  // Keep the public prop for existing callers, but use a CSS-only control.
+  // Pulling a pointer-tracking GSAP boundary into every CTA delayed page hydration.
+  void magnetic;
+  return el;
 }
 
 export function Eyebrow({ children, className = "", num }: { children: ReactNode; className?: string; num?: string }) {

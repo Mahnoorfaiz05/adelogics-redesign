@@ -105,9 +105,9 @@ export function ProcessTimeline({ stages, light = false }: { stages: { name: str
       <div className={`absolute bottom-0 left-4 top-0 w-px md:left-1/2 ${light ? "bg-ink/10" : "bg-white/10"}`}>
         <div ref={line} className="h-full w-full origin-top scale-y-0 bg-gradient-to-b from-brand-300 via-brand-400 to-steel" />
       </div>
-      <ol className="space-y-12 md:space-y-24">
+      <ol className="space-y-10 md:space-y-16">
         {stages.map((s, i) => (
-          <li key={s.name} className={`relative md:grid md:grid-cols-2 md:gap-20 ${i % 2 ? "" : ""}`}>
+          <li key={s.name} className="relative md:grid md:grid-cols-2 md:gap-12">
             <span className={`timeline-step absolute -left-12 top-1 grid h-8 w-8 place-items-center rounded-full border font-mono text-[0.7rem] transition-all duration-500 md:left-1/2 md:-translate-x-1/2 ${i <= active ? "scale-110 border-transparent bg-brand-gradient text-white shadow-[0_0_30px_rgba(123,73,158,.7)]" : light ? "border-ink/20 bg-ivory text-ink/50" : "border-white/20 bg-ink text-white/50"}`}>{i + 1}</span>
             <div className={`pt-card ${i % 2 ? "md:col-start-2" : "md:col-start-1 md:text-right"}`}>
               <p className={`font-mono text-xs uppercase tracking-widest ${i <= active ? "text-brand-400" : muted}`}>Stage {i + 1} of {stages.length}</p>
@@ -257,7 +257,7 @@ export function WorkGrid() {
         <AnimatePresence mode="popLayout">
           {list.map((p, i) => (
             <motion.div key={p.slug} layout initial={{ opacity: 0, y: 40, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, scale: 0.94 }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.04 }}
-              className={i % 2 === 1 ? "md:mt-16" : ""}>
+              className={i % 2 === 1 ? "md:mt-8" : ""}>
               <ProjectCard p={p} index={projects.indexOf(p)} />
             </motion.div>
           ))}
