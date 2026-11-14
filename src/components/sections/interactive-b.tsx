@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Minus, Plus, Quote, UserRound } from "lucide-react";
 import { projects, type Project } from "@/data/projects";
 import { getService } from "@/data/services";
@@ -130,6 +130,7 @@ export function ProcessTimeline({ stages, light = false }: { stages: { name: str
 export function Testimonials() {
   const [i, setI] = useState(0);
   const [dir, setDir] = useState(1);
+  const reduceMotion = useReducedMotion();
   const t = testimonials[i];
   const go = (d: number) => { setDir(d); setI((x) => (x + d + testimonials.length) % testimonials.length); };
   return (
@@ -143,7 +144,7 @@ export function Testimonials() {
             </p>
           )}
           <AnimatePresence mode="wait" custom={dir}>
-            <motion.div key={i} custom={dir} initial={{ opacity: 0, x: dir * 60 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: dir * -60 }} transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}>
+            <motion.div key={i} custom={dir} initial={reduceMotion ? false : { opacity: 0, x: dir * 60 }} animate={{ opacity: 1, x: 0 }} exit={reduceMotion ? { opacity: 1 } : { opacity: 0, x: dir * -60 }} transition={reduceMotion ? { duration: 0 } : { duration: 0.55, ease: [0.16, 1, 0.3, 1] }}>
               <blockquote className="display text-2xl leading-snug text-ink md:text-3xl">“{t.feedback}”</blockquote>
               <div className="mt-8 flex items-center gap-4">
                 <span className="grid h-14 w-14 place-items-center rounded-full bg-paper text-ink/40">{t.image ? <Image src={t.image} alt={t.name} width={56} height={56} className="rounded-full" /> : <UserRound />}</span>
@@ -158,7 +159,7 @@ export function Testimonials() {
         </div>
       </div>
       <div className="flex flex-col justify-between gap-8 lg:col-span-4">
-        <div className="space-y-3 text-ink/60"><p className="font-mono text-[0.7rem] uppercase tracking-wider text-amber-700">Unverified placeholders</p><p>No client testimonial has been published yet. These cards use sample content only; they are not genuine customer feedback and no client identity is implied.</p><p>Verified quotes will replace them once written permission is received.</p></div>
+        <div className="space-y-3 text-ink/60"><p className="font-mono text-[0.7rem] uppercase tracking-wider text-amber-700">Illustrative demo content</p><p>The names and statements in these cards are fictional samples for the interface only. They are not customer feedback, endorsements, company affiliations, or project claims.</p><p>Verified client quotes will replace them only after written permission is received.</p></div>
         <div className="flex items-center gap-3">
           <button onClick={() => go(-1)} aria-label="Previous testimonial" className="grid h-14 w-14 place-items-center rounded-full border border-ink/20 text-ink transition-colors hover:bg-ink hover:text-ivory"><ArrowLeft size={18} /></button>
           <button onClick={() => go(1)} aria-label="Next testimonial" className="grid h-14 w-14 place-items-center rounded-full border border-ink/20 text-ink transition-colors hover:bg-ink hover:text-ivory"><ArrowRight size={18} /></button>
@@ -175,8 +176,9 @@ export function Team({ light = false }: { light?: boolean }) {
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
       {team.map((member, index) => {
-        const imageAlt = member.name === "Name not published"
-          ? "Adelogix CEO and Founder"
+        const isFounder = member.role === "CEO & Founder";
+        const imageAlt = isFounder
+          ? "Muhammad Noman, CEO and Founder of Adelogix"
           : `${member.name}, ${member.role} at Adelogix`;
         return (
           <Reveal as="article" key={`${member.name}-${index}`} variant="up" delay={index * 0.06}
