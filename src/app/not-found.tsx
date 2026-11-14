@@ -5,7 +5,7 @@ import { services } from "@/data/services";
 
 export default function NotFound() {
   return (
-    <section className="noise relative isolate flex min-h-[100svh] items-center overflow-hidden bg-ink pt-28">
+    <section className="noise relative isolate flex min-h-[calc(100svh-var(--header-h))] items-start overflow-hidden bg-ink px-0 py-12 sm:py-16 lg:items-center lg:py-0">
       <div className="absolute inset-0 -z-10 opacity-80"><ParticleCanvas shape="galaxy" hue="#b9a6ff" density={0.65} links={false} /></div>
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,transparent,#0d0b13_75%)]" />
       <div className="container-x text-center">

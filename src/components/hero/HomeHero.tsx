@@ -61,7 +61,7 @@ export default function HomeHero() {
   }, []);
 
   return (
-    <section ref={root} className="noise relative isolate flex min-h-[calc(100svh-var(--header-h))] flex-col justify-end overflow-hidden bg-ink pt-16 sm:pt-20 md:pt-24">
+    <section ref={root} className="noise relative isolate flex min-h-[calc(100svh-var(--header-h))] flex-col justify-start overflow-hidden bg-ink pb-12 pt-8 sm:pt-12 lg:justify-end lg:pb-0 lg:pt-24">
       <div className="absolute inset-0 -z-20 grid-lines" />
       <div className="orb -left-40 top-1/4 -z-10 h-[520px] w-[520px] bg-brand-700/60" />
       <div className="orb right-[-10%] top-[-10%] -z-10 h-[600px] w-[600px] bg-brand-400/25" />

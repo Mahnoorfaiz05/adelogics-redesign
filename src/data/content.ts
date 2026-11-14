@@ -38,23 +38,26 @@ export const collaboration = [
   { title: "Agreed support", text: "Clear terms for what happens after launch, written into the proposal." },
 ];
 
-// SAMPLE PLACEHOLDERS — NOT GENUINE CUSTOMER FEEDBACK.
-// Replace with verified testimonials (with client permission) and set verified: true.
+// SAMPLE TESTIMONIALS — NOT GENUINE CUSTOMER FEEDBACK.
+// These are illustrative layout copy only. Replace them with verified testimonials
+// after written permission is received; do not associate them with a company,
+// photograph, rating, project, or outcome.
 export const testimonials = [
-  { verified: false, name: "Client Name", company: "Company Name", country: "Country", project: "Project / Service", feedback: "Placeholder feedback. Replace this text with a verified quote from a client, shared with their written permission.", image: "" },
-  { verified: false, name: "Client Name", company: "Company Name", country: "Country", project: "Project / Service", feedback: "Placeholder feedback. Describe what it was like to work with Adelogix, in the client's own words, once approved.", image: "" },
-  { verified: false, name: "Client Name", company: "Company Name", country: "Country", project: "Project / Service", feedback: "Placeholder feedback. Keep testimonials specific and honest — what was built, how communication felt, what happened after launch.", image: "" },
+  { verified: false, name: "Daniel Carter", company: "Illustrative sample", country: "No client affiliation", project: "Demo testimonial", feedback: "We had a great experience working with the Adelogix team. Their approach to development, communication, and attention to detail made the entire process smooth.", image: "" },
+  { verified: false, name: "Sophia Bennett", company: "Illustrative sample", country: "No client affiliation", project: "Demo testimonial", feedback: "Adelogix helped us turn our ideas into a professional digital experience. The team was responsive, creative, and focused on delivering quality.", image: "" },
+  { verified: false, name: "James Mitchell", company: "Illustrative sample", country: "No client affiliation", project: "Demo testimonial", feedback: "The team demonstrated strong technical understanding and a professional approach throughout the project. We appreciated their attention to the overall user experience.", image: "" },
+  { verified: false, name: "Olivia Anderson", company: "Illustrative sample", country: "No client affiliation", project: "Demo testimonial", feedback: "Working with Adelogix was a positive experience. Their development approach and commitment to quality made the collaboration straightforward.", image: "" },
 ];
 
-// Original team artwork supplied in the repository. Names and roles below are
-// used only where they are printed on the source artwork. The source portrait
-// below is the original CEO & Founder photograph; no personal name was supplied.
+// Original leadership portrait supplied in src/team images/. The name and title
+// below are confirmed by Adelogix. The portrait is copied without alteration to
+// public/images/team/ for production delivery and Next.js optimization.
 export const founder = {
   confirmed: true,
   role: "CEO & Founder",
-  name: "Name not published",
-  bio: "Original Adelogix leadership portrait; the supplied material confirms the CEO & Founder designation but does not publish a name.",
-  image: "/images/team/team-member-01.jpeg",
+  name: "MUHAMMAD NOMAN",
+  bio: "CEO & Founder of Adelogix Software Technology.",
+  image: "/images/team/muhammad-noman.jpeg",
   position: "50% 28%",
 };
 

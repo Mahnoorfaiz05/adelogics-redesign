@@ -99,14 +99,14 @@ export default function AboutPage() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] bg-ink shadow-[0_20px_50px_rgba(13,11,19,.14)] md:rounded-[32px]">
               <Image
                 src={founder.image}
-                alt="Adelogix CEO and Founder"
+                alt="Muhammad Noman, CEO and Founder of Adelogix"
                 fill
                 sizes="(min-width: 1024px) 38vw, (min-width: 640px) 60vw, 100vw"
                 className="object-cover"
                 style={{ objectPosition: founder.position }}
               />
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/45 to-transparent" />
-              <span className="absolute left-4 top-4 rounded-full bg-ink/80 px-3 py-1.5 font-mono text-[0.65rem] uppercase tracking-wider text-white backdrop-blur-sm">Original leadership portrait</span>
+              <span className="absolute left-4 top-4 rounded-full bg-ink/80 px-3 py-1.5 font-mono text-[0.65rem] uppercase tracking-wider text-white backdrop-blur-sm">CEO &amp; Founder</span>
             </div>
           </Reveal>
           <div className="lg:col-span-6 lg:col-start-7">
@@ -115,8 +115,7 @@ export default function AboutPage() {
             <Reveal variant="blur" delay={0.2}>
               <p className="mt-7 eyebrow text-brand-600">{founder.role}</p>
               <p className="mt-3 display text-2xl text-ink">{founder.name}</p>
-              <p className="lead mt-7 text-ink/70">Adelogix Software Technology is led by its CEO &amp; Founder. The supplied material confirms the role and original portrait; a personal name and biography have not been published for this website.</p>
-              <p className="mt-5 text-sm leading-relaxed text-ink/55">The team works with clients from discovery through launch and ongoing support, with clear scope, practical decisions and regular communication.</p>
+              <p className="lead mt-7 text-ink/70">{founder.bio} He leads a team that takes clients from discovery through launch and ongoing support, with clear scope, practical decisions and regular communication.</p>
             </Reveal>
           </div>
         </div>

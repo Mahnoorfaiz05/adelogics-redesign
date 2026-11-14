@@ -101,7 +101,7 @@ export default function HomePage() {
       {/* 09 Testimonials */}
       <section className="surface-light relative section-space">
         <div className="container-x">
-          <SectionHeader light num="09" eyebrow="Sample testimonials" title="Reviews, *once approved.*" intro="Nothing below is a real client quote yet. These placeholders show the layout we will use once clients approve their words — until then, the case studies show what we have built." />
+          <SectionHeader light num="09" eyebrow="Sample testimonials" title="Reviews, *once approved.*" intro="The names and quotes below are fictional demonstration content for this layout only — not real customer feedback or endorsements. Authentic client reviews will replace them once written approval is received." />
           <div className="mt-14"><Testimonials /></div>
         </div>
       </section>

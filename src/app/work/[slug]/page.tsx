@@ -40,7 +40,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   return (
     <>
       {/* Project-specific hero */}
-      <section className="noise relative isolate overflow-hidden bg-ink pb-10 pt-22 sm:pt-24 md:pb-16 md:pt-28">
+      <section className="noise relative isolate overflow-hidden bg-ink pb-12 pt-8 sm:pb-14 sm:pt-12 md:pb-16 md:pt-28">
         <div className="absolute inset-0 -z-10" style={{ background: `radial-gradient(ellipse at 70% 20%, ${p.color}66, transparent 60%)` }} />
         <div className="absolute inset-0 -z-10 opacity-60"><ParticleCanvas shape="wave" hue="#cfc3ee" density={0.8} links={false} /></div>
         <div className="container-x">
