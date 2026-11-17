@@ -46,7 +46,7 @@ export default function Footer() {
 
         <div className="grid grid-cols-1 gap-10 py-12 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 md:grid-cols-12 md:py-16">
           <div className="sm:col-span-2 md:col-span-4">
-            <span className="inline-flex rounded-xl bg-ivory p-2.5"><Image src="/images/brand/adelogix-logo-original.png" alt="Adelogix" width={234} height={51} className="h-8 w-auto" /></span>
+            <span className="inline-flex rounded-xl bg-ivory p-2 sm:p-2.5"><Image src="/images/brand/adelogix-logo-original.png" alt="Adelogix" width={234} height={51} sizes="(min-width: 640px) 147px, 110px" className="h-6 w-auto sm:h-8" /></span>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/60 sm:mt-6">
               {site.legalName} designs, builds and supports web platforms, mobile apps and custom business software for startups, growing companies and established teams.
             </p>

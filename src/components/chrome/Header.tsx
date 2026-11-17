@@ -81,8 +81,10 @@ export default function Header() {
         onMouseLeave={closeMega}
       >
         <div className="mx-auto flex min-h-[var(--header-h)] max-w-[1440px] items-center justify-between gap-4 px-4 py-2.5 sm:mx-4 md:px-6 xl:mx-auto">
-          <Link href="/" className="relative z-10 flex shrink-0 items-center" aria-label="Adelogix home">
-            <span className="rounded-lg bg-ivory px-2 py-1"><Image src="/images/brand/adelogix-logo-original.png" alt="Adelogix" width={234} height={51} className="h-6 w-auto md:h-7" priority /></span>
+          <Link href="/" className="relative z-10 flex h-11 shrink-0 items-center" aria-label="Adelogix home">
+            <span className="flex h-10 items-center rounded-lg bg-ivory px-2.5 ring-1 ring-ink/5 sm:h-11 sm:px-3">
+              <Image src="/images/brand/adelogix-logo-original.png" alt="Adelogix" width={234} height={51} sizes="(min-width: 1024px) 128px, (min-width: 640px) 110px, 100px" className="h-[1.35rem] w-auto sm:h-6 lg:h-7" priority />
+            </span>
           </Link>
 
           <nav aria-label="Primary" className="hidden lg:block">
