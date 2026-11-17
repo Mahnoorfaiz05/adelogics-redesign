@@ -172,10 +172,11 @@ export function Testimonials() {
 }
 
 /* ───────── Team (original supplied team photographs) ───────── */
-export function Team({ light = false }: { light?: boolean }) {
+export function Team({ light = false, excludeFounder = false }: { light?: boolean; excludeFounder?: boolean }) {
+  const members = excludeFounder ? team.filter((member) => member.role !== "CEO & Founder") : team;
   return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-      {team.map((member, index) => {
+    <div className={`grid gap-4 sm:grid-cols-2 ${excludeFounder ? "lg:grid-cols-4" : "lg:grid-cols-5"}`}>
+      {members.map((member, index) => {
         const isFounder = member.role === "CEO & Founder";
         const imageAlt = isFounder
           ? "Muhammad Noman, CEO and Founder of Adelogix"

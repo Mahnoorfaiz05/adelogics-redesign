@@ -125,7 +125,7 @@ export default function AboutPage() {
       <section className="bg-ink section-space">
         <div className="container-x">
           <SectionHeader num="06" eyebrow="Team" title="Roles that carry your project from *idea to release.*" />
-          <div className="mt-14"><Team /></div>
+          <div className="mt-14"><Team excludeFounder /></div>
         </div>
       </section>
 
