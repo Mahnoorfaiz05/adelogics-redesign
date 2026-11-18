@@ -105,7 +105,7 @@ export function ProcessTimeline({ stages, light = false }: { stages: { name: str
       <div className={`absolute bottom-0 left-3.5 top-0 w-px md:left-1/2 ${light ? "bg-ink/10" : "bg-white/10"}`}>
         <div ref={line} className="h-full w-full origin-top scale-y-0 bg-gradient-to-b from-brand-300 via-brand-400 to-steel" />
       </div>
-      <ol className="space-y-7 md:space-y-10">
+      <ul className="space-y-7 md:space-y-10">
         {stages.map((s, i) => (
           <li key={s.name} className="relative md:grid md:grid-cols-2 md:gap-10">
             <span aria-hidden="true" className={`absolute -left-10 top-2 h-4 w-4 rounded-full border transition-all duration-500 md:left-1/2 md:-translate-x-1/2 ${i <= active ? "scale-110 border-transparent bg-brand-gradient shadow-[0_0_30px_rgba(123,73,158,.7)]" : light ? "border-ink/20 bg-ivory" : "border-white/20 bg-ink"}`} />
@@ -120,7 +120,7 @@ export function ProcessTimeline({ stages, light = false }: { stages: { name: str
             </div>
           </li>
         ))}
-      </ol>
+      </ul>
     </div>
   );
 }

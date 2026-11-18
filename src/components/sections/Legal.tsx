@@ -13,9 +13,9 @@ export default function Legal({ title, intro, updated, sections }: { title: stri
               <p className="eyebrow text-ink/50">Last updated</p>
               <p className="mt-2 font-medium">{updated}</p>
               <nav aria-label="On this page" className="mt-8 hidden lg:block">
-                <ol className="space-y-2 text-sm text-ink/60">
+                <ul className="space-y-2 text-sm text-ink/60">
                   {sections.map((s, i) => <li key={s.h}><a href={`#s-${i}`} className="link-u hover:text-ink">{s.h}</a></li>)}
-                </ol>
+                </ul>
               </nav>
             </div>
           </aside>
