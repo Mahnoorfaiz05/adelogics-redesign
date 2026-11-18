@@ -2,30 +2,28 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { SplitHeading, Reveal, Counter, Tilt } from "@/components/anim/primitives";
-import { Eyebrow } from "@/components/ui/Button";
 import { LIcon } from "@/components/ui/Icons";
 import { industries, highlights, strengths } from "@/data/content";
 import { getService } from "@/data/services";
 import type { Project } from "@/data/projects";
 
-export function SectionHeader({ num, eyebrow, title, intro, light, className = "", action }: { num?: string; eyebrow: string; title: string; intro?: string; light?: boolean; className?: string; action?: React.ReactNode }) {
+export function SectionHeader({ title, intro, light, className = "", action }: { title: string; intro?: string; light?: boolean; className?: string; action?: React.ReactNode }) {
   return (
-    <div className={`grid gap-8 md:grid-cols-12 md:items-end ${className}`}>
+    <div className={`grid gap-7 md:grid-cols-12 md:items-end ${className}`}>
       <div className="md:col-span-8">
-        <Reveal variant="clip-up"><Eyebrow num={num} className={light ? "text-ink/60" : "text-white/60"}>{eyebrow}</Eyebrow></Reveal>
-        <SplitHeading text={title} className="mt-6 display h-md text-balance" accentClass={light ? "serif-i text-brand-500" : "serif-i text-gradient"} />
+        <SplitHeading text={title} className="display h-md text-balance" accentClass={light ? "serif-i text-brand-500" : "serif-i text-gradient"} />
       </div>
       {(intro || action) && (
         <Reveal variant="blur" delay={0.2} className="md:col-span-4">
           {intro && <p className={`leading-relaxed ${light ? "text-ink/65" : "text-white/60"}`}>{intro}</p>}
-          {action && <div className="mt-6">{action}</div>}
+          {action && <div className="mt-5">{action}</div>}
         </Reveal>
       )}
     </div>
   );
 }
 
-export function ProjectCard({ p, size = "md", index }: { p: Project; size?: "md" | "lg"; index?: number }) {
+export function ProjectCard({ p, size = "md" }: { p: Project; size?: "md" | "lg" }) {
   return (
     <Link href={`/work/${p.slug}/`} className="group block" data-cursor="view" aria-label={`${p.name} case study`}>
       <Tilt max={5} className="overflow-hidden rounded-[28px]">
@@ -39,7 +37,7 @@ export function ProjectCard({ p, size = "md", index }: { p: Project; size?: "md"
       </Tilt>
       <div className="mt-5 flex items-start justify-between gap-4">
         <div>
-          <p className="font-mono text-xs uppercase tracking-wider text-current opacity-50">{index !== undefined && `${String(index + 1).padStart(2, "0")} · `}{p.category} · {p.year}</p>
+          <p className="font-mono text-xs uppercase tracking-wider text-current opacity-50">{p.category} · {p.year}</p>
           <h3 className="mt-2 display text-2xl md:text-3xl">{p.name}</h3>
           <p className="mt-2 max-w-md text-sm opacity-60">{p.tagline}</p>
         </div>
@@ -50,16 +48,15 @@ export function ProjectCard({ p, size = "md", index }: { p: Project; size?: "md"
 }
 
 /* Industries — expanding panels on desktop, stacked tiles on mobile */
-export function Industries({ num = "07", light = true }: { num?: string; light?: boolean }) {
+export function Industries({ light = true }: { light?: boolean }) {
   return (
     <section className={`${light ? "surface-light" : "bg-ink"} relative section-space`}>
       <div className="container-x">
-        <SectionHeader light={light} num={num} eyebrow="Industries we serve" title="Sectors with their own *rules* and pressures." intro="Each sector has its own users, rules and pressures. These are the industries we design and develop for, with the services that most often apply." />
+        <SectionHeader light={light} title="Sectors with their own *rules* and pressures." intro="Each sector has its own users, rules and pressures. These are the industries we design and develop for, with the services that most often apply." />
         <Reveal stagger={0.07} variant="up" className="mt-12 flex flex-col gap-3 lg:h-[440px] lg:flex-row">
-          {industries.map((ind, i) => (
+          {industries.map((ind) => (
             <div key={ind.name} tabIndex={0} className={`group relative flex min-h-[150px] flex-col justify-between overflow-hidden rounded-[26px] p-6 outline-none transition-[flex-grow,background] duration-700 ease-[cubic-bezier(.16,1,.3,1)] lg:flex-1 lg:hover:flex-[3.2] lg:focus-within:flex-[3.2] ${light ? "bg-paper hover:bg-ink hover:text-ivory focus:bg-ink focus:text-ivory" : "bg-ink-3 hover:bg-brand-700"}`}>
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-xs opacity-50">0{i + 1}</span>
+              <div className="flex justify-end">
                 <span className="grid h-12 w-12 place-items-center rounded-2xl border border-current/15 transition-transform duration-700 group-hover:rotate-[-12deg] group-hover:scale-110"><LIcon name={ind.icon} /></span>
               </div>
               <div className="pointer-events-none absolute -bottom-10 -right-10 h-48 w-48 rounded-full bg-brand-400/0 blur-3xl transition-colors duration-700 group-hover:bg-brand-400/50" />
@@ -88,13 +85,13 @@ export function Industries({ num = "07", light = true }: { num?: string; light?:
 }
 
 /* Highlights — verified facts only */
-export function Highlights({ num = "08" }: { num?: string }) {
+export function Highlights() {
   return (
     <section className="relative overflow-hidden bg-ink section-space">
       <div className="orb left-1/3 top-0 h-[400px] w-[400px] bg-brand-600/30" />
       <div className="container-x relative">
-        <SectionHeader num={num} eyebrow="Company highlights" title="Why teams choose to *work with us.*" intro="Most software projects that struggle do so because of unclear scope, poor communication or the wrong technology. These are the habits we use to avoid all three." />
-        <div className="mt-16 grid grid-cols-2 border-l border-t border-white/10 lg:grid-cols-4">
+        <SectionHeader title="Why teams choose to *work with us.*" intro="Most software projects that struggle do so because of unclear scope, poor communication or the wrong technology. These are the habits we use to avoid all three." />
+        <div className="mt-14 grid grid-cols-2 border-l border-t border-white/10 lg:grid-cols-4">
           {highlights.map((h) => (
             <Reveal key={h.label} variant="fade" className="group relative overflow-hidden border-b border-r border-white/10 p-6 md:p-10">
               <div className="absolute inset-x-0 bottom-0 h-0 bg-brand-gradient transition-all duration-700 group-hover:h-1" />
@@ -103,11 +100,10 @@ export function Highlights({ num = "08" }: { num?: string }) {
             </Reveal>
           ))}
         </div>
-        <div className="mt-16 grid gap-px overflow-hidden rounded-[28px] bg-white/10 md:grid-cols-5">
+        <div className="mt-14 grid gap-px overflow-hidden rounded-[28px] bg-white/10 md:grid-cols-5">
           {strengths.map((s, i) => (
             <Reveal key={s.title} variant="up" delay={i * 0.08} className="group bg-ink-2 p-7 transition-colors duration-500 hover:bg-ink-3">
-              <span className="font-mono text-xs text-brand-300">0{i + 1}</span>
-              <h3 className="mt-6 text-lg font-medium">{s.title}</h3>
+              <h3 className="font-medium">{s.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-white/55">{s.text}</p>
             </Reveal>
           ))}

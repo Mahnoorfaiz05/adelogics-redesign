@@ -61,7 +61,7 @@ export default function HomeHero() {
   }, []);
 
   return (
-    <section ref={root} className="noise relative isolate flex min-h-[calc(100svh-var(--header-h))] flex-col justify-start overflow-hidden bg-ink pb-12 pt-8 sm:pt-12 lg:justify-end lg:pb-0 lg:pt-24">
+    <section ref={root} className="noise relative isolate flex min-h-[560px] flex-col justify-center overflow-hidden bg-ink py-14 sm:min-h-[620px] sm:py-16 lg:min-h-[min(76svh,760px)] lg:py-20">
       <div className="absolute inset-0 -z-20 grid-lines" />
       <div className="orb -left-40 top-1/4 -z-10 h-[520px] w-[520px] bg-brand-700/60" />
       <div className="orb right-[-10%] top-[-10%] -z-10 h-[600px] w-[600px] bg-brand-400/25" />
@@ -88,12 +88,8 @@ export default function HomeHero() {
         </div>
       </div>
 
-      <div ref={content} className="container-x relative pb-8 sm:pb-10 md:pb-14">
-        <p className="hh-fade eyebrow inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.04] px-4 py-2 text-brand-200 backdrop-blur">
-          <span className="inline-flex h-2 w-2 rounded-full bg-brand-300" />
-          Software development partner
-        </p>
-        <SplitHeading as="h1" immediate delay={0.3} stagger={0.07} text="Software built around how your *business* really works." className="mt-8 max-w-[15ch] display h-xl" />
+      <div ref={content} className="container-x relative">
+        <SplitHeading as="h1" immediate delay={0.3} stagger={0.07} text="Software built around how your *business* really works." className="max-w-[15ch] display h-xl" />
         <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-6">
             <p className="hh-fade lead max-w-xl text-white/65">
@@ -111,13 +107,6 @@ export default function HomeHero() {
               </li>
             ))}
           </ul>
-        </div>
-        <div className="mt-9 flex items-center justify-between border-t border-white/10 pt-5 text-xs text-white/45 sm:mt-12 sm:pt-6">
-          <span className="hh-fade flex items-center gap-3">
-            <span className="relative h-9 w-5 rounded-full border border-white/25"><span className="absolute left-1/2 top-1.5 h-1.5 w-1 -translate-x-1/2 rounded-full bg-white/70" style={{ animation: "scroll-dot 1.8s ease-in-out infinite" }} /></span>
-            Scroll to explore
-          </span>
-          <span className="hh-fade hidden font-mono sm:block">Design to deployment · Web, iOS &amp; Android · Support after launch</span>
         </div>
       </div>
     </section>

@@ -20,8 +20,7 @@ export function ServiceDirectory({ services, light = false }: { services: Servic
     <ul className={`border-t ${border}`}>
       {services.map((service) => (
         <li key={service.slug} className={`border-b ${border}`}>
-          <Link href={`/services/${service.slug}/`} className="group grid grid-cols-[auto_1fr_auto] items-center gap-3 py-5 sm:gap-5 md:grid-cols-[72px_minmax(0,1fr)_minmax(13rem,0.8fr)_auto] md:py-6">
-            <span className={`font-mono text-xs ${light ? "text-ink/45" : "text-white/45"}`}>{service.num}</span>
+          <Link href={`/services/${service.slug}/`} className="group grid grid-cols-[1fr_auto] items-center gap-3 py-5 sm:gap-5 md:grid-cols-[minmax(0,1fr)_minmax(13rem,0.8fr)_auto] md:py-6">
             <span className="flex min-w-0 items-center gap-3">
               <span className={`hidden h-10 w-10 shrink-0 place-items-center rounded-xl border sm:grid ${light ? "border-ink/15 text-brand-600" : "border-white/10 text-brand-200"}`}><LIcon name={service.icon} size={18} /></span>
               <span className="display text-[clamp(1.3rem,1rem+1.5vw,2.25rem)] leading-none transition-transform duration-300 group-hover:translate-x-1">{service.name}</span>
@@ -40,20 +39,19 @@ export function ProcessSteps({ stages, light = false }: { stages: { name: string
   const muted = light ? "text-ink/65" : "text-white/60";
   const border = light ? "border-ink/15" : "border-white/10";
   return (
-    <ol className={`grid gap-px overflow-hidden rounded-[26px] border ${border} ${light ? "bg-ink/10" : "bg-white/10"} md:grid-cols-2`}>
-      {stages.map((stage, index) => (
-        <li key={stage.name} className={`min-w-0 p-6 sm:p-7 ${light ? "bg-ivory" : "bg-ink-2"}`}>
-          <p className="font-mono text-xs uppercase tracking-widest text-brand-400">Stage {String(index + 1).padStart(2, "0")}</p>
-          <h3 className="mt-3 display text-3xl md:text-4xl">{stage.name}</h3>
-          <p className={`mt-4 max-w-xl leading-relaxed ${muted}`}>{stage.text}</p>
+    <div className={`grid gap-px overflow-hidden rounded-[26px] border ${border} ${light ? "bg-ink/10" : "bg-white/10"} md:grid-cols-2`}>
+      {stages.map((stage) => (
+        <article key={stage.name} className={`min-w-0 p-5 sm:p-6 ${light ? "bg-ivory" : "bg-ink-2"}`}>
+          <h3 className="display text-3xl md:text-4xl">{stage.name}</h3>
+          <p className={`mt-3 max-w-xl leading-relaxed ${muted}`}>{stage.text}</p>
           {stage.items && (
-            <ul className="mt-5 flex flex-wrap gap-2">
+            <ul className="mt-4 flex flex-wrap gap-2">
               {stage.items.map((item) => <li key={item} className={`rounded-full border px-3 py-1.5 text-xs ${border}`}>{item}</li>)}
             </ul>
           )}
-        </li>
+        </article>
       ))}
-    </ol>
+    </div>
   );
 }
 
@@ -89,9 +87,8 @@ export function TechnologyGrid({ categories, service }: { categories: TechCatego
 
   const cards = service ? tools : categories.map((category) => ({
     name: category.name,
-    mono: String(category.items.length),
     category: category.blurb,
-    icon: undefined,
+    lucide: category.lucide,
     isCategory: true,
   }));
 
@@ -100,7 +97,7 @@ export function TechnologyGrid({ categories, service }: { categories: TechCatego
       {cards.map((item) => (
         <div key={item.name} className="rounded-[20px] border border-white/10 bg-ink p-4 sm:p-5">
           <span className="grid h-10 w-10 place-items-center rounded-xl bg-white/[0.05] text-white">
-            {"isCategory" in item ? <span className="font-mono text-xs">{item.mono}</span> : <TechMark icon={item.icon} mono={item.mono} size={20} />}
+            {"isCategory" in item ? <LIcon name={item.lucide} size={20} /> : <TechMark icon={item.icon} lucide={item.lucide} size={20} />}
           </span>
           <p className="mt-4 font-medium leading-snug">{item.name}</p>
           <p className="mt-1 text-xs leading-relaxed text-white/45">{item.category}</p>

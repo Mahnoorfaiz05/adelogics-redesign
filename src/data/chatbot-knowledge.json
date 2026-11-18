@@ -38,7 +38,7 @@
     "service list",
     "offerings"
    ],
-   "response": "We offer twelve core services across websites, mobile apps, product design, business systems and AI:\n\n• Web Development — Websites, portals and web applications built to load fast, rank well and stay easy to change.\n• Mobile App Development — iOS and Android apps planned around everyday use, from first prototype to store release.\n• Custom Software Development — Software shaped around your process when off-the-shelf tools force you to work around them.\n• UI/UX Design — Research-led interface design in Figma, from wireframes to a developer-ready design system.\n• SaaS Development — Subscription products with accounts, billing, roles and the admin tools to run them.\n• AI Development & Automation — Practical AI features and workflow automation that remove repetitive work from your team.\n• CRM Development — Customer management built around your pipeline, with the integrations your sales team relies on.\n• ERP & CMS Development — Operations and content systems that give each team one reliable place to work.\n• WordPress Development — Custom WordPress themes and plugins that are fast, secure and simple for editors.\n• IT Services — Cloud infrastructure, DevOps and IT support that keep your systems running, secure and able to grow.\n• Product Development — End-to-end product development: from idea and design to build, testing and release.\n• DevOps & Cloud — DevOps, cloud infrastructure and support for systems that deploy safely and stay online.\n\nEach service has its own detail page with scope, process and common questions.",
+   "response": "We offer twelve core services across websites, mobile apps, product design, business systems and AI:\n\n• Web Development — Websites, portals and web applications built to load fast, rank well and stay easy to change.\n• Mobile App Development — iOS and Android apps planned around everyday use, from first prototype to store release.\n• Custom Software Development — Software shaped around your process when off-the-shelf tools force you to work around them.\n• UI/UX Design — Research-led interface design in Figma, from wireframes to a developer-ready design system.\n• SaaS Development — Subscription products with accounts, billing, roles and the admin tools to run them.\n• AI Development & Automation — Practical AI features and workflow automation that remove repetitive work from your team.\n• CRM Development — Customer management built around your pipeline, with the integrations your sales team relies on.\n• ERP & CMS Development — Operations and content systems that give each team one reliable place to work.\n• WordPress Development — Custom WordPress themes and plugins that are fast, secure and simple for editors.\n• IT Services — Cloud infrastructure, DevOps and IT support that keep your systems running, secure and able to grow.\n• Product Development — End-to-end product development: from idea and design to build, testing and release.\n• DevOps & Cloud Engineering — DevOps, cloud infrastructure and support for systems that deploy safely and stay online.\n\nEach service has its own detail page with scope, process and common questions.",
    "links": [
     {
      "text": "All services",
@@ -222,7 +222,7 @@
      "url": "/services/it-services/"
     },
     {
-     "text": "DevOps & Cloud",
+     "text": "DevOps & Cloud Engineering",
      "url": "/services/devops-cloud/"
     }
    ],

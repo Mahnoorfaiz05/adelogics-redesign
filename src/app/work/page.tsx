@@ -22,10 +22,9 @@ export default function WorkPage() {
   return (
     <>
       <PageHero
-        eyebrow="Our work" shape="wave" hue="#b19df0" big="Work"
+        shape="wave" hue="#b19df0"
         title="Products we have *designed* and built."
-        intro="Mobile apps, marketplaces, finance dashboards, CRMs and crypto platforms — each with its own case study covering the challenge, approach and solution."
-        crumbs={[{ label: "Home", href: "/" }, { label: "Work" }]}
+        intro="Mobile apps, marketplaces, finance dashboards, CRMs and crypto platforms—each with a case study covering the challenge, approach and solution."
       >
         <Button href="#projects">Browse projects</Button>
         <Button href="/contact/" variant="ghost">Discuss a similar project</Button>
@@ -46,8 +45,7 @@ export default function WorkPage() {
       {/* Featured project */}
       <section className="relative overflow-hidden bg-ink section-space">
         <div className="container-x">
-          <Reveal variant="clip-up"><p className="eyebrow text-brand-300">Featured project</p></Reveal>
-          <Link href={`/work/${featured.slug}/`} className="group mt-8 grid gap-10 lg:grid-cols-12 lg:items-center" data-cursor="view">
+          <Link href={`/work/${featured.slug}/`} className="group grid gap-10 lg:grid-cols-12 lg:items-center" data-cursor="view">
             <Reveal variant="mask" className="relative aspect-[3/2] overflow-hidden rounded-[32px] lg:col-span-8">
               <Parallax speed={0.15} className="absolute inset-[-8%]"><Image src={featured.cover} alt={`${featured.name} cover`} fill sizes="(min-width:1024px) 66vw, 100vw" className="object-cover transition-transform duration-[1.4s] group-hover:scale-105" /></Parallax>
             </Reveal>
@@ -65,7 +63,7 @@ export default function WorkPage() {
 
       <section id="projects" className="surface-light scroll-mt-20 section-space">
         <div className="container-x">
-          <SectionHeader light num="01" eyebrow="All projects" title="Filter by *what we did.*" />
+          <SectionHeader light title="Find work by *focus.*" />
           <div className="mt-12"><WorkGrid /></div>
         </div>
       </section>

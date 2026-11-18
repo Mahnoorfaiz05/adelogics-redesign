@@ -53,7 +53,7 @@ export function FeaturedProjects({ list = projects }: { list?: Project[] }) {
               </div>
               <div className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-4 md:inset-x-8 md:bottom-8">
                 <div>
-                  <span className="font-mono text-xs text-brand-200">{String(i + 1).padStart(2, "0")} — {p.industry}</span>
+                  <span className="font-mono text-xs text-brand-200">{p.industry}</span>
                   <h3 className="mt-2 display text-3xl text-white md:text-6xl">{p.name}</h3>
                   <p className="mt-2 hidden max-w-lg text-sm text-white/70 md:block">{p.tagline}</p>
                   <div className="mt-4 hidden flex-wrap gap-2 md:flex">
@@ -101,20 +101,19 @@ export function ProcessTimeline({ stages, light = false }: { stages: { name: str
   }, [stages.length]);
   const muted = light ? "text-ink/55" : "text-white/55";
   return (
-    <div ref={root} className="relative pl-12 md:pl-0">
-      <div className={`absolute bottom-0 left-4 top-0 w-px md:left-1/2 ${light ? "bg-ink/10" : "bg-white/10"}`}>
+    <div ref={root} className="relative pl-10 md:pl-0">
+      <div className={`absolute bottom-0 left-3.5 top-0 w-px md:left-1/2 ${light ? "bg-ink/10" : "bg-white/10"}`}>
         <div ref={line} className="h-full w-full origin-top scale-y-0 bg-gradient-to-b from-brand-300 via-brand-400 to-steel" />
       </div>
-      <ol className="space-y-10 md:space-y-16">
+      <ol className="space-y-7 md:space-y-10">
         {stages.map((s, i) => (
-          <li key={s.name} className="relative md:grid md:grid-cols-2 md:gap-12">
-            <span className={`timeline-step absolute -left-12 top-1 grid h-8 w-8 place-items-center rounded-full border font-mono text-[0.7rem] transition-all duration-500 md:left-1/2 md:-translate-x-1/2 ${i <= active ? "scale-110 border-transparent bg-brand-gradient text-white shadow-[0_0_30px_rgba(123,73,158,.7)]" : light ? "border-ink/20 bg-ivory text-ink/50" : "border-white/20 bg-ink text-white/50"}`}>{i + 1}</span>
+          <li key={s.name} className="relative md:grid md:grid-cols-2 md:gap-10">
+            <span aria-hidden="true" className={`absolute -left-10 top-2 h-4 w-4 rounded-full border transition-all duration-500 md:left-1/2 md:-translate-x-1/2 ${i <= active ? "scale-110 border-transparent bg-brand-gradient shadow-[0_0_30px_rgba(123,73,158,.7)]" : light ? "border-ink/20 bg-ivory" : "border-white/20 bg-ink"}`} />
             <div className={`pt-card ${i % 2 ? "md:col-start-2" : "md:col-start-1 md:text-right"}`}>
-              <p className={`font-mono text-xs uppercase tracking-widest ${i <= active ? "text-brand-400" : muted}`}>Stage {i + 1} of {stages.length}</p>
-              <h3 className="mt-3 display text-4xl md:text-6xl">{s.name}</h3>
-              <p className={`mt-4 leading-relaxed ${muted} ${i % 2 ? "" : "md:ml-auto"} max-w-md`}>{s.text}</p>
+              <h3 className="display text-3xl md:text-5xl">{s.name}</h3>
+              <p className={`mt-3 leading-relaxed ${muted} ${i % 2 ? "" : "md:ml-auto"} max-w-md`}>{s.text}</p>
               {s.items && (
-                <ul className={`mt-5 flex flex-wrap gap-2 ${i % 2 ? "" : "md:justify-end"}`}>
+                <ul className={`mt-4 flex flex-wrap gap-2 ${i % 2 ? "" : "md:justify-end"}`}>
                   {s.items.map((it) => <li key={it} className={`rounded-full border px-3 py-1.5 text-xs ${light ? "border-ink/15" : "border-white/15 text-white/75"}`}>{it}</li>)}
                 </ul>
               )}
@@ -163,7 +162,6 @@ export function Testimonials() {
         <div className="flex items-center gap-3">
           <button onClick={() => go(-1)} aria-label="Previous testimonial" className="grid h-14 w-14 place-items-center rounded-full border border-ink/20 text-ink transition-colors hover:bg-ink hover:text-ivory"><ArrowLeft size={18} /></button>
           <button onClick={() => go(1)} aria-label="Next testimonial" className="grid h-14 w-14 place-items-center rounded-full border border-ink/20 text-ink transition-colors hover:bg-ink hover:text-ivory"><ArrowRight size={18} /></button>
-          <span className="ml-3 font-mono text-sm text-ink/50">{String(i + 1).padStart(2, "0")} / {String(testimonials.length).padStart(2, "0")}</span>
         </div>
         <Link href="/work/" className="link-u self-start font-medium text-brand-500">Read our case studies →</Link>
       </div>
@@ -172,15 +170,13 @@ export function Testimonials() {
 }
 
 /* ───────── Team (original supplied team photographs) ───────── */
-export function Team({ light = false, excludeFounder = false }: { light?: boolean; excludeFounder?: boolean }) {
-  const members = excludeFounder ? team.filter((member) => member.role !== "CEO & Founder") : team;
+export function Team({ light = false }: { light?: boolean }) {
+  // Leadership has its own dedicated treatment on About; cards here show the wider team.
+  const members = team.filter((member) => member.role !== "CEO & Founder");
   return (
-    <div className={`grid gap-4 sm:grid-cols-2 ${excludeFounder ? "lg:grid-cols-4" : "lg:grid-cols-5"}`}>
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
       {members.map((member, index) => {
-        const isFounder = member.role === "CEO & Founder";
-        const imageAlt = isFounder
-          ? "Muhammad Noman, CEO and Founder of Adelogix"
-          : `${member.name}, ${member.role} at Adelogix`;
+        const imageAlt = `${member.name}, ${member.role} at Adelogix`;
         return (
           <Reveal as="article" key={`${member.name}-${index}`} variant="up" delay={index * 0.06}
             className={`group overflow-hidden rounded-[24px] border transition-all duration-500 hover:-translate-y-1 ${light ? "border-ink/10 bg-white text-ink shadow-sm" : "border-white/10 bg-ink-3 text-ivory"}`}>
@@ -261,7 +257,7 @@ export function WorkGrid() {
           {list.map((p, i) => (
             <motion.div key={p.slug} layout initial={{ opacity: 0, y: 40, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, scale: 0.94 }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.04 }}
               className={i % 2 === 1 ? "md:mt-8" : ""}>
-              <ProjectCard p={p} index={projects.indexOf(p)} />
+              <ProjectCard p={p} />
             </motion.div>
           ))}
         </AnimatePresence>

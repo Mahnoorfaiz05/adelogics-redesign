@@ -14,20 +14,12 @@ type W = Window & { __lenis?: { stop: () => void; start: () => void } };
 
 export default function Header() {
   const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
   const [mega, setMega] = useState(false);
   const [mobile, setMobile] = useState(false);
   const [mobileServices, setMobileServices] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(scrollY > 12);
-    addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     const frame = requestAnimationFrame(() => { setMega(false); setMobile(false); setMobileServices(false); });
@@ -77,14 +69,12 @@ export default function Header() {
     <>
       <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-ivory focus:px-4 focus:py-2 focus:text-ink">Skip to content</a>
       <header
-        className={`sticky top-0 z-50 border-b transition-colors duration-300 ${scrolled || mega ? "border-white/10 bg-ink/85 shadow-[0_14px_40px_-25px_rgba(0,0,0,.8)] backdrop-blur-xl" : "border-transparent bg-ink/35 backdrop-blur-sm"}`}
+        className="sticky top-0 z-50 border-b border-white/10 bg-black"
         onMouseLeave={closeMega}
       >
         <div className="mx-auto flex min-h-[var(--header-h)] max-w-[1440px] items-center justify-between gap-4 px-4 py-2.5 sm:mx-4 md:px-6 xl:mx-auto">
           <Link href="/" className="relative z-10 flex h-11 shrink-0 items-center" aria-label="Adelogix home">
-            <span className="flex h-10 items-center rounded-lg bg-ivory px-2.5 ring-1 ring-ink/5 sm:h-11 sm:px-3">
-              <Image src="/images/brand/adelogix-logo-original.png" alt="Adelogix" width={234} height={51} sizes="(min-width: 1024px) 128px, (min-width: 640px) 110px, 100px" className="h-[1.35rem] w-auto sm:h-6 lg:h-7" priority />
-            </span>
+            <Image src="/images/brand/adelogix-logo-original.png" alt="Adelogix" width={234} height={51} sizes="(min-width: 1024px) 128px, (min-width: 640px) 110px, 100px" className="h-[1.35rem] w-auto brightness-0 invert sm:h-6 lg:h-7" priority />
           </Link>
 
           <nav aria-label="Primary" className="hidden lg:block">
@@ -153,8 +143,7 @@ export default function Header() {
               <div className="grid grid-cols-12 gap-8 p-8">
                 <div className="col-span-3 flex flex-col justify-between border-r border-white/10 pr-8">
                   <div>
-                    <p className="eyebrow text-brand-300">Services</p>
-                    <p className="mt-4 display text-3xl leading-tight">Design, development and the systems <span className="serif-i text-gradient">in between.</span></p>
+                    <p className="display text-3xl leading-tight">Design, development and the systems <span className="serif-i text-gradient">in between.</span></p>
                   </div>
                   <Link href="/services/" className="link-u mt-8 inline-flex items-center gap-2 self-start text-sm text-white/80">All services <ArrowUpRight size={14} /></Link>
                 </div>
@@ -200,8 +189,8 @@ export default function Header() {
                 {nav.map((item, i) => (
                   <motion.li key={item.href} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25 + i * 0.06, duration: 0.7, ease: [0.16, 1, 0.3, 1] }} className="border-b border-white/10">
                     <div className="flex items-center justify-between">
-                      <Link href={item.href} onClick={() => setMobile(false)} className={`flex min-w-0 items-baseline gap-3 py-4 display text-[clamp(2rem,10vw,2.4rem)] ${isActive(item.href) ? "text-brand-200" : "text-white"}`}>
-                        <span className="font-mono text-xs text-white/40">0{i + 1}</span>{item.label}
+                      <Link href={item.href} onClick={() => setMobile(false)} className={`flex min-w-0 items-baseline py-4 display text-[clamp(2rem,10vw,2.4rem)] ${isActive(item.href) ? "text-brand-200" : "text-white"}`}>
+                        {item.label}
                       </Link>
                       {item.mega && (
                         <button aria-label="Show services" aria-expanded={mobileServices} onClick={() => setMobileServices((v) => !v)} className="grid h-11 w-11 place-items-center rounded-full border border-white/15">

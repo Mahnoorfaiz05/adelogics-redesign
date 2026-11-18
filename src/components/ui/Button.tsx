@@ -33,13 +33,3 @@ export function Button({ href, children, variant = "primary", external, classNam
   );
   return magnetic ? <Magnetic strength={0.25}>{el}</Magnetic> : el;
 }
-
-export function Eyebrow({ children, className = "", num }: { children: ReactNode; className?: string; num?: string }) {
-  return (
-    <p className={`eyebrow inline-flex items-center gap-3 ${className}`}>
-      {num && <span className="text-brand-300">{num}</span>}
-      <span className="h-px w-8 bg-current opacity-40" />
-      <span>{children}</span>
-    </p>
-  );
-}

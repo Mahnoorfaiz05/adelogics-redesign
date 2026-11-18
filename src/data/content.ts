@@ -68,6 +68,7 @@ export const team = [
   { confirmed: true, role: "Business Developer", name: "Aimen Irshad", bio: "Team profile supplied by Adelogix.", image: "/images/team/aimen-irshad.jpeg", position: "50% 43%" },
   { confirmed: true, role: "UI UX Designer", name: "Maria Fatima", bio: "Team profile supplied by Adelogix.", image: "/images/team/maria-fatima.jpeg", position: "50% 42%" },
   { confirmed: true, role: "Business Developer", name: "Aqsa Rehman", bio: "Team profile supplied by Adelogix.", image: "/images/team/aqsa-rehman.jpeg", position: "50% 40%" },
+  { confirmed: true, role: "Sales Strategist", name: "Muhammad Adnan", bio: "Sales Strategist at Adelogix.", image: "/images/team/muhammad-adnan.jpeg", position: "50% 38%" },
 ];
 
 export const generalFaqs = [

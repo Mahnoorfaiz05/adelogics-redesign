@@ -852,7 +852,7 @@
  },
  {
   "slug": "devops-cloud",
-  "name": "DevOps & Cloud",
+  "name": "DevOps & Cloud Engineering",
   "headline": "Systems that deploy themselves and stay online.",
   "intro": "We automate the path from code to production with CI/CD pipelines, cloud infrastructure on AWS and Google Cloud Platform, and monitoring that catches problems before users do, supported by ongoing IT and cloud support.",
   "short": "DevOps, cloud infrastructure and support for systems that deploy safely and stay online.",
@@ -899,7 +899,7 @@
   ],
   "technologies": [],
   "caseStudies": [],
-  "faqTitle": "DevOps & Cloud: common questions",
+  "faqTitle": "DevOps & Cloud Engineering: common questions",
   "ctaTitle": "Thinking about DevOps and cloud support?",
   "ctaText": "Share a few details about what you need. We will come back with questions, an initial view on approach and the next practical step.",
   "faqs": [

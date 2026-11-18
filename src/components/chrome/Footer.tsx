@@ -28,8 +28,7 @@ export default function Footer() {
         {/* Top CTA band */}
         <div className="flex flex-col gap-7 border-b border-white/10 pb-10 sm:gap-8 sm:pb-12 md:flex-row md:items-end md:justify-between md:pb-16">
           <Reveal variant="blur">
-            <p className="eyebrow text-brand-300">Have a project in mind?</p>
-            <Link href="/contact/" className="group mt-4 inline-flex items-center gap-3 display text-[clamp(2.15rem,7vw,6rem)]" data-cursor="hover">
+            <Link href="/contact/" className="group inline-flex items-center gap-3 display text-[clamp(2.15rem,7vw,6rem)]" data-cursor="hover">
               <span>Let&apos;s <span className="serif-i text-gradient">talk</span></span>
               <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-brand-gradient transition-transform duration-700 group-hover:rotate-45 sm:h-14 sm:w-14 md:h-20 md:w-20"><ArrowUpRight className="h-5 w-5 sm:h-6 sm:w-6 md:h-9 md:w-9" /></span>
             </Link>
@@ -46,7 +45,7 @@ export default function Footer() {
 
         <div className="grid grid-cols-1 gap-10 py-12 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 md:grid-cols-12 md:py-16">
           <div className="sm:col-span-2 md:col-span-4">
-            <span className="inline-flex rounded-xl bg-ivory p-2 sm:p-2.5"><Image src="/images/brand/adelogix-logo-original.png" alt="Adelogix" width={234} height={51} sizes="(min-width: 640px) 147px, 110px" className="h-6 w-auto sm:h-8" /></span>
+            <Image src="/images/brand/adelogix-logo-original.png" alt="Adelogix" width={234} height={51} sizes="(min-width: 640px) 147px, 110px" className="h-6 w-auto brightness-0 invert sm:h-8" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/60 sm:mt-6">
               {site.legalName} designs, builds and supports web platforms, mobile apps and custom business software for startups, growing companies and established teams.
             </p>
@@ -60,11 +59,6 @@ export default function Footer() {
           <FooterCol title="Company" className="md:col-span-2" links={[...nav.map((n) => ({ label: n.label, href: n.href })), { label: "Privacy Policy", href: "/privacy-policy/" }, { label: "Terms & Conditions", href: "/terms/" }]} />
           <FooterCol title="Services" className="md:col-span-3" links={services.map((s) => ({ label: s.name, href: `/services/${s.slug}/` }))} />
           <FooterCol title="Work" className="sm:col-span-2 md:col-span-3" links={[...projects.map((p) => ({ label: p.name, href: `/work/${p.slug}/` })), { label: "Technologies", href: "/technologies/" }]} />
-        </div>
-
-        {/* Giant wordmark */}
-        <div className="pointer-events-none select-none overflow-hidden pt-2" aria-hidden="true">
-          <p className="display text-center text-[20vw] leading-[0.82] tracking-[-0.06em] text-transparent [-webkit-text-stroke:1px_rgba(207,195,238,.18)] sm:text-[16vw] xl:text-[17rem]">Adelogix</p>
         </div>
 
         <div className="grid gap-6 border-t border-white/10 py-7 text-xs text-white/50 sm:py-8 md:grid-cols-[1fr_auto_1fr] md:items-center">

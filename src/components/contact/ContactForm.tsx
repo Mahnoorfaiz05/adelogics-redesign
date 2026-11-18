@@ -45,6 +45,7 @@ export default function ContactForm() {
     if (!d.name || d.name.trim().length < 2) e.name = "Please enter your name.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.email || "")) e.email = "Please enter a valid email address.";
     if (!d.service) e.service = "Please choose a service.";
+    if (d.company !== "yes" && d.company !== "no") e.company = "Please select yes or no.";
     if (!d.subject || d.subject.trim().length < 3) e.subject = "Please add a short subject.";
     if (!d.details || d.details.trim().length < 10) e.details = "Please tell us a little more (at least 10 characters).";
     if (needsPhone && !/^\+?[0-9\s()-]{7,}$/.test(d.phone || "")) e.phone = "Please enter a phone number so we can reach you.";
@@ -108,7 +109,7 @@ export default function ContactForm() {
           reply_to: data.email.trim(),
           subject: data.subject.trim(),
           message: data.details.trim(),
-          company: (data.company || "Not provided").trim(),
+          company: data.company === "yes" ? "Yes" : "No",
           service: serviceName,
           budget: data.budget || "Prefer not to say",
           preferred_contact_method: data.contact_method || "email",
@@ -154,7 +155,14 @@ export default function ContactForm() {
       <div className="grid gap-6 md:grid-cols-2">
         <div><label htmlFor="f-name" className={label}>Name *</label><input id="f-name" name="name" autoComplete="name" className="field" aria-invalid={!!errors.name} aria-describedby={errors.name ? "e-name" : undefined} />{err("name")}</div>
         <div><label htmlFor="f-email" className={label}>Business email *</label><input id="f-email" name="email" type="email" autoComplete="email" className="field" aria-invalid={!!errors.email} aria-describedby={errors.email ? "e-email" : undefined} />{err("email")}</div>
-        <div><label htmlFor="f-company" className={label}>Company</label><input id="f-company" name="company" autoComplete="organization" className="field" /></div>
+        <div>
+          <label htmlFor="f-company" className={label}>Are you enquiring for a company? *</label>
+          <select id="f-company" name="company" className="field" required aria-invalid={!!errors.company} aria-describedby={errors.company ? "e-company" : undefined}>
+            <option value="">Select an option</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>{err("company")}
+        </div>
         <div>
           <label htmlFor="f-service" className={label}>Project type *</label>
           <select id="f-service" name="service" className="field" value={service} onChange={(event) => setService(event.target.value)} aria-invalid={!!errors.service} aria-describedby={errors.service ? "e-service" : undefined}>
