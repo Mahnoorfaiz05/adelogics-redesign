@@ -30,6 +30,7 @@ export async function POST(req: Request) {
   if (data.subject.length < 3) errors.subject = "Please add a short subject.";
   if (!emailRe.test(data.email)) errors.email = "Please enter a valid email address.";
   if (!SERVICES.has(data.service)) errors.service = "Please choose a service.";
+  if (data.company !== "yes" && data.company !== "no") errors.company = "Please select yes or no.";
   if (data.details.length < 10) errors.details = "Please tell us a little more (at least 10 characters).";
   if (!METHODS.has(data.contactMethod)) errors.contact_method = "Please choose a contact method.";
   if ((data.contactMethod === "phone" || data.contactMethod === "whatsapp") && !/^\+?[0-9\s()-]{7,}$/.test(data.phone)) {

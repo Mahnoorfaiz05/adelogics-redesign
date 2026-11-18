@@ -26,10 +26,9 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
-        eyebrow="Contact" shape="galaxy" hue="#b48cff" big="Hello"
+        shape="galaxy" hue="#b48cff"
         title="Tell us about your *project.*"
         intro="Whether you have a detailed brief or just an idea, start here. A short message is enough for us to understand what you need and suggest a next step."
-        crumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
       >
         <Button href="#form">Start your enquiry</Button>
         <Button href={whatsappLink()} external variant="ghost" icon={<WhatsAppIcon size={15} />}>WhatsApp us</Button>
@@ -39,7 +38,6 @@ export default function ContactPage() {
         <div className="absolute inset-0 grid-lines opacity-40" />
         <div className="container-x relative grid gap-12 lg:grid-cols-12">
           <aside className="space-y-3 lg:col-span-4">
-            <Reveal variant="clip-up"><p className="eyebrow text-brand-300">Contact information</p></Reveal>
             <Reveal stagger={0.08} variant="left" className="space-y-3 pt-4">
               {cards.map((c) => (
                 <a key={c.label} href={c.href} {...(c.ext ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="group flex items-start gap-4 rounded-2xl border border-white/10 bg-ink p-5 transition-all duration-500 hover:-translate-y-0.5 hover:border-brand-300/50">
@@ -70,7 +68,7 @@ export default function ContactPage() {
       {/* Map */}
       <section className="bg-ink">
         <div className="container-x section-space">
-          <SectionHeader eyebrow="Office location" title="Based in *Bahawalpur,* working worldwide." intro={site.location} />
+          <SectionHeader title="Based in *Bahawalpur,* working worldwide." intro={site.location} />
           <Reveal variant="mask" className="relative mt-12 overflow-hidden rounded-[28px] border border-white/10">
             <iframe title="Adelogix office location map" src={site.mapEmbed} loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="h-[360px] w-full grayscale invert-[0.92] hue-rotate-180 md:h-[400px]" />
             <a href={site.mapUrl} target="_blank" rel="noopener noreferrer" className="glass absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-ink/70 px-4 py-2 text-sm">Open in Google Maps <ArrowUpRight size={14} /></a>
@@ -81,13 +79,13 @@ export default function ContactPage() {
       {/* What happens next */}
       <section className="surface-light section-space">
         <div className="container-x">
-          <SectionHeader light eyebrow="What happens next" title="After you get *in touch.*" />
+          <SectionHeader light title="After you get *in touch.*" />
           <div className="relative mt-12 grid gap-6 md:mt-12 md:grid-cols-3">
             <div className="absolute left-0 right-0 top-7 hidden h-px bg-ink/10 md:block" />
             {nextSteps.map((s, i) => (
               <Reveal key={s.title} variant="up" delay={i * 0.15} className="relative">
-                <span className="relative grid h-14 w-14 place-items-center rounded-full bg-ink font-mono text-sm text-ivory">0{i + 1}</span>
-                <h3 className="mt-8 display text-2xl">{s.title}</h3>
+                <span aria-hidden="true" className="relative block h-3 w-3 rounded-full bg-brand-gradient" />
+                <h3 className="mt-6 display text-2xl">{s.title}</h3>
                 <p className="mt-3 text-ink/60">{s.text}</p>
               </Reveal>
             ))}
@@ -97,7 +95,7 @@ export default function ContactPage() {
 
       <section className="bg-ink section-space">
         <div className="container-x grid gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-4"><SectionHeader eyebrow="Before you write" title="Quick *answers.*" className="!block" /></div>
+          <div className="lg:col-span-4"><SectionHeader title="Quick *answers.*" className="!block" /></div>
           <div className="lg:col-span-8"><FAQ items={generalFaqs.filter((f) => ["Pricing", "Timelines", "Communication", "Support"].includes(f.topic))} /></div>
         </div>
       </section>

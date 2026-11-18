@@ -24,19 +24,19 @@ export type ServiceContent = {
 export type HeroShape = "sphere" | "helix" | "grid" | "rings" | "wave" | "cube" | "torus" | "galaxy";
 
 // Visual identity per service, so every service page gets its own hero.
-const meta: Record<string, { num: string; icon: string; shape: HeroShape; hue: string; tags: string[] }> = {
-  "web-development": { num: "01", icon: "Globe", shape: "grid", hue: "#8b6cf0", tags: ["Websites", "Portals", "Web apps"] },
-  "mobile-app-development": { num: "02", icon: "Smartphone", shape: "rings", hue: "#a792d8", tags: ["iOS", "Android", "Store release"] },
-  "custom-software-development": { num: "03", icon: "Boxes", shape: "cube", hue: "#7b8fd6", tags: ["Internal tools", "Dashboards", "Integrations"] },
-  "ui-ux-design": { num: "04", icon: "PenTool", shape: "wave", hue: "#c39be0", tags: ["Figma", "Design systems", "Prototypes"] },
-  "saas-development": { num: "05", icon: "Layers", shape: "torus", hue: "#9a7cf2", tags: ["Multi-tenant", "Billing", "Admin"] },
-  "ai-development-automation": { num: "06", icon: "Sparkles", shape: "galaxy", hue: "#b48cff", tags: ["AI assistants", "Extraction", "Workflows"] },
-  "crm-development": { num: "07", icon: "Users", shape: "sphere", hue: "#8ea3d8", tags: ["Pipelines", "Quotes", "Reports"] },
-  "erp-cms-development": { num: "08", icon: "Database", shape: "cube", hue: "#7d6ad0", tags: ["Inventory", "Finance", "Headless CMS"] },
-  "wordpress-development": { num: "09", icon: "LayoutTemplate", shape: "grid", hue: "#a9b8c9", tags: ["Themes", "Plugins", "WooCommerce"] },
-  "it-services": { num: "10", icon: "ServerCog", shape: "helix", hue: "#8fa9c9", tags: ["AWS", "GCP", "Support"] },
-  "product-development": { num: "11", icon: "Rocket", shape: "torus", hue: "#b19df0", tags: ["MVP", "Design", "Release"] },
-  "devops-cloud": { num: "12", icon: "Cloud", shape: "helix", hue: "#9cb2d6", tags: ["CI/CD", "IaC", "Monitoring"] },
+const meta: Record<string, { icon: string; shape: HeroShape; hue: string; tags: string[] }> = {
+  "web-development": { icon: "Globe", shape: "grid", hue: "#8b6cf0", tags: ["Websites", "Portals", "Web apps"] },
+  "mobile-app-development": { icon: "Smartphone", shape: "rings", hue: "#a792d8", tags: ["iOS", "Android", "Store release"] },
+  "custom-software-development": { icon: "Boxes", shape: "cube", hue: "#7b8fd6", tags: ["Internal tools", "Dashboards", "Integrations"] },
+  "ui-ux-design": { icon: "PenTool", shape: "wave", hue: "#c39be0", tags: ["Figma", "Design systems", "Prototypes"] },
+  "saas-development": { icon: "Layers", shape: "torus", hue: "#9a7cf2", tags: ["Multi-tenant", "Billing", "Admin"] },
+  "ai-development-automation": { icon: "Sparkles", shape: "galaxy", hue: "#b48cff", tags: ["AI assistants", "Extraction", "Workflows"] },
+  "crm-development": { icon: "Users", shape: "sphere", hue: "#8ea3d8", tags: ["Pipelines", "Quotes", "Reports"] },
+  "erp-cms-development": { icon: "Database", shape: "cube", hue: "#7d6ad0", tags: ["Inventory", "Finance", "Headless CMS"] },
+  "wordpress-development": { icon: "LayoutTemplate", shape: "grid", hue: "#a9b8c9", tags: ["Themes", "Plugins", "WooCommerce"] },
+  "it-services": { icon: "ServerCog", shape: "helix", hue: "#8fa9c9", tags: ["AWS", "GCP", "Support"] },
+  "product-development": { icon: "Rocket", shape: "torus", hue: "#b19df0", tags: ["MVP", "Design", "Release"] },
+  "devops-cloud": { icon: "Cloud", shape: "helix", hue: "#9cb2d6", tags: ["CI/CD", "IaC", "Monitoring"] },
 };
 
 export type Service = ServiceContent & (typeof meta)[string];
@@ -87,7 +87,7 @@ export const serviceGroups = [
     name: "IT Services",
     desc: "Cloud infrastructure, DevOps practices and IT support that keep systems available, secure and able to grow.",
     slugs: ["it-services", "devops-cloud"],
-    items: ["DevOps & Cloud Infrastructure", "AWS Cloud Solutions", "Google Cloud Platform (GCP)", "Cloud Deployment & Management", "Infrastructure Management"],
+    items: ["DevOps & Cloud Engineering", "AWS Cloud Solutions", "Google Cloud Platform (GCP)", "Cloud Deployment & Management", "Infrastructure Management"],
   },
 ];
 

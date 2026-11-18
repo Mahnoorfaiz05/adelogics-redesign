@@ -33,8 +33,7 @@ export function ServicesShowcase({ list = services, light = false }: { list?: Se
         {list.map((svc, i) => (
           <li key={svc.slug} className={`border-b ${light ? "border-ink/15" : "border-white/10"}`} onMouseEnter={() => setActive(i)}>
             <div className="group relative">
-              <Link href={`/services/${svc.slug}/`} className="relative grid grid-cols-[auto_1fr_auto] items-center gap-4 py-6 md:grid-cols-[80px_1fr_1.1fr_auto] md:gap-8 md:py-8" data-cursor="hover">
-                <span className={`font-mono text-xs ${light ? "text-ink/40" : "text-white/40"}`}>{svc.num}</span>
+              <Link href={`/services/${svc.slug}/`} className="relative grid grid-cols-[1fr_auto] items-center gap-4 py-6 md:grid-cols-[1fr_1.1fr_auto] md:gap-8 md:py-8" data-cursor="hover">
                 <span className="flex items-center gap-4">
                   <span className={`hidden h-12 w-12 shrink-0 place-items-center rounded-2xl border transition-all duration-700 group-hover:rotate-[-10deg] group-hover:scale-110 sm:grid ${light ? "border-ink/15 text-brand-500 group-hover:bg-ink group-hover:text-brand-200" : "border-white/10 text-brand-200 group-hover:bg-brand-500/25"}`}>
                     <LIcon name={svc.icon} size={20} />
@@ -115,7 +114,7 @@ export function TechEcosystem({ compact = false }: { compact?: boolean }) {
               <div className="absolute left-1/2 top-1/2 grid h-[28%] w-[28%] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-brand-gradient shadow-[0_0_80px_rgba(123,73,158,.6)]">
                 <div className="text-center">
                   <LIcon name={c.lucide} size={30} className="mx-auto text-white" />
-                  <p className="mt-1 font-mono text-[0.65rem] tracking-widest text-white/80">{c.short}</p>
+                  <p className="mt-1 text-[0.65rem] tracking-wide text-white/80">{c.name}</p>
                 </div>
               </div>
               {c.items.map((it, i) => {
@@ -127,7 +126,7 @@ export function TechEcosystem({ compact = false }: { compact?: boolean }) {
                     <motion.span initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.15 + i * 0.07, type: "spring", stiffness: 300, damping: 18 }}
                       className={`float grid h-16 w-16 place-items-center rounded-2xl border backdrop-blur transition-all duration-300 md:h-20 md:w-20 ${hover === i ? "scale-110 border-brand-300 bg-brand-500/30 text-white" : "border-white/15 bg-white/[0.05] text-white/85"}`}
                       style={{ animationDelay: `${i * 0.6}s` }}>
-                      <TechMark icon={it.icon} mono={it.mono} size={26} />
+                      <TechMark icon={it.icon} lucide={it.lucide} size={26} />
                     </motion.span>
                   </button>
                 );
@@ -140,13 +139,12 @@ export function TechEcosystem({ compact = false }: { compact?: boolean }) {
         <div>
           <AnimatePresence mode="wait">
             <motion.div key={c.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.45 }}>
-              <p className="eyebrow text-brand-300">{String(cat + 1).padStart(2, "0")} / {String(techCategories.length).padStart(2, "0")}</p>
               <h3 className="mt-4 display text-4xl md:text-5xl">{c.name}</h3>
               <p className="mt-4 max-w-md text-white/60">{c.blurb}</p>
               <ul className="mt-8 divide-y divide-white/10 border-y border-white/10">
                 {c.items.map((it, i) => (
                   <li key={it.name} onMouseEnter={() => setHover(i)} className={`flex items-start gap-4 py-4 transition-colors ${hover === i ? "text-white" : "text-white/70"}`}>
-                    <span className={`mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-xl border transition-colors ${hover === i ? "border-brand-300 bg-brand-500/25" : "border-white/10"}`}><TechMark icon={it.icon} mono={it.mono} size={16} /></span>
+                    <span className={`mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-xl border transition-colors ${hover === i ? "border-brand-300 bg-brand-500/25" : "border-white/10"}`}><TechMark icon={it.icon} lucide={it.lucide} size={16} /></span>
                     <div className="min-w-0">
                       <p className="flex flex-wrap items-center gap-2 font-medium">{it.name}
                         {it.kind === "capability" && <span className="rounded-full bg-white/[0.07] px-2 py-0.5 font-mono text-[0.6rem] uppercase tracking-wider text-white/50">Capability</span>}
@@ -172,7 +170,7 @@ export function ToolsMarquee() {
       <Marquee speed={45}>
         {tools.map((t) => (
           <span key={t.name} className="mx-3 flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-6 py-3 text-white/75">
-            <TechMark icon={t.icon} mono={t.mono} size={18} />{t.name}
+            <TechMark icon={t.icon} lucide={t.lucide} size={18} />{t.name}
           </span>
         ))}
       </Marquee>

@@ -1,6 +1,9 @@
 import {
   Globe, Smartphone, Boxes, PenTool, Layers, Sparkles, Users, Database, LayoutTemplate, ServerCog, Rocket, Cloud,
-  HeartPulse, GraduationCap, ShoppingBag, Landmark, Building2, Plane, Car, MonitorSmartphone, Server, type LucideIcon,
+  HeartPulse, GraduationCap, ShoppingBag, Landmark, Building2, Plane, Car, MonitorSmartphone, Server,
+  Accessibility, BellRing, Bot, ChartNoAxesCombined, CircleDot, Code2, CreditCard, DatabaseBackup, FileSearch,
+  Gauge, GitBranch, HardDriveDownload, Library, MousePointerClick, Network, PanelsTopLeft, Plug, RefreshCw,
+  Search, ShieldCheck, Workflow, type LucideIcon,
 } from "lucide-react";
 import { siWordpress, siWoocommerce, siApple, siAndroid, siFigma, siGooglecloud, siStripe, siPaypal, siWhatsapp, siInstagram, siFacebook, siX, siYoutube } from "simple-icons";
 
@@ -9,6 +12,9 @@ const si = { siWordpress, siWoocommerce, siApple, siAndroid, siFigma, siGooglecl
 const lucideMap: Record<string, LucideIcon> = {
   Globe, Smartphone, Boxes, PenTool, Layers, Sparkles, Users, Database, LayoutTemplate, ServerCog, Rocket, Cloud,
   HeartPulse, GraduationCap, ShoppingBag, Landmark, Building2, Plane, Car, MonitorSmartphone, Server,
+  Accessibility, BellRing, Bot, ChartNoAxesCombined, CircleDot, Code2, CreditCard, DatabaseBackup, FileSearch,
+  Gauge, GitBranch, HardDriveDownload, Library, MousePointerClick, Network, PanelsTopLeft, Plug, RefreshCw,
+  Search, ShieldCheck, Workflow,
 };
 
 export function LIcon({ name, size = 22, className = "", strokeWidth = 1.5 }: { name: string; size?: number; className?: string; strokeWidth?: number }) {
@@ -27,9 +33,10 @@ export function BrandIcon({ name, size = 22, className = "", color }: { name: st
   );
 }
 
-export function TechMark({ icon, mono, size = 22, className = "" }: { icon?: string; mono?: string; size?: number; className?: string }) {
+/** A named product mark when verified, otherwise a descriptive graphical icon. */
+export function TechMark({ icon, lucide, size = 22, className = "" }: { icon?: string; lucide?: string; size?: number; className?: string }) {
   if (icon) return <BrandIcon name={icon} size={size} className={className} />;
-  return <span className={`font-mono text-[0.7rem] font-semibold tracking-wider ${className}`}>{mono}</span>;
+  return <LIcon name={lucide ?? "CircleDot"} size={size} className={className} />;
 }
 
 export function WhatsAppIcon({ size = 24, className = "" }: { size?: number; className?: string }) {

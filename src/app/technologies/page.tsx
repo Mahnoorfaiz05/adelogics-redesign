@@ -20,10 +20,9 @@ export default function TechnologiesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Technologies" shape="rings" hue="#8fa9c9" align="center" big="Stack"
+        shape="rings" hue="#8fa9c9" align="center"
         title="Technology chosen for *fit,* not fashion."
         intro="The stack for each project is chosen for what it has to do, who will maintain it and how it is expected to grow."
-        crumbs={[{ label: "Home", href: "/" }, { label: "Technologies" }]}
       >
         <Button href="#ecosystem">Explore the ecosystem</Button>
         <Button href="/contact/" variant="ghost">Discuss your stack</Button>
@@ -34,7 +33,7 @@ export default function TechnologiesPage() {
       <section id="ecosystem" className="relative overflow-hidden bg-ink section-space">
         <div className="absolute inset-0 grid-lines opacity-50" />
         <div className="container-x relative">
-          <SectionHeader num="01" eyebrow="Interactive ecosystem" title="Eight areas, *one connected* stack." intro="Select a category, then hover or tap an orbiting node for details. Named tools are ones we have used on client work; capabilities describe what we deliver in that area." />
+          <SectionHeader title="One connected *stack.*" intro="Select a category, then hover or tap an orbiting node for details. Named tools are ones we have used on client work; capabilities describe what we deliver in that area." />
           <div className="mt-14"><TechEcosystem /></div>
         </div>
       </section>
@@ -42,14 +41,13 @@ export default function TechnologiesPage() {
       {/* Categorised showcase — bento */}
       <section className="surface-light section-space">
         <div className="container-x">
-          <SectionHeader light num="02" eyebrow="Categorised showcase" title="Everything, *at a glance.*" />
+          <SectionHeader light title="Everything, *at a glance.*" />
           <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {techCategories.map((c, i) => (
               <Reveal key={c.id} variant={i % 2 ? "clip-up" : "scale"} delay={(i % 4) * 0.06}
                 className={`group relative overflow-hidden rounded-[28px] p-7 ${i === 0 || i === 5 ? "lg:col-span-2" : ""} ${i % 3 === 0 ? "bg-ink text-ivory" : "bg-white"}`}>
                 <div className="flex items-center justify-between">
                   <span className={`grid h-12 w-12 place-items-center rounded-2xl transition-transform duration-700 group-hover:rotate-[-12deg] ${i % 3 === 0 ? "bg-brand-gradient text-white" : "bg-brand-100 text-brand-600"}`}><LIcon name={c.lucide} /></span>
-                  <span className="font-mono text-xs opacity-40">{String(i + 1).padStart(2, "0")}</span>
                 </div>
                 <h3 className="mt-8 display text-3xl">{c.name}</h3>
                 <p className="mt-2 text-sm opacity-60">{c.blurb}</p>
@@ -57,7 +55,7 @@ export default function TechnologiesPage() {
                   {c.items.map((it) => (
                     <li key={it.name} className="group/chip relative">
                       <span tabIndex={0} className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs outline-none transition-colors ${i % 3 === 0 ? "border-white/15 hover:bg-white/10 focus:bg-white/10" : "border-ink/10 hover:bg-ink hover:text-ivory focus:bg-ink focus:text-ivory"}`}>
-                        <TechMark icon={it.icon} mono={it.mono} size={13} className="!text-[0.55rem]" />{it.name}
+                        <TechMark icon={it.icon} lucide={it.lucide} size={13} />{it.name}
                       </span>
                       <span role="tooltip" className="pointer-events-none absolute bottom-[calc(100%+8px)] left-0 z-10 w-56 translate-y-2 rounded-xl bg-ink-3 p-3 text-xs text-white/80 opacity-0 shadow-xl transition-all duration-300 group-hover/chip:translate-y-0 group-hover/chip:opacity-100 group-focus-within/chip:translate-y-0 group-focus-within/chip:opacity-100">{it.desc}</span>
                     </li>
@@ -75,7 +73,7 @@ export default function TechnologiesPage() {
       {/* Related services by category */}
       <section className="bg-ink section-space">
         <div className="container-x">
-          <SectionHeader num="03" eyebrow="Related services" title="Where each area *shows up.*" />
+          <SectionHeader title="Where each area *shows up.*" />
           <ul className="mt-14 border-t border-white/10">
             {techCategories.map((c) => {
               const svc = Array.from(new Set(c.items.flatMap((i) => i.services)));
