@@ -85,6 +85,7 @@ html.has-cursor, html.has-cursor * { cursor: none !important; }
 /* Typography */
 .display { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.045em; line-height: 0.95; }
 .h-xl { font-size: clamp(2.6rem, 1.2rem + 6.6vw, 8.4rem); }
+.home-headline { font-size: clamp(2.45rem, 1.35rem + 5.55vw, 7.25rem); }
 .h-lg { font-size: clamp(2.3rem, 1.2rem + 4.4vw, 5.6rem); }
 .h-md { font-size: clamp(1.9rem, 1.2rem + 2.6vw, 3.75rem); }
 .h-sm { font-size: clamp(1.35rem, 1.1rem + 0.9vw, 2rem); }
@@ -160,6 +161,7 @@ select.field option { background: #14111c; color: #f5f4f0; }
 @media (max-width: 639px) {
   .display { letter-spacing: -0.035em; line-height: 1; }
   .h-xl { font-size: clamp(2.35rem, 11vw, 3.15rem); }
+  .home-headline { font-size: clamp(2.3rem, 9.5vw, 3rem); }
   .h-lg { font-size: clamp(2.1rem, 9.5vw, 2.8rem); }
   .h-md { font-size: clamp(1.8rem, 8.5vw, 2.35rem); }
   .lead { line-height: 1.55; }

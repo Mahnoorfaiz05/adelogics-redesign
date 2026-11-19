@@ -21,13 +21,15 @@ include a descriptive alt text and responsive `sizes` attribute.
 
 ## EmailJS
 
-The contact form uses the official `@emailjs/browser` SDK. Add these **Production,
-Preview and Development** variables in Vercel:
+The contact form posts only to the site’s `/api/contact/` route. That route
+validates the request, relays accepted enquiries to EmailJS, and then stores an
+optional database backup. Configure these **Production, Preview and Development**
+variables in Vercel:
 
 ```text
-NEXT_PUBLIC_EMAILJS_SERVICE_ID
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+EMAILJS_SERVICE_ID
+EMAILJS_TEMPLATE_ID
+EMAILJS_PUBLIC_KEY
 ```
 
 1. In EmailJS, create an email service whose recipient is
@@ -37,13 +39,15 @@ NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
 3. Use the following template variables: `to_email`, `from_name`, `from_email`,
    `reply_to`, `subject`, `message`, `company`, `service`, `budget`,
    `preferred_contact_method`, `phone`, and `submitted_at`.
-4. Copy the service ID, template ID and EmailJS **public** key into the matching
+4. Copy the service ID, template ID and EmailJS public key into the matching
    Vercel variables, redeploy, and submit a real test enquiry.
 5. Confirm that the test is received at `Adelogixteam@gmail.com` before claiming
    email delivery is active.
 
-The public key is designed by EmailJS to be used in browser code. Do not add SMTP
-passwords or any private email credentials to this project.
+The public key is designed by EmailJS for identifying the project; keep all three
+values in Vercel environment settings and never add SMTP passwords or private
+email credentials to this repository. The route temporarily accepts the former
+`NEXT_PUBLIC_EMAILJS_*` names only as a migration fallback.
 
 ## WhatsApp click-to-chat
 
