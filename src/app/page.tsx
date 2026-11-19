@@ -32,7 +32,7 @@ export default function HomePage() {
             </div>
             <div className="lg:col-span-8">
               <ScrollText
-                text="A software partner that starts with your *business,* not the code. We turn requirements into dependable products, from the first workshop to the releases that follow launch."
+                text="A software partner that starts with your *business,* not the code."
                 className="display text-[clamp(1.8rem,1.1rem+2.9vw,4.2rem)] leading-[1.05]" dim="rgba(13,11,19,0.14)" bright="#0d0b13"
               />
               <div className="mt-14 grid gap-10 md:grid-cols-2">

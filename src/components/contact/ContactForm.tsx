@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight, CheckCircle2, AlertCircle, Loader2, Info } from "lucide-react";
 import { site, whatsappLink } from "@/lib/site";
@@ -10,19 +9,13 @@ const budgets = ["Under $5,000", "$5,000 to $15,000", "$15,000 to $50,000", "$50
 const methods = [{ v: "email", l: "Email" }, { v: "phone", l: "Phone" }, { v: "whatsapp", l: "WhatsApp" }, { v: "video", l: "Video call" }];
 type Errors = Partial<Record<string, string>>;
 
-const emailJsConfig = {
-  serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
-  templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
-  publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "",
-};
-const hasEmailJsConfig = Object.values(emailJsConfig).every(Boolean);
-
 export default function ContactForm() {
   const form = useRef<HTMLFormElement>(null);
   const [method, setMethod] = useState("email");
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<{ type: "success" | "error"; title: string; text: string } | null>(null);
   const [loading, setLoading] = useState(false);
+  const [deliveryReady, setDeliveryReady] = useState<boolean | null>(null);
   const [service, setService] = useState("");
   const [subject, setSubject] = useState("New project enquiry");
   const lastAttempt = useRef<{ key: string; at: number }>({ key: "", at: 0 });
@@ -36,6 +29,17 @@ export default function ContactForm() {
       setSubject(name ? `${name} project enquiry` : "New project enquiry");
     }, 0);
     return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+    fetch("/api/contact/", { cache: "no-store" })
+      .then((response) => response.json())
+      .then((data: { deliveryConfigured?: boolean }) => {
+        if (active && typeof data.deliveryConfigured === "boolean") setDeliveryReady(data.deliveryConfigured);
+      })
+      .catch(() => { if (active) setDeliveryReady(null); });
+    return () => { active = false; };
   }, []);
 
   const needsPhone = method === "phone" || method === "whatsapp";
@@ -65,15 +69,6 @@ export default function ContactForm() {
       return;
     }
 
-    if (!hasEmailJsConfig) {
-      setStatus({
-        type: "error",
-        title: "Email delivery is being configured.",
-        text: `Please email ${site.email} or use WhatsApp while the EmailJS service is connected.`,
-      });
-      return;
-    }
-
     const key = JSON.stringify([data.name, data.email, data.subject, data.details]);
     if (key === lastAttempt.current.key && Date.now() - lastAttempt.current.at < 20_000) {
       setStatus({ type: "error", title: "Please wait before resending.", text: "We are already processing this enquiry. You can also message us on WhatsApp." });
@@ -84,8 +79,8 @@ export default function ContactForm() {
     lastAttempt.current = { key, at: Date.now() };
     const firstName = (data.name || "").trim().split(/\s+/)[0];
     try {
-      // Server-side validation and optional database backup. It never contains
-      // EmailJS credentials and gracefully works when Postgres is not configured.
+      // The server validates, delivers through EmailJS, then optionally records
+      // a backup. Provider configuration never reaches browser code.
       const res = await fetch("/api/contact/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -96,35 +91,13 @@ export default function ContactForm() {
         setErrors(json.errors);
         return;
       }
-      if (!res.ok || !json.ok) throw new Error("Contact validation was unavailable");
-
-      const serviceName = services.find((s) => s.slug === data.service)?.name || "Not sure yet";
-      await emailjs.send(
-        emailJsConfig.serviceId,
-        emailJsConfig.templateId,
-        {
-          to_email: site.email,
-          from_name: data.name.trim(),
-          from_email: data.email.trim(),
-          reply_to: data.email.trim(),
-          subject: data.subject.trim(),
-          message: data.details.trim(),
-          company: data.company === "yes" ? "Yes" : "No",
-          service: serviceName,
-          budget: data.budget || "Prefer not to say",
-          preferred_contact_method: data.contact_method || "email",
-          phone: (data.phone || "Not provided").trim(),
-          submitted_at: new Date().toISOString(),
-        },
-        { publicKey: emailJsConfig.publicKey },
-      );
-
-      if (json.id) {
-        fetch("/api/contact/", {
-          method: "PATCH",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ id: json.id }),
-        }).catch(() => {});
+      if (!res.ok || !json.ok) {
+        setStatus({
+          type: "error",
+          title: "We could not send your enquiry.",
+          text: json.error || `Please try again shortly, email ${site.email}, or message us on WhatsApp.`,
+        });
+        return;
       }
       form.current?.reset();
       setMethod("email");
@@ -150,7 +123,7 @@ export default function ContactForm() {
   const label = "mb-2 block text-sm text-white/75";
 
   return (
-    <form ref={form} onSubmit={onSubmit} noValidate className="relative space-y-6" aria-describedby="form-note">
+    <form ref={form} onSubmit={onSubmit} noValidate className="relative space-y-6" aria-describedby="form-note" aria-busy={loading}>
       <p id="form-note" className="text-sm text-white/50">Fields marked * are required. It takes about two minutes.</p>
       <div className="grid gap-6 md:grid-cols-2">
         <div><label htmlFor="f-name" className={label}>Name *</label><input id="f-name" name="name" autoComplete="name" className="field" aria-invalid={!!errors.name} aria-describedby={errors.name ? "e-name" : undefined} />{err("name")}</div>
@@ -217,7 +190,7 @@ export default function ContactForm() {
 
       <p className="flex items-start gap-2 rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-xs leading-relaxed text-white/45">
         <Info size={15} className="mt-0.5 shrink-0 text-brand-300" />
-        <span>{hasEmailJsConfig ? <>This form sends your enquiry to <a className="underline hover:text-white" href={`mailto:${site.email}`}>{site.email}</a> through EmailJS. Your sender email is included as the reply-to address.</> : <>EmailJS is not configured in this deployment yet. Please use <a className="underline hover:text-white" href={`mailto:${site.email}`}>{site.email}</a> or WhatsApp until it is connected.</>}</span>
+        <span>{deliveryReady === false ? <>Email delivery is being configured for this deployment. Please use <a className="underline hover:text-white" href={`mailto:${site.email}`}>{site.email}</a> or WhatsApp in the meantime.</> : <>We validate each enquiry before delivery through EmailJS. If delivery is temporarily unavailable, use <a className="underline hover:text-white" href={`mailto:${site.email}`}>{site.email}</a> or WhatsApp.</>}</span>
       </p>
 
       <div aria-live="polite">

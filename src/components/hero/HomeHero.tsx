@@ -89,7 +89,7 @@ export default function HomeHero() {
       </div>
 
       <div ref={content} className="container-x relative">
-        <SplitHeading as="h1" immediate delay={0.3} stagger={0.07} text="Software built around how your *business* really works." className="max-w-[15ch] display h-xl" />
+        <SplitHeading as="h1" immediate delay={0.3} stagger={0.07} text="Software built around how your *business* really works." className="max-w-[15ch] display home-headline" />
         <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-6">
             <p className="hh-fade lead max-w-xl text-white/65">

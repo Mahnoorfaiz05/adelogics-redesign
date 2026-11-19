@@ -90,7 +90,7 @@ export function TechEcosystem({ compact = false }: { compact?: boolean }) {
 
   return (
     <div>
-      <div className="-mx-[var(--gutter)] overflow-x-auto px-[var(--gutter)] pb-2 [scrollbar-width:none]" role="tablist" aria-label="Technology categories">
+      <div className="-mx-[var(--gutter)] overflow-x-auto px-[var(--gutter)] pb-2 [scrollbar-width:none] md:mx-0 md:flex md:justify-center md:px-0" role="tablist" aria-label="Technology categories">
         <div className="flex w-max gap-2">
           {techCategories.map((t, i) => (
             <button key={t.id} role="tab" aria-selected={cat === i} onClick={() => { setCat(i); setHover(null); }}
