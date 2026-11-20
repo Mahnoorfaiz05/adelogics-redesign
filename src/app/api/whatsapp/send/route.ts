@@ -8,7 +8,7 @@ const clip = (value: unknown, length: number) => typeof value === "string" ? val
  * Server-only WhatsApp Cloud API sender.
  *
  * This endpoint is deliberately protected by WHATSAPP_API_INTERNAL_SECRET. It is
- * for a trusted server, CRM, or secure automation—not browser code. A free-form
+ * for a trusted server, CRM, or secure automation, not browser code. A free-form
  * WhatsApp message must also comply with Meta's session/template rules.
  */
 export async function POST(request: Request) {

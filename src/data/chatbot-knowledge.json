@@ -38,7 +38,7 @@
     "service list",
     "offerings"
    ],
-   "response": "We offer twelve core services across websites, mobile apps, product design, business systems and AI:\n\n• Web Development — Websites, portals and web applications built to load fast, rank well and stay easy to change.\n• Mobile App Development — iOS and Android apps planned around everyday use, from first prototype to store release.\n• Custom Software Development — Software shaped around your process when off-the-shelf tools force you to work around them.\n• UI/UX Design — Research-led interface design in Figma, from wireframes to a developer-ready design system.\n• SaaS Development — Subscription products with accounts, billing, roles and the admin tools to run them.\n• AI Development & Automation — Practical AI features and workflow automation that remove repetitive work from your team.\n• CRM Development — Customer management built around your pipeline, with the integrations your sales team relies on.\n• ERP & CMS Development — Operations and content systems that give each team one reliable place to work.\n• WordPress Development — Custom WordPress themes and plugins that are fast, secure and simple for editors.\n• IT Services — Cloud infrastructure, DevOps and IT support that keep your systems running, secure and able to grow.\n• Product Development — End-to-end product development: from idea and design to build, testing and release.\n• DevOps & Cloud Engineering — DevOps, cloud infrastructure and support for systems that deploy safely and stay online.\n\nEach service has its own detail page with scope, process and common questions.",
+   "response": "We offer twelve core services across websites, mobile apps, product design, business systems and AI:\n\n• Web Development: Websites, portals and web applications built to load fast, rank well and stay easy to change.\n• Mobile App Development: iOS and Android apps planned around everyday use, from first prototype to store release.\n• Custom Software Development: Software shaped around your process when off the shelf tools force you to work around them.\n• UI/UX Design: Research led interface design in Figma, from wireframes to a developer ready design system.\n• SaaS Development: Subscription products with accounts, billing, roles and the admin tools to run them.\n• AI Development & Automation: Practical AI features and workflow automation that remove repetitive work from your team.\n• CRM Development: Customer management built around your pipeline, with the integrations your sales team relies on.\n• ERP & CMS Development: Operations and content systems that give each team one reliable place to work.\n• WordPress Development: Custom WordPress themes and plugins that are fast, secure and simple for editors.\n• IT Services: Cloud infrastructure, DevOps and IT support that keep your systems running, secure and able to grow.\n• Product Development: End to end product development: from idea and design to build, testing and release.\n• DevOps & Cloud Engineering: DevOps, cloud infrastructure and support for systems that deploy safely and stay online.\n\nEach service has its own detail page with scope, process and common questions.",
    "links": [
     {
      "text": "All services",
@@ -62,7 +62,7 @@
     "build a website",
     "website development"
    ],
-   "response": "Yes. We build business websites, customer portals and web applications — from the frontend to the backend. Our web development service includes responsive design, technical SEO, documented code, and ongoing support.",
+   "response": "Yes. We build business websites, customer portals and web applications: from the frontend to the backend. Our web development service includes responsive design, technical SEO, documented code, and ongoing support.",
    "links": [
     {
      "text": "Web Development",
@@ -113,7 +113,7 @@
     "openai",
     "chatbot"
    ],
-   "response": "Yes. We add practical AI features and workflow automation to applications — document extraction and classification, AI assistants trained on your content, and workflow automation between business tools. We start with tasks where the time saved is easy to measure.",
+   "response": "Yes. We add practical AI features and workflow automation to applications: document extraction and classification, AI assistants trained on your content, and workflow automation between business tools. We start with tasks where the time saved is easy to measure.",
    "links": [
     {
      "text": "AI Development & Automation",
@@ -136,7 +136,7 @@
     "business software",
     "workflow system"
    ],
-   "response": "Yes. We build custom software shaped around your process — internal tools, admin panels, databases, reporting dashboards and integrations. We map your process with your team before writing any code and deliver in phases.",
+   "response": "Yes. We build custom software shaped around your process: internal tools, admin panels, databases, reporting dashboards and integrations. We map your process with your team before writing any code and deliver in phases.",
    "links": [
     {
      "text": "Custom Software Development",
@@ -161,7 +161,7 @@
     "sales pipeline",
     "build a crm"
    ],
-   "response": "Yes. We build custom CRM systems and extend existing ones — pipeline stages, lead capture, follow-up reminders, dashboards and integrations. We can also customise existing CRM platforms.",
+   "response": "Yes. We build custom CRM systems and extend existing ones: pipeline stages, lead capture, follow up reminders, dashboards and integrations. We can also customise existing CRM platforms.",
    "links": [
     {
      "text": "CRM Development",
@@ -189,7 +189,7 @@
     "wireframe",
     "prototype"
    ],
-   "response": "Yes. We design websites, apps, dashboards and admin panels in Figma — starting with user flows and wireframes, then visual design, and finishing with developer-ready files including design systems and handoff specs.",
+   "response": "Yes. We design websites, apps, dashboards and admin panels in Figma: starting with user flows and wireframes, then visual design, and finishing with developer ready files including design systems and handoff specs.",
    "links": [
     {
      "text": "UI/UX Design",
@@ -242,7 +242,7 @@
     "saas development",
     "mvp"
    ],
-   "response": "Yes. We help founders build software-as-a-service products: multi-tenant architecture, subscription billing, user roles, admin panels and product analytics — from MVP to growing platform.",
+   "response": "Yes. We help founders build software as a service products: multi tenant architecture, subscription billing, user roles, admin panels and product analytics: from MVP to growing platform.",
    "links": [
     {
      "text": "SaaS Development",
@@ -289,7 +289,7 @@
     "wordpress site",
     "page builder"
    ],
-   "response": "Yes. We build custom WordPress themes and plugins — lightweight, fast and secure, without heavy page builders. We also handle WooCommerce stores, speed improvements and maintenance.",
+   "response": "Yes. We build custom WordPress themes and plugins: lightweight, fast and secure, without heavy page builders. We also handle WooCommerce stores, speed improvements and maintenance.",
    "links": [
     {
      "text": "WordPress Development",
@@ -311,7 +311,7 @@
     "product lifecycle",
     "build a product from scratch"
    ],
-   "response": "Yes. We take products from strategy through to release — research, design, development, QA, user testing and release management. One team responsible for the complete product.",
+   "response": "Yes. We take products from strategy through to release: research, design, development, QA, user testing and release management. One team responsible for the complete product.",
    "links": [
     {
      "text": "Product Development",
@@ -357,7 +357,7 @@
     "fitness app",
     "health app"
    ],
-   "response": "Uplift.ai is a mobile fitness app that combines training, meals and daily health tracking with an AI coach. Adelogix designed, developed and deployed it in 2023 over about 3–4 months. It includes 11 user flows and a design system with colour, type and effect styles.",
+   "response": "Uplift.ai is a mobile fitness app that combines training, meals and daily health tracking with an AI coach. Adelogix designed, developed and deployed it in 2023 over about 3 to 4 months. It includes 11 user flows and a design system with colour, type and effect styles.",
    "links": [
     {
      "text": "Uplift.ai case study",
@@ -378,7 +378,7 @@
     "ios vpn",
     "private browsing"
    ],
-   "response": "Fast VPN is an iOS app that connects users to a secure server in a single tap. Adelogix designed, developed and delivered it in 2025 over about 2–2.5 months. It includes 193 screens in light and dark mode, a built-in speed test, and Face ID/Touch ID/PIN security.",
+   "response": "Fast VPN is an iOS app that connects users to a secure server in a single tap. Adelogix designed, developed and delivered it in 2025 over about 2 to 2.5 months. It includes 193 screens in light and dark mode, a built in speed test, and Face ID/Touch ID/PIN security.",
    "links": [
     {
      "text": "Fast VPN case study",
@@ -400,7 +400,7 @@
     "freelancer",
     "booking app"
    ],
-   "response": "Emyy is a local services marketplace connecting customers with local freelancers. Adelogix developed the mobile app and website, delivered in February 2026. It has 57 mobile screens, 6 web pages and 2 user roles (customer and freelancer), with Stripe payments and real-time booking states.",
+   "response": "Emyy is a local services marketplace connecting customers with local freelancers. Adelogix developed the mobile app and website, delivered in February 2026. It has 57 mobile screens, 6 web pages and 2 user roles (customer and freelancer), with Stripe payments and real time booking states.",
    "links": [
     {
      "text": "Emyy case study",
@@ -422,7 +422,7 @@
     "dj crm",
     "events crm"
    ],
-   "response": "USR CRM is a web CRM for a UK team of international DJs and music producers. Adelogix redesigned and developed it in 2026 with a calm stone and sage interface, 14 desktop screens each with a matching mobile layout, live quotes, event sheets, a DJ colour-coded calendar and admin reports.",
+   "response": "USR CRM is a web CRM for a UK team of international DJs and music producers. Adelogix redesigned and developed it in 2026 with a calm stone and sage interface, 14 desktop screens each with a matching mobile layout, live quotes, event sheets, a DJ colour coded calendar and admin reports.",
    "links": [
     {
      "text": "USR CRM case study",
@@ -445,7 +445,7 @@
     "merchant dashboard",
     "horus"
    ],
-   "response": "OriusPay is a merchant finance dashboard designed and developed end to end by Adelogix in 2026. It has 17 modules on one sidebar — KPI cards, cash flow, transaction pipeline, Horus AI assistant, Quick Actions for payment links and QR codes, VAT compliance, and MFA security.",
+   "response": "OriusPay is a merchant finance dashboard designed and developed end to end by Adelogix in 2026. It has 17 modules on one sidebar: KPI cards, cash flow, transaction pipeline, Horus AI assistant, Quick Actions for payment links and QR codes, VAT compliance, and MFA security.",
    "links": [
     {
      "text": "OriusPay case study",
@@ -467,7 +467,7 @@
     "crypto app",
     "investment platform"
    ],
-   "response": "TruNext is a crypto investment platform built around GNSE, its gold-backed token. Adelogix designed the full UI/UX across three surfaces — web app, mobile app and admin panel — in 2026. It features four investment packages, USDT and gold-backed token wallets, Skrill cashout, and a referral program.",
+   "response": "TruNext is a crypto investment platform built around GNSE, its gold backed token. Adelogix designed the full UI/UX across three surfaces: web app, mobile app and admin panel: in 2026. It features four investment packages, USDT and gold backed token wallets, Skrill cashout, and a referral program.",
    "links": [
     {
      "text": "TruNext case study",
@@ -489,7 +489,7 @@
     "xen coin",
     "community-powered"
    ],
-   "response": "XENPOP is a community-powered crypto mining platform. People mine and earn coins from their phone with no special hardware. Adelogix designed and developed the complete platform in 2026: a 76-screen mobile app, a landing page, and a 16-screen admin panel, all on one shared design system.",
+   "response": "XENPOP is a community powered crypto mining platform. People mine and earn coins from their phone with no special hardware. Adelogix designed and developed the complete platform in 2026: a 76-screen mobile app, a landing page, and a 16-screen admin panel, all on one shared design system.",
    "links": [
     {
      "text": "XENPOP case study",
@@ -512,7 +512,7 @@
     "get started",
     "next step"
    ],
-   "response": "Send us a short description of your project through the contact form or book a call. We will arrange an initial conversation to understand your goals, then suggest next steps — usually a discovery phase or a proposal.",
+   "response": "Send us a short description of your project through the contact form or book a call. We will arrange an initial conversation to understand your goals, then suggest next steps: usually a discovery phase or a proposal.",
    "links": [
     {
      "text": "Contact us",
@@ -590,7 +590,7 @@
     "what service fits",
     "unsure"
    ],
-   "response": "I'd be happy to help you choose. Could you tell me a bit about what you're building — for example, a website, mobile app, CRM, or custom software? In the meantime, here's how our services map to common needs:\n\n• Website or web app → Web Development\n• iOS/Android app → Mobile App Development\n• CRM system → CRM Development\n• Custom internal tool → Custom Software Development\n• UI/UX design → UI/UX Design\n• SaaS product → SaaS Development\n\nSend us your details and we'll recommend the right service.",
+   "response": "I'd be happy to help you choose. Could you tell me a bit about what you're building: for example, a website, mobile app, CRM, or custom software? In the meantime, here's how our services map to common needs:\n\n• Website or web app → Web Development\n• iOS/Android app → Mobile App Development\n• CRM system → CRM Development\n• Custom internal tool → Custom Software Development\n• UI/UX design → UI/UX Design\n• SaaS product → SaaS Development\n\nSend us your details and we'll recommend the right service.",
    "links": [
     {
      "text": "All services",
@@ -610,7 +610,7 @@
   {
    "id": "fallback",
    "patterns": [],
-   "response": "I'm not sure I can answer that from the information available on our website. The ADELOGIX team would be happy to help — you can contact us through the contact form, by email, or by phone/WhatsApp.",
+   "response": "I'm not sure I can answer that from the information available on our website. The ADELOGIX team would be happy to help: you can contact us through the contact form, by email, or by phone/WhatsApp.",
    "links": [
     {
      "text": "Contact us",
@@ -727,7 +727,7 @@
    "category": "Crypto investment platform",
    "industry": "FinTech",
    "year": "2026",
-   "summary": "Crypto investment platform built around GNSE gold-backed token. UI/UX design by Adelogix across web app, mobile app and admin panel.",
+   "summary": "Crypto investment platform built around GNSE gold backed token. UI/UX design by Adelogix across web app, mobile app and admin panel.",
    "services": [
     "ui-ux-design"
    ],
@@ -739,7 +739,7 @@
    "category": "Crypto mining platform",
    "industry": "FinTech",
    "year": "2026",
-   "summary": "Community-powered crypto mining platform with mobile app, website and admin panel, designed and developed by Adelogix in 2026.",
+   "summary": "Community powered crypto mining platform with mobile app, website and admin panel, designed and developed by Adelogix in 2026.",
    "services": [
     "web-development",
     "mobile-app-development",

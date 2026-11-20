@@ -23,6 +23,7 @@ export default function ServicesPage() {
       <PageHero
         shape="helix"
         hue="#9a7cf2"
+        eyebrow="SERVICES"
         title="Design, development and the systems *in between.*"
         intro="Services covering websites, apps, product design, business software and AI. Tell us what you need to achieve and we will recommend where to start."
       >
@@ -38,6 +39,7 @@ export default function ServicesPage() {
 
       <section className="surface-light section-space">
         <div className="container-x">
+          <p className="eyebrow mb-4 text-brand-600">SERVICES</p>
           <h2 className="display h-md text-ink">One team for your <AccentText text="*product.*" className="serif-i text-brand-500" /></h2>
           <p className="mt-4 max-w-2xl text-ink/65">Each service has a detailed page covering scope, process, relevant technologies and common questions.</p>
           <div className="content-gap"><ServiceDirectory services={services} light /></div>
@@ -46,11 +48,13 @@ export default function ServicesPage() {
 
       <section id="groups" className="bg-ink section-space">
         <div className="container-x">
+          <p className="eyebrow mb-4 text-brand-300">SERVICE AREAS</p>
           <h2 className="display h-md">Services that work <AccentText text="*better together.*" /></h2>
           <div className="content-gap space-y-10 md:space-y-12">
             {serviceGroups.map((group, groupIndex) => (
               <section key={group.id} id={`group-${group.id}`} className="scroll-mt-28 grid gap-7 border-t border-white/10 pt-8 lg:grid-cols-12 lg:gap-10">
                 <div className={`lg:col-span-5 ${groupIndex % 2 ? "lg:order-2 lg:col-start-8" : ""}`}>
+                  <p className="eyebrow mb-3 text-brand-300">SERVICE GROUP</p>
                   <h3 className="display text-3xl md:text-4xl">{group.name}</h3>
                   <p className="mt-4 max-w-xl text-white/60">{group.desc}</p>
                   <ul className="mt-6 grid gap-2 text-sm text-white/70 sm:grid-cols-2">
@@ -77,12 +81,13 @@ export default function ServicesPage() {
 
       <section className="surface-light section-space">
         <div className="container-x">
+          <p className="eyebrow mb-4 text-brand-600">DELIVERABLES</p>
           <h2 className="display h-md text-ink">What you can <AccentText text="*expect.*" className="serif-i text-brand-500" /></h2>
           <div className="content-gap grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((service) => (
               <Link key={service.slug} href={`/services/${service.slug}/`} className="group rounded-[20px] border border-ink/10 bg-white p-5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg">
                 <div className="flex items-center gap-3"><LIcon name={service.icon} size={18} className="text-brand-500" /><p className="font-medium">{service.name}</p></div>
-                <ul className="mt-4 space-y-1.5 text-sm leading-relaxed text-ink/60">{service.deliverables.slice(1, 4).map((deliverable) => <li key={deliverable}>— {deliverable}</li>)}</ul>
+                <ul className="mt-4 space-y-1.5 text-sm leading-relaxed text-ink/60">{service.deliverables.slice(1, 4).map((deliverable) => <li key={deliverable}>{deliverable}</li>)}</ul>
               </Link>
             ))}
           </div>
@@ -91,21 +96,21 @@ export default function ServicesPage() {
 
       <section className="bg-ink-2 section-space">
         <div className="container-x">
-          <div className="flex flex-wrap items-end justify-between gap-5"><div><h2 className="display h-md">Chosen for <AccentText text="*fit,* not fashion." /></h2></div><Button href="/technologies/" variant="ghost">All technologies</Button></div>
+          <div className="flex flex-wrap items-end justify-between gap-5"><div><p className="eyebrow mb-4 text-brand-300">TECHNOLOGIES</p><h2 className="display h-md">Chosen for <AccentText text="*fit,* not fashion." /></h2></div><Button href="/technologies/" variant="ghost">All technologies</Button></div>
           <p className="mt-4 max-w-2xl text-white/60">The stack is selected during planning for the product, its integrations and the team that will maintain it.</p>
           <div className="content-gap"><TechnologyGrid categories={techCategories} /></div>
         </div>
       </section>
 
       <section className="bg-ink section-space">
-        <div className="container-x"><h2 className="display h-md">How we bring it <AccentText text="*to life.*" /></h2><div className="content-gap"><ProcessSteps stages={processStages} /></div></div>
+        <div className="container-x"><p className="eyebrow mb-4 text-brand-300">PROCESS</p><h2 className="display h-md">How we bring it <AccentText text="*to life.*" /></h2><div className="content-gap"><ProcessSteps stages={processStages} /></div></div>
       </section>
 
       <section className="surface-light section-space">
-        <div className="container-x"><h2 className="display h-md text-ink">Common <AccentText text="*questions.*" className="serif-i text-brand-500" /></h2><div className="content-gap"><StaticFAQ light items={generalFaqs.slice(0, 6)} /></div></div>
+        <div className="container-x"><p className="eyebrow mb-4 text-brand-600">FAQ</p><h2 className="display h-md text-ink">Common <AccentText text="*questions.*" className="serif-i text-brand-500" /></h2><div className="content-gap"><StaticFAQ light items={generalFaqs.slice(0, 6)} /></div></div>
       </section>
 
-      <FinalCTA title="Not sure where to *start?*" text="Describe the problem you want to solve. We will recommend the right service — or a short discovery phase — and explain why." />
+      <FinalCTA title="Not sure where to *start?*" text="Describe the problem you want to solve. We will recommend the right service or a short discovery phase and explain why." />
     </>
   );
 }

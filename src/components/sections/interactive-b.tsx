@@ -5,68 +5,35 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Minus, Plus, Quote, UserRound } from "lucide-react";
 import { projects, type Project } from "@/data/projects";
-import { getService } from "@/data/services";
 import { testimonials, team } from "@/data/content";
 import { registerGsap, prefersReducedMotion } from "@/lib/motion";
 import { ProjectCard } from "./blocks";
 import { Reveal } from "@/components/anim/primitives";
 
-/* ───────── Featured projects: pinned horizontal scroll (desktop) ───────── */
+/* Featured projects: a stable, user controlled grid with direct case study links. */
 export function FeaturedProjects({ list = projects }: { list?: Project[] }) {
-  const section = useRef<HTMLDivElement>(null);
-  const track = useRef<HTMLDivElement>(null);
-  const bar = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const { gsap } = registerGsap();
-    if (prefersReducedMotion()) return;
-    const mm = gsap.matchMedia();
-    mm.add("(min-width: 1024px)", () => {
-      const t = track.current!, s = section.current!;
-      const dist = () => t.scrollWidth - window.innerWidth + 80;
-      const tw = gsap.to(t, {
-        x: () => -dist(), ease: "none",
-        scrollTrigger: { trigger: s, start: "top top", end: () => `+=${dist()}`, scrub: 0.8, pin: true, invalidateOnRefresh: true, anticipatePin: 1,
-          onUpdate: (self) => { if (bar.current) bar.current.style.transform = `scaleX(${self.progress})`; } },
-      });
-      gsap.utils.toArray<HTMLElement>(".hp-img").forEach((img) => {
-        gsap.fromTo(img, { xPercent: -8 }, { xPercent: 8, ease: "none", scrollTrigger: { trigger: img, containerAnimation: tw, start: "left right", end: "right left", scrub: true } });
-      });
-      return () => { tw.scrollTrigger?.kill(); tw.kill(); };
-    });
-    return () => mm.revert();
-  }, []);
-
   return (
-    <div ref={section} className="relative overflow-hidden lg:h-screen">
-      <div ref={track} className="flex flex-col gap-8 px-[var(--gutter)] sm:gap-10 lg:h-full lg:w-max lg:flex-row lg:items-center lg:gap-10 lg:pr-[30vw]">
-        {list.map((p, i) => (
-          <Link key={p.slug} href={`/work/${p.slug}/`} data-cursor="view" className="group relative block w-full shrink-0 lg:w-[min(62vw,980px)]">
-            <div className="relative aspect-[3/2] overflow-hidden rounded-[30px] bg-ink-3">
-              <div className="hp-img absolute inset-[-8%]">
-                <Image src={p.cover} alt={`${p.name} — ${p.category}`} fill sizes="(min-width:1024px) 62vw, 100vw" className="object-cover transition-transform duration-[1.4s] group-hover:scale-105" />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
-              <div className="absolute left-5 top-5 flex flex-wrap gap-2 md:left-7 md:top-7">
-                <span className="rounded-full bg-ink/60 px-3 py-1.5 font-mono text-[0.68rem] uppercase tracking-wider text-white backdrop-blur">{p.category}</span>
-                <span className="rounded-full bg-ink/60 px-3 py-1.5 font-mono text-[0.68rem] uppercase tracking-wider text-white/70 backdrop-blur">{p.year}</span>
-              </div>
-              <div className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-4 md:inset-x-8 md:bottom-8">
-                <div>
-                  <span className="font-mono text-xs text-brand-200">{p.industry}</span>
-                  <h3 className="mt-2 display text-3xl text-white md:text-6xl">{p.name}</h3>
-                  <p className="mt-2 hidden max-w-lg text-sm text-white/70 md:block">{p.tagline}</p>
-                  <div className="mt-4 hidden flex-wrap gap-2 md:flex">
-                    {p.services.slice(0, 3).map((s) => <span key={s} className="rounded-full border border-white/25 px-3 py-1 text-xs text-white/80">{getService(s)?.name}</span>)}
-                  </div>
-                </div>
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-ivory text-ink transition-transform duration-500 group-hover:rotate-45 md:h-16 md:w-16"><ArrowUpRight /></span>
-              </div>
+    <div className="container-x grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+      {list.map((p) => (
+        <Link key={p.slug} href={`/work/${p.slug}/`} className="group relative block min-w-0">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[30px] bg-ink-3">
+            <Image src={p.cover} alt={`${p.name} ${p.category}`} fill sizes="(min-width:1280px) 30vw, (min-width:640px) 46vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
+            <div className="absolute left-5 top-5 flex flex-wrap gap-2">
+              <span className="rounded-full bg-ink/60 px-3 py-1.5 font-mono text-[0.68rem] uppercase tracking-wider text-white backdrop-blur">{p.category}</span>
+              <span className="rounded-full bg-ink/60 px-3 py-1.5 font-mono text-[0.68rem] uppercase tracking-wider text-white/70 backdrop-blur">{p.year}</span>
             </div>
-          </Link>
-        ))}
-      </div>
-      <div className="absolute bottom-8 left-[var(--gutter)] right-[var(--gutter)] hidden h-px bg-white/10 lg:block"><div ref={bar} className="h-px origin-left scale-x-0 bg-brand-gradient" /></div>
+            <div className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-4">
+              <div>
+                <span className="font-mono text-xs text-brand-200">{p.industry}</span>
+                <h3 className="mt-2 display text-3xl text-white md:text-4xl">{p.name}</h3>
+                <p className="mt-2 max-w-lg text-sm text-white/70">{p.tagline}</p>
+              </div>
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-ivory text-ink transition-transform duration-500 group-hover:rotate-45"><ArrowUpRight /></span>
+            </div>
+          </div>
+        </Link>
+      ))}
     </div>
   );
 }
@@ -125,7 +92,7 @@ export function ProcessTimeline({ stages, light = false }: { stages: { name: str
   );
 }
 
-/* ───────── Testimonials (SAMPLE placeholders — clearly marked) ───────── */
+/* ───────── Testimonials (SAMPLE placeholders clearly marked) ───────── */
 export function Testimonials() {
   const [i, setI] = useState(0);
   const [dir, setDir] = useState(1);

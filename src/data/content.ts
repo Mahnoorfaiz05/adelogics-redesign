@@ -1,7 +1,7 @@
 export const industries = [
   { name: "Healthcare", full: "Healthcare & Medical", text: "Appointment booking, patient portals and staff scheduling.", services: ["custom-software-development", "mobile-app-development"], icon: "HeartPulse" },
-  { name: "Education", full: "Education & E-Learning", text: "Course platforms, student portals and assessment tools.", services: ["saas-development", "web-development"], icon: "GraduationCap" },
-  { name: "E-Commerce", full: "E-Commerce & Retail", text: "Online stores, inventory and order management.", services: ["wordpress-development", "erp-cms-development"], icon: "ShoppingBag" },
+  { name: "Education", full: "Education & E Learning", text: "Course platforms, student portals and assessment tools.", services: ["saas-development", "web-development"], icon: "GraduationCap" },
+  { name: "E Commerce", full: "E Commerce & Retail", text: "Online stores, inventory and order management.", services: ["wordpress-development", "erp-cms-development"], icon: "ShoppingBag" },
   { name: "Finance", full: "Finance & FinTech", text: "Client dashboards, onboarding flows and approval tools.", services: ["custom-software-development", "ai-development-automation"], icon: "Landmark" },
   { name: "Real Estate", full: "Real Estate & Property", text: "Listings, enquiry management and agent CRMs.", services: ["crm-development", "web-development"], icon: "Building2" },
   { name: "Travel", full: "Travel & Hospitality", text: "Booking engines, guest apps and availability tools.", services: ["mobile-app-development", "web-development"], icon: "Plane" },
@@ -10,7 +10,7 @@ export const industries = [
 
 export const strengths = [
   { title: "Clear communication", text: "You always know what is in progress, what is finished and what needs your input." },
-  { title: "Practical problem-solving", text: "We look for the simplest solution to the real problem, and say so when a feature can wait." },
+  { title: "Practical problem solving", text: "We look for the simplest solution to the real problem, and say so when a feature can wait." },
   { title: "Suitable technology", text: "Tools are chosen for your budget, team and growth plans, not for what is fashionable." },
   { title: "Organised delivery", text: "Agreed scope, visible milestones and staged releases keep the project predictable." },
   { title: "Support after launch", text: "We can stay on to fix issues, monitor and improve the product, on terms agreed upfront." },
@@ -38,7 +38,7 @@ export const collaboration = [
   { title: "Agreed support", text: "Clear terms for what happens after launch, written into the proposal." },
 ];
 
-// SAMPLE TESTIMONIALS — NOT GENUINE CUSTOMER FEEDBACK.
+// SAMPLE TESTIMONIALS NOT GENUINE CUSTOMER FEEDBACK.
 // These are illustrative layout copy only. Replace them with verified testimonials
 // after written permission is received; do not associate them with a company,
 // photograph, rating, project, or outcome.
@@ -74,11 +74,11 @@ export const team = [
 export const generalFaqs = [
   { topic: "Services", q: "What kind of projects do you take on?", a: "Websites, web applications, iOS and Android apps, SaaS products, CRMs, ERPs, WordPress builds, AI features and automation, and cloud/DevOps work. If you are unsure which service fits, describe the problem and we will recommend where to start." },
   { topic: "Pricing", q: "How much does a project cost?", a: "Every project is scoped individually. After a short conversation we provide a written scope and phased estimate. If requirements are still unclear, we may suggest a short discovery phase first so the estimate is reliable." },
-  { topic: "Timelines", q: "How long does a typical project take?", a: "It depends on scope. As a reference from our own case studies, Fast VPN took about 2–2.5 months and Uplift.ai about 3–4 months from first screens to live app. Your proposal includes a timeline with milestones." },
+  { topic: "Timelines", q: "How long does a typical project take?", a: "It depends on scope. As a reference from our own case studies, Fast VPN took about 2 to 2.5 months and Uplift.ai about 3 to 4 months from first screens to live app. Your proposal includes a timeline with milestones." },
   { topic: "Technologies", q: "Which technologies do you use?", a: "The stack is chosen during planning based on your requirements, budget and the team that will maintain the product. We work across web, iOS, Android, WordPress, Figma, AWS and Google Cloud, among others." },
-  { topic: "Communication", q: "How will we communicate during the project?", a: "You get one point of contact, regular progress updates at an agreed rhythm and decisions recorded in writing — by email, phone, WhatsApp or video call, whichever you prefer." },
+  { topic: "Communication", q: "How will we communicate during the project?", a: "You get one point of contact, regular progress updates at an agreed rhythm and decisions recorded in writing by email, phone, WhatsApp or video call, whichever you prefer." },
   { topic: "Support", q: "Do you provide support after launch?", a: "Yes. We can stay on to fix issues, monitor and improve the product. Support terms are agreed upfront and written into the proposal." },
-  { topic: "Collaboration", q: "Can you work with our existing team or codebase?", a: "Yes. We start with a short technical review to understand the codebase and its risks, then recommend whether to improve it in place or rebuild specific parts. We are comfortable working alongside in-house teams." },
+  { topic: "Collaboration", q: "Can you work with our existing team or codebase?", a: "Yes. We start with a short technical review to understand the codebase and its risks, then recommend whether to improve it in place or rebuild specific parts. We are comfortable working alongside in house teams." },
   { topic: "Ownership", q: "Who owns the code when the project is finished?", a: "Ownership terms are set out in the project agreement. Our standard approach is that you receive the source code and access to the accounts your product runs on once the project is paid for." },
 ];
 

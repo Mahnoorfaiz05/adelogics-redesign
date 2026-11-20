@@ -18,13 +18,14 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about/" },
 };
 
-const aboutIntro = "We want to be the development partner we would hire ourselves: clear about what will be delivered, honest about trade-offs, and still around after launch.";
+const aboutIntro = "We want to be the development partner we would hire ourselves: clear about what will be delivered, honest about trade offs, and still around after launch.";
 
 export default function AboutPage() {
   return (
     <>
       <PageHero
         shape="torus" hue="#c39be0"
+        eyebrow="ABOUT"
         title="A software team that starts with your *business.*"
         intro={aboutIntro}
         aside={
@@ -42,6 +43,7 @@ export default function AboutPage() {
         <div className="container-x grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-32">
+              <p className="eyebrow mb-4 text-brand-600">OUR APPROACH</p>
               <SplitHeading text="The partner we would *hire.*" className="display h-md" accentClass="serif-i text-brand-500" />
               <Reveal variant="mask" className="relative mt-8 aspect-[4/3] overflow-hidden rounded-[28px]">
                 <Parallax speed={0.2} className="absolute inset-[-10%]"><Image src="/images/case-studies/usr-crm/05-dashboard.webp" alt="USR CRM dashboard redesigned by Adelogix" fill sizes="40vw" className="object-cover" /></Parallax>
@@ -59,17 +61,19 @@ export default function AboutPage() {
       <section className="grid md:grid-cols-2">
         <div className="relative overflow-hidden bg-brand-gradient p-6 py-14 sm:p-10 sm:py-16 md:p-16 md:py-20">
           <div className="absolute -right-20 -top-20 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
+          <p className="eyebrow mb-4 text-white/75">PURPOSE</p>
           <SplitHeading as="h2" text="Practical software that solves the problem it was *built for.*" className="mt-2 display text-[clamp(1.8rem,1rem+2.4vw,3.4rem)]" accentClass="serif-i" />
         </div>
         <div className="relative overflow-hidden bg-ink-2 p-6 py-14 sm:p-10 sm:py-16 md:p-16 md:py-20">
           <div className="absolute inset-0 grid-lines opacity-60" />
+          <p className="relative eyebrow mb-4 text-brand-200">PARTNERSHIP</p>
           <SplitHeading as="h2" text="The partner teams trust to stay *clear and involved.*" className="relative mt-2 display text-[clamp(1.8rem,1rem+2.4vw,3.4rem)]" />
         </div>
       </section>
 
       <section className="bg-ink section-space">
         <div className="container-x">
-          <SectionHeader title="Principles behind every *project.*" intro="The working habits that shape how we plan, build and communicate, whatever the size of the project." />
+          <SectionHeader eyebrow="VALUES" title="Principles behind every *project.*" intro="The working habits that shape how we plan, build and communicate, whatever the size of the project." />
           <div className="mt-10 space-y-4 md:mt-12 md:space-y-5">
             {values.map((v, i) => (
               <div key={v.title} className="md:sticky" style={{ top: `${110 + i * 26}px` }}>
@@ -100,6 +104,7 @@ export default function AboutPage() {
             </div>
           </Reveal>
           <div className="lg:col-span-6 lg:col-start-7">
+            <p className="eyebrow mb-4 text-brand-600">LEADERSHIP</p>
             <SplitHeading text="Leading with *clarity.*" className="display h-md" accentClass="serif-i text-brand-500" />
             <Reveal variant="blur" delay={0.2}>
               <p className="mt-7 eyebrow text-brand-600">{founder.role}</p>
@@ -112,14 +117,14 @@ export default function AboutPage() {
 
       <section className="bg-ink section-space">
         <div className="container-x">
-          <SectionHeader title="People who carry the work *forward.*" />
+          <SectionHeader eyebrow="TEAM" title="People who carry the work *forward.*" />
           <div className="mt-12"><Team /></div>
         </div>
       </section>
 
       <section className="border-t border-white/10 bg-ink-2 section-space">
         <div className="container-x">
-          <SectionHeader title="Experience where it *counts.*" action={<Button href="/services/" variant="ghost">Explore services</Button>} />
+          <SectionHeader eyebrow="SERVICES" title="Experience where it *counts.*" action={<Button href="/services/" variant="ghost">Explore services</Button>} />
           <Reveal stagger={0.08} variant="up" className="mt-12 grid gap-px overflow-hidden rounded-[28px] bg-white/10 md:grid-cols-2 lg:grid-cols-3">
             {serviceGroups.map((g) => (
               <div key={g.id} className="group relative bg-ink-2 p-8 transition-colors duration-500 hover:bg-ink-3">
@@ -136,7 +141,7 @@ export default function AboutPage() {
 
       <section id="approach" className="surface-light section-space">
         <div className="container-x">
-          <SectionHeader light title="How we work *together.*" intro="One point of contact, regular progress updates at an agreed rhythm, and decisions recorded in writing." />
+          <SectionHeader eyebrow="PROCESS" light title="How we work *together.*" intro="One point of contact, regular progress updates at an agreed rhythm, and decisions recorded in writing." />
           <Reveal stagger={0.1} variant="right" className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {processStages.map((s) => (
               <div key={s.name} className="group relative overflow-hidden rounded-[26px] bg-paper p-7 transition-all duration-700 hover:-translate-y-2 hover:bg-ink hover:text-ivory">
@@ -159,7 +164,7 @@ export default function AboutPage() {
           {strengths.map((s) => <span key={s.title} className="mx-8 display text-5xl text-white/10 md:text-7xl">{s.title} <span className="text-brand-400/50">✦</span></span>)}
         </Marquee>
         <div className="container-x">
-          <SectionHeader title="What keeps projects *predictable.*" />
+          <SectionHeader eyebrow="WHY ADELOGIX" title="What keeps projects *predictable.*" />
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-5">
             {strengths.map((s, i) => (
               <Reveal key={s.title} variant="scale" delay={i * 0.06} className="glass group rounded-[24px] p-6 transition-transform duration-500 hover:-translate-y-1">

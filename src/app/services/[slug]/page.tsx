@@ -48,6 +48,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <PageHero
         shape={service.shape}
         hue={service.hue}
+        eyebrow="SERVICES"
         title={service.headline.replace(/(\w+)\.$/, "*$1.*")}
         intro={service.intro}
         aside={
@@ -69,12 +70,14 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
       <section className="surface-light section-space">
         <div className="container-x">
+          <p className="eyebrow mb-4 text-brand-600">OVERVIEW</p>
           <p className="display max-w-5xl text-[clamp(1.55rem,1rem+2.05vw,3.1rem)] leading-[1.1] text-ink">{service.short} {service.intro}</p>
         </div>
       </section>
 
       <section className="bg-ink section-space">
         <div className="container-x">
+          <p className="eyebrow mb-4 text-brand-300">CHALLENGES</p>
           <h2 className="max-w-3xl display h-md"><AccentText text={service.challengesTitle.replace("familiar?", "*familiar?*")} /></h2>
           <div className="content-gap grid gap-3 md:grid-cols-2">
             {service.challenges.map((challenge) => (
@@ -93,6 +96,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <div className="orb -right-20 top-0 h-[320px] w-[320px]" style={{ background: service.hue, opacity: 0.3 }} />
         <div className="container-x relative grid gap-8 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-6">
+            <p className="eyebrow mb-4 text-brand-200">SOLUTION</p>
             <h2 className="display h-md">{service.solutionTitle}</h2>
             <p className="lead mt-6 max-w-2xl text-white/70">{service.solutionText}</p>
           </div>
@@ -106,6 +110,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
       <section id="included" className="surface-light scroll-mt-24 section-space">
         <div className="container-x">
+          <p className="eyebrow mb-4 text-brand-600">DELIVERABLES</p>
           <h2 className="display h-md text-ink">What we can <AccentText text="*deliver.*" className="serif-i text-brand-500" /></h2>
           <p className="mt-4 max-w-2xl text-ink/65">Every project is scoped individually. These are the deliverables most often included in this service.</p>
           <div className="content-gap grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -121,8 +126,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <section className="bg-ink-2 section-space">
         <div className="container-x">
           <div className="flex flex-wrap items-end justify-between gap-5">
-            <h2 className="display h-md">Tools for <AccentText text="*this work.*" /></h2>
-            <Link href="/technologies/" className="link-u text-sm text-brand-200">All technologies →</Link>
+            <div><p className="eyebrow mb-4 text-brand-300">TECHNOLOGIES</p><h2 className="display h-md">Tools for <AccentText text="*this work.*" /></h2>
+            </div>
+            <Link href="/technologies/" className="link-u text-sm text-brand-200">All technologies</Link>
           </div>
           <p className="mt-4 max-w-2xl text-white/60">The final stack is chosen during planning, based on requirements and the team that will maintain the product.</p>
           <div className="content-gap"><TechnologyGrid categories={techCategories} service={service} /></div>
@@ -131,6 +137,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
       <section className="bg-ink section-space">
         <div className="container-x">
+          <p className="eyebrow mb-4 text-brand-300">PROCESS</p>
           <h2 className="display h-md">How the work comes <AccentText text="*together.*" /></h2>
           <div className="content-gap"><ProcessSteps stages={stages} /></div>
         </div>
@@ -140,7 +147,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <section className="surface-light section-space">
           <div className="container-x">
             <div className="flex flex-wrap items-end justify-between gap-5">
-              <h2 className="display h-md text-ink">Related <AccentText text="*work.*" className="serif-i text-brand-500" /></h2>
+              <div><p className="eyebrow mb-4 text-brand-600">WORK</p><h2 className="display h-md text-ink">Related <AccentText text="*work.*" className="serif-i text-brand-500" /></h2>
+              </div>
               <Button href="/work/" variant="dark">All work</Button>
             </div>
             <div className="content-gap grid gap-x-6 gap-y-10 md:grid-cols-2">
@@ -153,6 +161,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <section className="bg-ink-2 section-space">
         <div className="container-x grid gap-8 lg:grid-cols-12">
           <div className="lg:col-span-4">
+            <p className="eyebrow mb-4 text-brand-300">FAQ</p>
             <h2 className="display text-4xl md:text-5xl">{service.faqTitle}</h2>
             <p className="mt-5 text-white/55">Something else on your mind? Ask us directly and we will give you a straight answer.</p>
           </div>
@@ -162,6 +171,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
       <section className="bg-ink section-space">
         <div className="container-x">
+          <p className="eyebrow mb-4 text-brand-300">RELATED SERVICES</p>
           <h2 className="display h-md">Often paired <AccentText text="*with this.*" /></h2>
           <div className="content-gap grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {related.map((item) => (

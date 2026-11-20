@@ -6,9 +6,9 @@ import type { HeroShape } from "@/data/services";
 /* Shared animated hero for inner pages. The composition stays cinematic without
    making visitors scroll through an empty viewport before reaching the page. */
 export default function PageHero({
-  title, intro, shape = "sphere", hue = "#a792d8", children, aside, align = "split",
+  eyebrow, title, intro, shape = "sphere", hue = "#a792d8", children, aside, align = "split",
 }: {
-  title: string; intro?: string; shape?: HeroShape; hue?: string;
+  eyebrow: string; title: string; intro?: string; shape?: HeroShape; hue?: string;
   children?: ReactNode; aside?: ReactNode; align?: "split" | "center";
 }) {
   const center = align === "center";
@@ -23,6 +23,7 @@ export default function PageHero({
       <div className={`container-x relative ${center ? "text-center" : ""}`}>
         <div className={`grid gap-8 ${aside ? "lg:grid-cols-12 lg:items-end" : ""}`}>
           <div className={aside ? "lg:col-span-8" : center ? "mx-auto max-w-5xl" : "max-w-5xl"}>
+            <p className={`eyebrow mb-4 text-brand-200 ${center ? "text-center" : ""}`}>{eyebrow}</p>
             <SplitHeading as="h1" text={title} immediate className="display h-lg text-balance" />
             {intro && (
               <Reveal variant="blur" delay={0.35} className={center ? "mx-auto max-w-2xl" : "max-w-2xl"}>

@@ -7,10 +7,11 @@ import { industries, highlights, strengths } from "@/data/content";
 import { getService } from "@/data/services";
 import type { Project } from "@/data/projects";
 
-export function SectionHeader({ title, intro, light, className = "", action }: { title: string; intro?: string; light?: boolean; className?: string; action?: React.ReactNode }) {
+export function SectionHeader({ eyebrow, title, intro, light, className = "", action }: { eyebrow: string; title: string; intro?: string; light?: boolean; className?: string; action?: React.ReactNode }) {
   return (
     <div className={`grid gap-7 md:grid-cols-12 md:items-end ${className}`}>
       <div className="md:col-span-8">
+        <p className={`eyebrow mb-4 ${light ? "text-brand-600" : "text-brand-300"}`}>{eyebrow}</p>
         <SplitHeading text={title} className="display h-md text-balance" accentClass={light ? "serif-i text-brand-500" : "serif-i text-gradient"} />
       </div>
       {(intro || action) && (
@@ -25,10 +26,10 @@ export function SectionHeader({ title, intro, light, className = "", action }: {
 
 export function ProjectCard({ p, size = "md" }: { p: Project; size?: "md" | "lg" }) {
   return (
-    <Link href={`/work/${p.slug}/`} className="group block" data-cursor="view" aria-label={`${p.name} case study`}>
+    <Link href={`/work/${p.slug}/`} className="group block" aria-label={`${p.name} case study`}>
       <Tilt max={5} className="overflow-hidden rounded-[28px]">
         <div className={`relative overflow-hidden rounded-[28px] bg-ink-3 ${size === "lg" ? "aspect-[16/10]" : "aspect-[3/2]"}`}>
-          <Image src={p.cover} alt={`${p.name} — ${p.category}`} fill sizes="(min-width:1024px) 50vw, 100vw" className="object-cover transition-transform duration-[1.4s] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-[1.06]" />
+          <Image src={p.cover} alt={`${p.name} ${p.category}`} fill sizes="(min-width:1024px) 50vw, 100vw" className="object-cover transition-transform duration-[1.4s] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-[1.06]" />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
           <div className="absolute bottom-5 left-5 right-5 flex translate-y-4 flex-wrap gap-2 opacity-0 transition-all duration-700 group-hover:translate-y-0 group-hover:opacity-100">
             {p.services.slice(0, 3).map((s) => <span key={s} className="rounded-full bg-white/15 px-3 py-1 text-xs text-white backdrop-blur">{getService(s)?.name}</span>)}
@@ -47,12 +48,12 @@ export function ProjectCard({ p, size = "md" }: { p: Project; size?: "md" | "lg"
   );
 }
 
-/* Industries — expanding panels on desktop, stacked tiles on mobile */
+/* Industries expanding panels on desktop, stacked tiles on mobile */
 export function Industries({ light = true }: { light?: boolean }) {
   return (
     <section className={`${light ? "surface-light" : "bg-ink"} relative section-space`}>
       <div className="container-x">
-        <SectionHeader light={light} title="Sectors with their own *rules* and pressures." intro="Each sector has its own users, rules and pressures. These are the industries we design and develop for, with the services that most often apply." />
+        <SectionHeader eyebrow="INDUSTRIES" light={light} title="Sectors with their own *rules* and pressures." intro="Each sector has its own users, rules and pressures. These are the industries we design and develop for, with the services that most often apply." />
         <Reveal stagger={0.07} variant="up" className="mt-12 flex flex-col gap-3 lg:h-[440px] lg:flex-row">
           {industries.map((ind) => (
             <div key={ind.name} tabIndex={0} className={`group relative flex min-h-[150px] flex-col justify-between overflow-hidden rounded-[26px] p-6 outline-none transition-[flex-grow,background] duration-700 ease-[cubic-bezier(.16,1,.3,1)] lg:flex-1 lg:hover:flex-[3.2] lg:focus-within:flex-[3.2] ${light ? "bg-paper hover:bg-ink hover:text-ivory focus:bg-ink focus:text-ivory" : "bg-ink-3 hover:bg-brand-700"}`}>
@@ -77,20 +78,20 @@ export function Industries({ light = true }: { light?: boolean }) {
           ))}
         </Reveal>
         <Reveal variant="fade" className={`mt-8 text-sm ${light ? "text-ink/60" : "text-white/60"}`}>
-          Working in another sector? <Link href="/contact/" className="link-u font-medium text-brand-500">Tell us about your business →</Link>
+          Working in another sector? <Link href="/contact/" className="link-u font-medium text-brand-500">Tell us about your business</Link>
         </Reveal>
       </div>
     </section>
   );
 }
 
-/* Highlights — verified facts only */
+/* Highlights verified facts only */
 export function Highlights() {
   return (
     <section className="relative overflow-hidden bg-ink section-space">
       <div className="orb left-1/3 top-0 h-[400px] w-[400px] bg-brand-600/30" />
       <div className="container-x relative">
-        <SectionHeader title="Why teams choose to *work with us.*" intro="Most software projects that struggle do so because of unclear scope, poor communication or the wrong technology. These are the habits we use to avoid all three." />
+        <SectionHeader eyebrow="WHY ADELOGIX" title="Why teams choose to *work with us.*" intro="Most software projects that struggle do so because of unclear scope, poor communication or the wrong technology. These are the habits we use to avoid all three." />
         <div className="mt-14 grid grid-cols-2 border-l border-t border-white/10 lg:grid-cols-4">
           {highlights.map((h) => (
             <Reveal key={h.label} variant="fade" className="group relative overflow-hidden border-b border-r border-white/10 p-6 md:p-10">

@@ -12,7 +12,7 @@ import { nextSteps, generalFaqs } from "@/data/content";
 
 export const metadata: Metadata = {
   title: "Contact Us: Discuss Your Project",
-  description: "Tell Adelogix about your project. Email, phone, WhatsApp or the project enquiry form — we reply using your preferred contact method.",
+  description: "Tell Adelogix about your project. Email, phone, WhatsApp or the project enquiry form, and we reply using your preferred contact method.",
   alternates: { canonical: "/contact/" },
 };
 
@@ -27,6 +27,7 @@ export default function ContactPage() {
     <>
       <PageHero
         shape="galaxy" hue="#b48cff"
+        eyebrow="CONTACT"
         title="Tell us about your *project.*"
         intro="Whether you have a detailed brief or just an idea, start here. A short message is enough for us to understand what you need and suggest a next step."
       >
@@ -59,6 +60,7 @@ export default function ContactPage() {
             </Reveal>
           </aside>
           <Reveal variant="up" className="glass rounded-[32px] bg-ink/60 p-6 sm:p-8 md:p-12 lg:col-span-8">
+            <p className="eyebrow mb-4 text-brand-200">CONTACT</p>
             <h2 className="display text-3xl md:text-4xl">Project enquiry</h2>
             <div className="mt-6"><ContactForm /></div>
           </Reveal>
@@ -68,7 +70,7 @@ export default function ContactPage() {
       {/* Map */}
       <section className="bg-ink">
         <div className="container-x section-space">
-          <SectionHeader title="Based in *Bahawalpur,* working worldwide." intro={site.location} />
+          <SectionHeader eyebrow="LOCATION" title="Based in *Bahawalpur,* working worldwide." intro={site.location} />
           <Reveal variant="mask" className="relative mt-12 overflow-hidden rounded-[28px] border border-white/10">
             <iframe title="Adelogix office location map" src={site.mapEmbed} loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="h-[360px] w-full grayscale invert-[0.92] hue-rotate-180 md:h-[400px]" />
             <a href={site.mapUrl} target="_blank" rel="noopener noreferrer" className="glass absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-ink/70 px-4 py-2 text-sm">Open in Google Maps <ArrowUpRight size={14} /></a>
@@ -79,7 +81,7 @@ export default function ContactPage() {
       {/* What happens next */}
       <section className="surface-light section-space">
         <div className="container-x">
-          <SectionHeader light title="After you get *in touch.*" />
+          <SectionHeader eyebrow="NEXT STEPS" light title="After you get *in touch.*" />
           <div className="relative mt-12 grid gap-6 md:mt-12 md:grid-cols-3">
             <div className="absolute left-0 right-0 top-7 hidden h-px bg-ink/10 md:block" />
             {nextSteps.map((s, i) => (
@@ -95,7 +97,7 @@ export default function ContactPage() {
 
       <section className="bg-ink section-space">
         <div className="container-x grid gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-4"><SectionHeader title="Quick *answers.*" className="!block" /></div>
+          <div className="lg:col-span-4"><SectionHeader eyebrow="FAQ" title="Quick *answers.*" className="!block" /></div>
           <div className="lg:col-span-8"><FAQ items={generalFaqs.filter((f) => ["Pricing", "Timelines", "Communication", "Support"].includes(f.topic))} /></div>
         </div>
       </section>

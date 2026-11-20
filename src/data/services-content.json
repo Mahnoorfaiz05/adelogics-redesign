@@ -25,7 +25,7 @@
    }
   ],
   "solutionTitle": "One team for the full stack",
-  "solutionText": "We plan the structure around what visitors and users need to do, design the interface, then build it on a stack that suits the job. Marketing sites get clean markup, fast loading and search-friendly structure. Web applications get a properly modelled backend, secure authentication and an admin area your team can actually use.",
+  "solutionText": "We plan the structure around what visitors and users need to do, design the interface, then build it on a stack that suits the job. Marketing sites get clean markup, fast loading and search friendly structure. Web applications get a properly modelled backend, secure authentication and an admin area your team can actually use.",
   "solutionPoints": [
    "Page structure and user flows agreed before development starts",
    "Responsive layouts tested on real phone, tablet and desktop sizes",
@@ -33,7 +33,7 @@
    "Documented code and a handover your team or ours can maintain"
   ],
   "deliverables": [
-   "Full-stack web development",
+   "Full stack web development",
    "Frontend development",
    "Backend and API development",
    "Web application development",
@@ -43,7 +43,7 @@
    "Rebuilds and migrations from legacy platforms"
   ],
   "process": [
-   "We review your current site or idea, your audience and the actions that matter, such as enquiries, sign-ups or orders.",
+   "We review your current site or idea, your audience and the actions that matter, such as enquiries, sign ups or orders.",
    "Sitemap, key user flows, content needs and the technical approach are agreed, with a scope and timeline you can plan around.",
    "Design and development happen in reviewable stages on a staging link, so you see progress instead of waiting for a big reveal.",
    "We handle deployment, redirects and analytics setup, then stay available for fixes and improvements as agreed."
@@ -93,7 +93,7 @@
    },
    {
     "title": "Field teams work from paper or messaging apps",
-    "desc": "Information gets re-typed back at the office, photos go missing and nobody has a reliable picture of what happened on site."
+    "desc": "Information gets re typed back at the office, photos go missing and nobody has a reliable picture of what happened on site."
    },
    {
     "title": "Two platforms feel like two projects",
@@ -105,7 +105,7 @@
    }
   ],
   "solutionTitle": "Apps planned around the moment of use",
-  "solutionText": "We start by mapping when and where people will open the app, then design flows that respect that moment: one hand, a poor signal, thirty seconds to spare. Depending on your needs we recommend a cross-platform approach that shares one codebase across iOS and Android, or native development where the product depends on deep device features.",
+  "solutionText": "We start by mapping when and where people will open the app, then design flows that respect that moment: one hand, a poor signal, thirty seconds to spare. Depending on your needs we recommend a cross platform approach that shares one codebase across iOS and Android, or native development where the product depends on deep device features.",
   "solutionPoints": [
    "Clickable prototype tested before development begins",
    "One shared codebase for iOS and Android where it makes sense",
@@ -117,8 +117,8 @@
    "Android app development",
    "iOS app development",
    "Mobile app UI design",
-   "Offline-ready data and sync",
-   "Push notifications and in-app messaging",
+   "Offline ready data and sync",
+   "Push notifications and in app messaging",
    "App backend and admin panel",
    "Store listing, submission and release management"
   ],
@@ -145,7 +145,7 @@
   "faqs": [
    {
     "q": "Should we build for iOS, Android or both?",
-    "a": "It depends on who your users are. We look at your audience and budget and usually recommend a cross-platform build so both platforms launch together. Native development makes sense when an app relies heavily on device-specific features."
+    "a": "It depends on who your users are. We look at your audience and budget and usually recommend a cross platform build so both platforms launch together. Native development makes sense when an app relies heavily on device specific features."
    },
    {
     "q": "Do you publish the app to the stores?",
@@ -166,11 +166,11 @@
   "name": "Custom Software Development",
   "headline": "Software that fits the way your business actually runs.",
   "intro": "When generic tools force your team into workarounds, we design and build software around your process: internal systems, admin panels, databases and the integrations between them.",
-  "short": "Software shaped around your process when off-the-shelf tools force you to work around them.",
+  "short": "Software shaped around your process when off the shelf tools force you to work around them.",
   "challengesTitle": "Does any of this sound familiar?",
   "challenges": [
    {
-    "title": "Off-the-shelf tools almost fit",
+    "title": "Off the shelf tools almost fit",
     "desc": "You pay for several subscriptions, use a fraction of each, and still fill the gaps with spreadsheets."
    },
    {
@@ -191,8 +191,8 @@
   "solutionPoints": [
    "Process mapping with the people who do the work",
    "Database design that reflects how your business is structured",
-   "Role-based access so each team sees what it needs",
-   "Phased delivery, starting with the highest-impact module"
+   "Role based access so each team sees what it needs",
+   "Phased delivery, starting with the highest impact module"
   ],
   "deliverables": [
    "Custom software development",
@@ -201,7 +201,7 @@
    "Database design and development",
    "Reporting dashboards",
    "Data migration from spreadsheets and legacy systems",
-   "API and third-party integrations",
+   "API and third party integrations",
    "Ongoing maintenance and feature development"
   ],
   "process": [
@@ -234,7 +234,7 @@
    },
    {
     "q": "What happens to our existing data?",
-    "a": "We plan the migration as part of the project, clean and map the data, and run test imports before the final switch-over."
+    "a": "We plan the migration as part of the project, clean and map the data, and run test imports before the final switch over."
    }
   ]
  },
@@ -243,12 +243,12 @@
   "name": "UI/UX Design",
   "headline": "Interfaces that make complex things feel simple.",
   "intro": "We design websites, apps, dashboards and admin panels in Figma, starting with structure and user flows before visual polish, and finish with files developers can build from without guessing.",
-  "short": "Research-led interface design in Figma, from wireframes to a developer-ready design system.",
+  "short": "Research led interface design in Figma, from wireframes to a developer ready design system.",
   "challengesTitle": "Does any of this sound familiar?",
   "challenges": [
    {
     "title": "Users get lost or give up",
-    "desc": "Sign-ups stall halfway, support tickets ask the same questions, and analytics show people dropping off on the same screens."
+    "desc": "Sign ups stall halfway, support tickets ask the same questions, and analytics show people dropping off on the same screens."
    },
    {
     "title": "The product grew without a plan",
@@ -268,7 +268,7 @@
   "solutionPoints": [
    "User flows and wireframes agreed before visual design",
    "Interactive Figma prototypes for testing and stakeholder review",
-   "Component-based design systems with documented states",
+   "Component based design systems with documented states",
    "Developer handoff with specs, assets and responsive behaviour"
   ],
   "deliverables": [
@@ -304,7 +304,7 @@
   "faqs": [
    {
     "q": "Do you only design, or can you also build what you design?",
-    "a": "Both. Many clients have us design and develop, which avoids handoff gaps. We are also comfortable handing designs to your in-house developers with full specifications."
+    "a": "Both. Many clients have us design and develop, which avoids handoff gaps. We are also comfortable handing designs to your in house developers with full specifications."
    },
    {
     "q": "What do we receive at the end?",
@@ -316,7 +316,7 @@
    },
    {
     "q": "How many revision rounds are included?",
-    "a": "Revision rounds are agreed in the proposal for each project. Because we validate structure with wireframes first, late-stage revisions are usually small."
+    "a": "Revision rounds are agreed in the proposal for each project. Because we validate structure with wireframes first, late stage revisions are usually small."
    }
   ]
  },
@@ -324,7 +324,7 @@
   "slug": "saas-development",
   "name": "SaaS Development",
   "headline": "From product idea to paying subscribers.",
-  "intro": "We help founders and product teams build software-as-a-service products: a focused first version to test with real customers, then the architecture to grow it.",
+  "intro": "We help founders and product teams build software as a service products: a focused first version to test with real customers, then the architecture to grow it.",
   "short": "Subscription products with accounts, billing, roles and the admin tools to run them.",
   "challengesTitle": "Does any of this sound familiar?",
   "challenges": [
@@ -346,16 +346,16 @@
    }
   ],
   "solutionTitle": "A focused first release on solid foundations",
-  "solutionText": "We help you separate what the first release must do from what can wait, then build that version properly. Multi-tenant data separation, authentication, subscription billing and an internal admin panel are planned from day one, because retrofitting them later is expensive.",
+  "solutionText": "We help you separate what the first release must do from what can wait, then build that version properly. Multi tenant data separation, authentication, subscription billing and an internal admin panel are planned from day one, because retrofitting them later is expensive.",
   "solutionPoints": [
    "MVP scoping workshop to define a realistic first release",
-   "Multi-tenant architecture with secure data separation",
+   "Multi tenant architecture with secure data separation",
    "Subscription billing, trials, plans and team seats",
    "Internal admin panel and usage reporting"
   ],
   "deliverables": [
    "SaaS MVP development",
-   "Multi-tenant architecture",
+   "Multi tenant architecture",
    "Subscription billing integration",
    "User roles, teams and permissions",
    "Onboarding flows",
@@ -428,12 +428,12 @@
   ],
   "deliverables": [
    "AI development and automation",
-   "AI-powered application development",
+   "AI powered application development",
    "Document extraction and classification",
    "AI assistants trained on your own content",
    "Workflow automation between business tools",
    "API integration",
-   "Third-party integrations",
+   "Third party integrations",
    "Monitoring, evaluation and improvement"
   ],
   "process": [
@@ -470,7 +470,7 @@
   "slug": "crm-development",
   "name": "CRM Development",
   "headline": "A CRM shaped around how you sell and serve.",
-  "intro": "We build custom CRM systems, and extend existing ones, so your pipeline, customer records and follow-ups match the way your team really works.",
+  "intro": "We build custom CRM systems, and extend existing ones, so your pipeline, customer records and follow ups match the way your team really works.",
   "short": "Customer management built around your pipeline, with the integrations your sales team relies on.",
   "challengesTitle": "Does any of this sound familiar?",
   "challenges": [
@@ -487,16 +487,16 @@
     "desc": "Forecasts are assembled by hand from conversations and spreadsheets."
    },
    {
-    "title": "Per-seat pricing is getting expensive",
+    "title": "Per seat pricing is getting expensive",
     "desc": "Subscription costs climb with every new hire, for features most people never use."
    }
   ],
   "solutionTitle": "Your pipeline, your fields, your reports",
-  "solutionText": "We map your sales and service journey first, then build a CRM that follows it: the stages you use, the information you need at each step, automatic follow-up reminders and dashboards that answer the questions managers ask every week. Where an existing CRM is the right base, we customise and integrate it instead.",
+  "solutionText": "We map your sales and service journey first, then build a CRM that follows it: the stages you use, the information you need at each step, automatic follow up reminders and dashboards that answer the questions managers ask every week. Where an existing CRM is the right base, we customise and integrate it instead.",
   "solutionPoints": [
    "Pipeline stages and fields that mirror your process",
    "Lead capture from website forms and other channels",
-   "Task reminders and automated follow-ups",
+   "Task reminders and automated follow ups",
    "Dashboards for pipeline, activity and team performance"
   ],
   "deliverables": [
@@ -565,15 +565,15 @@
    },
    {
     "title": "Reporting takes days",
-    "desc": "Month-end reports are built by exporting and merging spreadsheets from several systems."
+    "desc": "Month end reports are built by exporting and merging spreadsheets from several systems."
    }
   ],
   "solutionTitle": "Modular systems that grow with you",
   "solutionText": "For ERP, we start with the module that causes the most friction, often inventory or order management, and connect further modules as your needs grow. For CMS projects, we model your content properly, so editors work with clear fields and previews rather than fragile page builders.",
   "solutionPoints": [
    "Modular ERP covering inventory, orders, purchasing and finance",
-   "Role-based access across departments",
-   "Structured content models with editor-friendly interfaces",
+   "Role based access across departments",
+   "Structured content models with editor friendly interfaces",
    "Headless or traditional CMS, chosen to suit your channels"
   ],
   "deliverables": [
@@ -627,7 +627,7 @@
   "challengesTitle": "Does any of this sound familiar?",
   "challenges": [
    {
-    "title": "Your site is slow and plugin-heavy",
+    "title": "Your site is slow and plugin heavy",
     "desc": "Dozens of plugins and a heavy theme make every page load slowly and every update risky."
    },
    {
@@ -644,11 +644,11 @@
    }
   ],
   "solutionTitle": "Custom themes, clean editing, fewer plugins",
-  "solutionText": "We build lightweight custom themes based on your design, with editing blocks set up for the content your team actually publishes. Where functionality is needed, we use well-maintained plugins or write focused custom code, and we set up updates, backups and security hardening from the start.",
+  "solutionText": "We build lightweight custom themes based on your design, with editing blocks set up for the content your team actually publishes. Where functionality is needed, we use well maintained plugins or write focused custom code, and we set up updates, backups and security hardening from the start.",
   "solutionPoints": [
-   "Custom block-based themes built from your design",
-   "Editor-friendly content blocks with guardrails",
-   "Minimal, well-maintained plugin set",
+   "Custom block based themes built from your design",
+   "Editor friendly content blocks with guardrails",
+   "Minimal, well maintained plugin set",
    "Speed, security hardening and backups configured at launch"
   ],
   "deliverables": [
@@ -704,7 +704,7 @@
   "challenges": [
    {
     "title": "Cloud costs keep climbing",
-    "desc": "Resources are left running, environments are over-provisioned and nobody is reviewing the bill, so cloud spend grows every month without anyone noticing."
+    "desc": "Resources are left running, environments are over provisioned and nobody is reviewing the bill, so cloud spend grows every month without anyone noticing."
    },
    {
     "title": "Deployments are slow and risky",
@@ -772,7 +772,7 @@
   "name": "Product Development",
   "headline": "Products designed, built and released properly.",
   "intro": "We take products from concept to launch and beyond: software architecture, design, AI features, quality assurance and release management, all planned around your users and your business goals.",
-  "short": "End-to-end product development: from idea and design to build, testing and release.",
+  "short": "End to end product development: from idea and design to build, testing and release.",
   "challengesTitle": "Does any of this sound familiar?",
   "challenges": [
    {
@@ -781,7 +781,7 @@
    },
    {
     "title": "Features ship without being tested",
-    "desc": "Releases reach users with bugs, confusing workflows or missing features, because quality checks and real-user feedback were skipped."
+    "desc": "Releases reach users with bugs, confusing workflows or missing features, because quality checks and real user feedback were skipped."
    },
    {
     "title": "Teams build the wrong things",
@@ -804,13 +804,13 @@
   ],
   "deliverables": [
    "Software Development - custom software architecture and development, scalable and reliable solutions tailored to your business requirements.",
-   "AI Development - AI-powered applications, intelligent automation and AI integration into existing platforms.",
+   "AI Development - AI powered applications, intelligent automation and AI integration into existing platforms.",
    "Chatbot Development - conversational AI chatbots for customer support automation and business workflows.",
    "QA and Review - software quality assurance, functional and performance testing, bug identification and quality reviews.",
-   "User Testing - user experience testing, usability evaluation and real-world product feedback.",
+   "User Testing - user experience testing, usability evaluation and real world product feedback.",
    "Product Management - product planning and strategy, development lifecycle management, feature prioritization and coordination.",
    "DevOps and Cloud - CI/CD pipeline implementation, cloud infrastructure, deployment automation and monitoring.",
-   "UX Design - user research, user journeys and wireframes for user-centred product experiences."
+   "UX Design - user research, user journeys and wireframes for user centred product experiences."
   ],
   "process": [
    "We review your product idea, users and goals, then agree what the first version must do and what can wait.",
@@ -872,7 +872,7 @@
    },
    {
     "title": "Cloud bills keep growing",
-    "desc": "Resources run when they are not needed, environments are over-sized, and nobody is reviewing usage or costs."
+    "desc": "Resources run when they are not needed, environments are over sized, and nobody is reviewing usage or costs."
    }
   ],
   "solutionTitle": "Automated delivery, observable systems",

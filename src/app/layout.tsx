@@ -6,7 +6,6 @@ import { site } from "@/lib/site";
 import SmoothScroll from "@/components/providers/SmoothScroll";
 import Header from "@/components/chrome/Header";
 import Footer from "@/components/chrome/Footer";
-import Cursor from "@/components/chrome/Cursor";
 import Preloader from "@/components/chrome/Preloader";
 import ScrollProgress from "@/components/chrome/ScrollProgress";
 import FloatingActions from "@/components/chrome/FloatingActions";
@@ -26,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website", siteName: site.legalName, locale: "en_GB", url: "/",
     title: "Adelogix | Web, Mobile & Custom Software Development", description: site.description,
-    images: [{ url: "/images/case-studies/oriuspay/01-cover.webp", width: 1200, height: 800, alt: "Adelogix — software development" }],
+    images: [{ url: "/images/case-studies/oriuspay/01-cover.webp", width: 1200, height: 800, alt: "Adelogix software development" }],
   },
   twitter: { card: "summary_large_image", title: "Adelogix | Software Development", description: site.description, images: ["/images/case-studies/oriuspay/01-cover.webp"] },
   alternates: { canonical: "/" },
@@ -52,7 +51,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Preloader />
         <SmoothScroll />
         <ScrollProgress />
-        <Cursor />
         <Header />
         <main id="main">{children}</main>
         <Footer />

@@ -17,7 +17,7 @@ export const prefersReducedMotion = () =>
 export const isFinePointer = () =>
   typeof window !== "undefined" && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-// Ready signal — resolves when the preloader has finished (or was skipped).
+// Ready signal resolves when the preloader has finished (or was skipped).
 type W = Window & { __adxReady?: boolean; __adxCbs?: (() => void)[] };
 export function onReady(cb: () => void) {
   if (typeof window === "undefined") return;

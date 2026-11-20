@@ -21,6 +21,7 @@ export default function TechnologiesPage() {
     <>
       <PageHero
         shape="rings" hue="#8fa9c9" align="center"
+        eyebrow="TECHNOLOGIES"
         title="Technology chosen for *fit,* not fashion."
         intro="The stack for each project is chosen for what it has to do, who will maintain it and how it is expected to grow."
       >
@@ -33,15 +34,15 @@ export default function TechnologiesPage() {
       <section id="ecosystem" className="relative overflow-hidden bg-ink section-space">
         <div className="absolute inset-0 grid-lines opacity-50" />
         <div className="container-x relative">
-          <SectionHeader title="One connected *stack.*" intro="Select a category, then hover or tap an orbiting node for details. Named tools are ones we have used on client work; capabilities describe what we deliver in that area." />
+          <SectionHeader eyebrow="TECHNOLOGIES" title="One connected *stack.*" intro="Select a category, then hover or tap an orbiting node for details. Named tools are ones we have used on client work; capabilities describe what we deliver in that area." />
           <div className="mt-14"><TechEcosystem /></div>
         </div>
       </section>
 
-      {/* Categorised showcase — bento */}
+      {/* Categorised showcase bento */}
       <section className="surface-light section-space">
         <div className="container-x">
-          <SectionHeader light title="Everything, *at a glance.*" />
+          <SectionHeader eyebrow="TECHNOLOGIES" light title="Everything, *at a glance.*" />
           <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {techCategories.map((c, i) => (
               <Reveal key={c.id} variant={i % 2 ? "clip-up" : "scale"} delay={(i % 4) * 0.06}
@@ -73,7 +74,7 @@ export default function TechnologiesPage() {
       {/* Related services by category */}
       <section className="bg-ink section-space">
         <div className="container-x">
-          <SectionHeader title="Where each area *shows up.*" />
+          <SectionHeader eyebrow="SERVICES" title="Where each area *shows up.*" />
           <ul className="mt-14 border-t border-white/10">
             {techCategories.map((c) => {
               const svc = Array.from(new Set(c.items.flatMap((i) => i.services)));
@@ -93,7 +94,7 @@ export default function TechnologiesPage() {
         </div>
       </section>
 
-      <FinalCTA title="Have a stack in mind — or *need advice?*" text="Tell us what you are building and who will maintain it. We will recommend a stack that suits your budget, team and growth plans." />
+      <FinalCTA title="Have a stack in mind or *need advice?*" text="Tell us what you are building and who will maintain it. We will recommend a stack that suits your budget, team and growth plans." />
     </>
   );
 }

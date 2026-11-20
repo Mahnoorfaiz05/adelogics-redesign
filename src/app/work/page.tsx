@@ -23,8 +23,9 @@ export default function WorkPage() {
     <>
       <PageHero
         shape="wave" hue="#b19df0"
+        eyebrow="WORK"
         title="Products we have *designed* and built."
-        intro="Mobile apps, marketplaces, finance dashboards, CRMs and crypto platforms—each with a case study covering the challenge, approach and solution."
+        intro="Mobile apps, marketplaces, finance dashboards, CRMs and crypto platforms each with a case study covering the challenge, approach and solution."
       >
         <Button href="#projects">Browse projects</Button>
         <Button href="/contact/" variant="ghost">Discuss a similar project</Button>
@@ -33,7 +34,7 @@ export default function WorkPage() {
       <div className="border-y border-white/10 bg-ink py-6">
         <Marquee speed={40}>
           {projects.map((p) => (
-            <Link key={p.slug} href={`/work/${p.slug}/`} className="group mx-6 flex items-center gap-5" data-cursor="view">
+            <Link key={p.slug} href={`/work/${p.slug}/`} className="group mx-6 flex items-center gap-5">
               <span className="relative h-14 w-20 overflow-hidden rounded-lg"><Image src={p.cover} alt="" fill sizes="80px" className="object-cover" /></span>
               <span className="display text-4xl text-white/30 transition-colors group-hover:text-white md:text-5xl">{p.name}</span>
               <span className="text-brand-400/60">✦</span>
@@ -45,7 +46,8 @@ export default function WorkPage() {
       {/* Featured project */}
       <section className="relative overflow-hidden bg-ink section-space">
         <div className="container-x">
-          <Link href={`/work/${featured.slug}/`} className="group grid gap-10 lg:grid-cols-12 lg:items-center" data-cursor="view">
+          <p className="eyebrow mb-5 text-brand-300">FEATURED WORK</p>
+          <Link href={`/work/${featured.slug}/`} className="group grid gap-10 lg:grid-cols-12 lg:items-center">
             <Reveal variant="mask" className="relative aspect-[3/2] overflow-hidden rounded-[32px] lg:col-span-8">
               <Parallax speed={0.15} className="absolute inset-[-8%]"><Image src={featured.cover} alt={`${featured.name} cover`} fill sizes="(min-width:1024px) 66vw, 100vw" className="object-cover transition-transform duration-[1.4s] group-hover:scale-105" /></Parallax>
             </Reveal>
@@ -63,7 +65,7 @@ export default function WorkPage() {
 
       <section id="projects" className="surface-light scroll-mt-20 section-space">
         <div className="container-x">
-          <SectionHeader light title="Find work by *focus.*" />
+          <SectionHeader eyebrow="ALL WORK" light title="Find work by *focus.*" />
           <div className="mt-12"><WorkGrid /></div>
         </div>
       </section>
