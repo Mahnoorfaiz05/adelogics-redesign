@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
 import HomeHero from "@/components/hero/HomeHero";
 import ScrollText from "@/components/anim/ScrollText";
-import { Reveal, Parallax, SplitHeading, Magnetic } from "@/components/anim/primitives";
+import { Reveal, SplitHeading, Magnetic } from "@/components/anim/primitives";
 import { Button } from "@/components/ui/Button";
 import { SectionHeader, Industries, Highlights } from "@/components/sections/blocks";
 import { ServicesShowcase, TechEcosystem, ToolsMarquee } from "@/components/sections/interactive-a";
@@ -20,17 +20,21 @@ export default function HomePage() {
     <>
       <HomeHero />
 
-      <section className="surface-light relative overflow-hidden section-space">
+      <section className="surface-light relative overflow-hidden py-14 md:py-20">
         <div className="mx-auto w-full max-w-[1600px] px-[clamp(1rem,3vw,3.5rem)]">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,.95fr)] lg:items-center xl:gap-20">
-            <Reveal variant="mask" className="relative mx-auto w-full max-w-xl overflow-hidden rounded-[28px] shadow-[0_20px_50px_rgba(13,11,19,.12)] lg:max-w-none">
-              <div className="relative aspect-[4/5]">
-                <Parallax speed={0.2} className="absolute inset-[-8%]">
-                  <Image src="/images/case-studies/uplift-ai/09-final-showcase.webp" alt="Uplift.ai mobile app screens designed by Adelogix" fill sizes="(min-width:1024px) 48vw, 100vw" className="object-cover" />
-                </Parallax>
+            <Reveal variant="mask" className="relative mx-auto w-full max-w-2xl overflow-hidden rounded-[28px] shadow-[0_20px_50px_rgba(13,11,19,.12)] lg:max-w-none">
+              <div className="relative aspect-[3/2] bg-ink">
+                <Image
+                  src="/images/case-studies/usr-crm/01-hero.webp"
+                  alt="USR CRM web and mobile project showcase designed and developed by Adelogix"
+                  fill
+                  sizes="(min-width: 1280px) 48vw, (min-width: 1024px) 50vw, 100vw"
+                  className="object-cover object-center"
+                />
               </div>
             </Reveal>
-            <div className="py-2 lg:py-6">
+            <div className="py-2 lg:py-4">
               <p className="eyebrow mb-5 text-brand-600">ABOUT</p>
               <ScrollText
                 text="A software partner that starts with your *business,* not the code."
