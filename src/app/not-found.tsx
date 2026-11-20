@@ -9,6 +9,7 @@ export default function NotFound() {
       <div className="absolute inset-0 -z-10 opacity-80"><ParticleCanvas shape="galaxy" hue="#b9a6ff" density={0.65} links={false} /></div>
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,transparent,#0d0b13_75%)]" />
       <div className="container-x text-center">
+        <p className="eyebrow mb-5 text-brand-200">NOT FOUND</p>
         <p className="display text-[clamp(7rem,28vw,22rem)] leading-none text-transparent [-webkit-text-stroke:1.5px_rgba(207,195,238,.55)]">404</p>
         <h1 className="mt-2 display h-md">This page drifted <span className="serif-i text-gradient">out of orbit.</span></h1>
         <p className="lead mx-auto mt-6 max-w-xl text-white/60">The page you are looking for does not exist or has moved. Let&apos;s get you back on track.</p>

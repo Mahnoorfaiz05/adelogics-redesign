@@ -5,7 +5,7 @@ import { Reveal } from "@/components/anim/primitives";
 export default function Legal({ title, intro, updated, sections }: { title: string; intro: string; updated: string; sections: { h: string; body: ReactNode }[] }) {
   return (
     <>
-      <PageHero title={title} intro={intro} shape="cube" hue="#7d6ad0" />
+      <PageHero eyebrow="LEGAL" title={title} intro={intro} shape="cube" hue="#7d6ad0" />
       <section className="surface-light section-space">
         <div className="container-x grid gap-10 md:gap-12 lg:grid-cols-12">
           <aside className="lg:col-span-3">

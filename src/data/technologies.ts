@@ -21,7 +21,7 @@ export const techCategories: TechCategory[] = [
     blurb: "Interfaces that load fast, rank well and work on every screen size.",
     items: [
       { name: "Responsive Web Interfaces", kind: "capability", lucide: "MonitorSmartphone", desc: "Layouts tested on real phone, tablet and desktop sizes.", services: ["web-development"] },
-      { name: "Web Applications", kind: "capability", lucide: "PanelsTopLeft", desc: "Logged-in products customers use every day.", services: ["web-development", "saas-development"] },
+      { name: "Web Applications", kind: "capability", lucide: "PanelsTopLeft", desc: "Logged in products customers use every day.", services: ["web-development", "saas-development"] },
       { name: "Technical SEO", kind: "capability", lucide: "Search", desc: "Metadata, sitemaps, clean URLs and structured data.", services: ["web-development", "wordpress-development"] },
       { name: "Performance & Accessibility", kind: "capability", lucide: "Accessibility", desc: "Speed and accessibility improvements on new and existing sites.", services: ["web-development"] },
     ],
@@ -36,7 +36,7 @@ export const techCategories: TechCategory[] = [
       { name: "Stripe", kind: "tool", icon: "siStripe", desc: "Payment flows such as Emyy's booking checkout.", services: ["saas-development", "mobile-app-development"] },
       { name: "PayPal & Apple Pay", kind: "tool", icon: "siPaypal", desc: "Subscription payments, as in the Fast VPN app.", services: ["mobile-app-development"] },
       { name: "Skrill", kind: "tool", lucide: "CreditCard", desc: "Deposit, withdrawal and cashout flows, as designed for TruNext.", services: ["ui-ux-design"] },
-      { name: "Multi-tenant Architecture", kind: "capability", lucide: "Layers", desc: "Tenant data separation, roles and billing for SaaS.", services: ["saas-development"] },
+      { name: "Multi tenant Architecture", kind: "capability", lucide: "Layers", desc: "Tenant data separation, roles and billing for SaaS.", services: ["saas-development"] },
     ],
   },
   {
@@ -45,10 +45,10 @@ export const techCategories: TechCategory[] = [
     lucide: "Smartphone",
     blurb: "iOS and Android apps, from prototype to store release.",
     items: [
-      { name: "iOS", kind: "tool", icon: "siApple", desc: "Native-feeling iPhone apps published under your Apple account.", services: ["mobile-app-development"] },
+      { name: "iOS", kind: "tool", icon: "siApple", desc: "Native feeling iPhone apps published under your Apple account.", services: ["mobile-app-development"] },
       { name: "Android", kind: "tool", icon: "siAndroid", desc: "Android apps released on Google Play.", services: ["mobile-app-development"] },
-      { name: "Cross-platform Codebase", kind: "capability", lucide: "Code2", desc: "One shared codebase for iOS and Android where it makes sense.", services: ["mobile-app-development"] },
-      { name: "Offline Sync & Push", kind: "capability", lucide: "BellRing", desc: "Offline-ready data, push notifications and in-app messaging.", services: ["mobile-app-development"] },
+      { name: "Cross platform Codebase", kind: "capability", lucide: "Code2", desc: "One shared codebase for iOS and Android where it makes sense.", services: ["mobile-app-development"] },
+      { name: "Offline Sync & Push", kind: "capability", lucide: "BellRing", desc: "Offline ready data, push notifications and in app messaging.", services: ["mobile-app-development"] },
     ],
   },
   {
@@ -92,7 +92,7 @@ export const techCategories: TechCategory[] = [
     id: "design",
     name: "UI/UX",
     lucide: "PenTool",
-    blurb: "Research-led design, finished as developer-ready systems.",
+    blurb: "Research led design, finished as developer ready systems.",
     items: [
       { name: "Figma", kind: "tool", icon: "siFigma", desc: "Wireframes, prototypes, design systems and handoff.", services: ["ui-ux-design"] },
       { name: "Design Systems", kind: "capability", lucide: "Library", desc: "Colour, type and component systems, as built for Uplift.ai and OriusPay.", services: ["ui-ux-design"] },
@@ -109,7 +109,7 @@ export const techCategories: TechCategory[] = [
       { name: "AI Assistants", kind: "capability", lucide: "Bot", desc: "Assistants trained on your own content, like OriusPay's Horus.", services: ["ai-development-automation"] },
       { name: "Document Extraction", kind: "capability", lucide: "FileSearch", desc: "Extracting and classifying information from documents.", services: ["ai-development-automation"] },
       { name: "Workflow Automation", kind: "capability", lucide: "Workflow", desc: "Automations between business tools, logged and auditable.", services: ["ai-development-automation"] },
-      { name: "API & Third-party Integrations", kind: "capability", lucide: "Plug", desc: "Connecting the tools your team already uses.", services: ["ai-development-automation"] },
+      { name: "API & Third party Integrations", kind: "capability", lucide: "Plug", desc: "Connecting the tools your team already uses.", services: ["ai-development-automation"] },
     ],
   },
 ];

@@ -111,7 +111,7 @@ export function CompactProjectCard({ project }: { project: Project }) {
   return (
     <Link href={`/work/${project.slug}/`} className="group block">
       <div className="relative aspect-[16/10] overflow-hidden rounded-[24px] bg-ink-3">
-        <Image src={project.cover} alt={`${project.name} — ${project.category}`} fill sizes="(min-width: 1024px) 42vw, (min-width: 768px) 45vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.025]" />
+        <Image src={project.cover} alt={`${project.name} ${project.category}`} fill sizes="(min-width: 1024px) 42vw, (min-width: 768px) 45vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.025]" />
       </div>
       <div className="mt-4 flex items-start justify-between gap-4">
         <div>

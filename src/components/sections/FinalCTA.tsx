@@ -17,14 +17,15 @@ export default function FinalCTA({
       <Marquee speed={60} className="pointer-events-none absolute top-10 -z-10 opacity-[0.05]">
         {["Discover", "Plan", "Build", "Launch", "Support"].map((word) => <span key={word} className="display px-8 text-[9rem] leading-none">{word} ✦</span>)}
       </Marquee>
-      <div className="container-x text-center">
+      <div className="mx-auto w-full max-w-[1600px] px-[clamp(1rem,3vw,3.5rem)] text-center">
+        <p className="eyebrow mb-5 text-brand-200">CONTACT</p>
         <SplitHeading text={title} className="mx-auto max-w-5xl display h-lg text-balance" />
         <Reveal variant="blur" delay={0.3}><p className="lead mx-auto mt-8 max-w-2xl text-white/60">{text}</p></Reveal>
         <Reveal variant="up" delay={0.45} className="mt-12 flex flex-wrap justify-center gap-3">
           <Button href="/contact/">Start a project enquiry</Button>
           <Button href={whatsappLink()} external variant="ghost" icon={<WhatsAppIcon size={15} />}>Message on WhatsApp</Button>
         </Reveal>
-        <Reveal stagger={0.1} variant="up" className="mx-auto mt-16 grid max-w-3xl gap-4 text-left sm:grid-cols-3">
+        <Reveal stagger={0.1} variant="up" className="mx-auto mt-16 grid w-full max-w-6xl gap-4 text-left sm:grid-cols-3">
           {[["Share a short brief", "A few sentences is enough"], ["We talk it through", "By your preferred method"], ["You get a clear proposal", "Scope, approach and estimate"]].map(([heading, detail]) => (
             <div key={heading} className="glass rounded-2xl p-5">
               <p className="font-medium">{heading}</p>

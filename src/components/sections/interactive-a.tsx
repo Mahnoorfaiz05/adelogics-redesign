@@ -1,39 +1,24 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { services, type Service } from "@/data/services";
 import { techCategories, allTools } from "@/data/technologies";
 import { LIcon, TechMark } from "@/components/ui/Icons";
 import { Marquee, Reveal } from "@/components/anim/primitives";
-import { registerGsap, isFinePointer } from "@/lib/motion";
 
-/* ───────── Services: editorial index with floating cursor preview ───────── */
+/* Services: editorial index with a stable, readable layout. */
 export function ServicesShowcase({ list = services, light = false }: { list?: Service[]; light?: boolean }) {
-  const [active, setActive] = useState<number | null>(null);
   const [open, setOpen] = useState<number | null>(null);
-  const preview = useRef<HTMLDivElement>(null);
-  const wrap = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const el = preview.current, w = wrap.current; if (!el || !w || !isFinePointer()) return;
-    const { gsap } = registerGsap();
-    const xTo = gsap.quickTo(el, "x", { duration: 0.6, ease: "power3.out" });
-    const yTo = gsap.quickTo(el, "y", { duration: 0.6, ease: "power3.out" });
-    const move = (e: MouseEvent) => { const r = w.getBoundingClientRect(); xTo(e.clientX - r.left + 30); yTo(e.clientY - r.top - 120); };
-    w.addEventListener("mousemove", move);
-    return () => w.removeEventListener("mousemove", move);
-  }, []);
-
-  const s = active !== null ? list[active] : null;
   return (
-    <div ref={wrap} className="relative" onMouseLeave={() => setActive(null)}>
+    <div className="relative">
       <ul className={`border-t ${light ? "border-ink/15" : "border-white/10"}`}>
         {list.map((svc, i) => (
-          <li key={svc.slug} className={`border-b ${light ? "border-ink/15" : "border-white/10"}`} onMouseEnter={() => setActive(i)}>
+          <li key={svc.slug} className={`border-b ${light ? "border-ink/15" : "border-white/10"}`}>
             <div className="group relative">
-              <Link href={`/services/${svc.slug}/`} className="relative grid grid-cols-[1fr_auto] items-center gap-4 py-6 md:grid-cols-[1fr_1.1fr_auto] md:gap-8 md:py-8" data-cursor="hover">
+              <Link href={`/services/${svc.slug}/`} className="relative grid grid-cols-[1fr_auto] items-center gap-4 py-6 md:grid-cols-[1fr_1.1fr_auto] md:gap-8 md:py-8">
                 <span className="flex items-center gap-4">
                   <span className={`hidden h-12 w-12 shrink-0 place-items-center rounded-2xl border transition-all duration-700 group-hover:rotate-[-10deg] group-hover:scale-110 sm:grid ${light ? "border-ink/15 text-brand-500 group-hover:bg-ink group-hover:text-brand-200" : "border-white/10 text-brand-200 group-hover:bg-brand-500/25"}`}>
                     <LIcon name={svc.icon} size={20} />
@@ -59,24 +44,6 @@ export function ServicesShowcase({ list = services, light = false }: { list?: Se
           </li>
         ))}
       </ul>
-      {/* Floating preview (desktop) */}
-      <div ref={preview} className="pointer-events-none absolute left-0 top-0 z-20 hidden lg:block" aria-hidden="true">
-        <AnimatePresence mode="wait">
-          {s && (
-            <motion.div key={s.slug} initial={{ opacity: 0, scale: 0.85, rotate: -4 }} animate={{ opacity: 1, scale: 1, rotate: 0 }} exit={{ opacity: 0, scale: 0.9 }} transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="relative w-72 overflow-hidden rounded-3xl border border-white/10 bg-ink-2 p-6 text-ivory shadow-2xl">
-              <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full blur-3xl" style={{ background: s.hue, opacity: 0.5 }} />
-              <div className="relative">
-                <span className="grid h-14 w-14 place-items-center rounded-2xl bg-brand-gradient"><LIcon name={s.icon} size={26} className="text-white" /></span>
-                <p className="mt-5 display text-xl">{s.name}</p>
-                <ul className="mt-4 space-y-2 text-xs text-white/70">
-                  {s.deliverables.slice(1, 5).map((d) => <li key={d} className="flex items-center gap-2"><Check size={12} className="text-brand-300" />{d}</li>)}
-                </ul>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
     </div>
   );
 }

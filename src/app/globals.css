@@ -69,9 +69,6 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 
 ::selection { background: var(--color-brand-400); color: #fff; }
 
-/* Hide the native cursor only when the custom cursor is active */
-html.has-cursor, html.has-cursor * { cursor: none !important; }
-
 :focus-visible { outline: 2px solid var(--color-lilac); outline-offset: 3px; border-radius: 6px; }
 
 .container-x { width: 100%; max-width: 1440px; margin-inline: auto; padding-inline: var(--gutter); }
@@ -176,12 +173,6 @@ select.field option { background: #14111c; color: #f5f4f0; }
     color: #fff;
     box-shadow: 0 0 22px rgb(123 73 158 / .38);
   }
-}
-
-/* Touch devices use the native cursor. The custom cursor component is also
-   guarded in JavaScript, and this CSS fallback covers a runtime pointer change. */
-@media (hover: none), (pointer: coarse) {
-  html.has-cursor, html.has-cursor * { cursor: auto !important; }
 }
 
 /* Reduced motion */

@@ -84,11 +84,12 @@ export default function HomeHero() {
         </div>
         <div className="hh-card glass absolute bottom-[25%] right-[27%] w-60 rounded-2xl p-4" data-depth="1.8">
           <div className="flex items-center gap-3"><span className="grid h-9 w-9 place-items-center rounded-xl bg-steel/20"><Database size={16} /></span><div><p className="text-sm font-medium">Data &amp; AI</p><p className="text-xs text-white/50">Databases · Automation</p></div></div>
-          <p className="mt-3 font-mono text-[0.65rem] text-brand-200">● your process — connected</p>
+          <p className="mt-3 font-mono text-[0.65rem] text-brand-200">● your process connected</p>
         </div>
       </div>
 
       <div ref={content} className="container-x relative">
+        <p className="eyebrow mb-5 text-brand-200">ADELOGIX</p>
         <SplitHeading as="h1" immediate delay={0.3} stagger={0.07} text="Software built around how your *business* really works." className="max-w-[15ch] display home-headline" />
         <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-6">

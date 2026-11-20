@@ -29,7 +29,7 @@ const meta: Record<string, { icon: string; shape: HeroShape; hue: string; tags: 
   "mobile-app-development": { icon: "Smartphone", shape: "rings", hue: "#a792d8", tags: ["iOS", "Android", "Store release"] },
   "custom-software-development": { icon: "Boxes", shape: "cube", hue: "#7b8fd6", tags: ["Internal tools", "Dashboards", "Integrations"] },
   "ui-ux-design": { icon: "PenTool", shape: "wave", hue: "#c39be0", tags: ["Figma", "Design systems", "Prototypes"] },
-  "saas-development": { icon: "Layers", shape: "torus", hue: "#9a7cf2", tags: ["Multi-tenant", "Billing", "Admin"] },
+  "saas-development": { icon: "Layers", shape: "torus", hue: "#9a7cf2", tags: ["Multi tenant", "Billing", "Admin"] },
   "ai-development-automation": { icon: "Sparkles", shape: "galaxy", hue: "#b48cff", tags: ["AI assistants", "Extraction", "Workflows"] },
   "crm-development": { icon: "Users", shape: "sphere", hue: "#8ea3d8", tags: ["Pipelines", "Quotes", "Reports"] },
   "erp-cms-development": { icon: "Database", shape: "cube", hue: "#7d6ad0", tags: ["Inventory", "Finance", "Headless CMS"] },
@@ -52,7 +52,7 @@ export const serviceGroups = [
     name: "Web Development",
     desc: "Business websites, portals and web applications, built from the database up to the interface people click.",
     slugs: ["web-development", "wordpress-development"],
-    items: ["Full-Stack Web Development", "Frontend Development", "Backend Development", "Web Application Development", "Responsive Web Development", "WordPress Development"],
+    items: ["Full Stack Web Development", "Frontend Development", "Backend Development", "Web Application Development", "Responsive Web Development", "WordPress Development"],
   },
   {
     id: "mobile",
@@ -78,9 +78,9 @@ export const serviceGroups = [
   {
     id: "ai",
     name: "AI & Integrations",
-    desc: "AI features, automation and the integrations that let your tools share data instead of people re-typing it.",
+    desc: "AI features, automation and the integrations that let your tools share data instead of people re typing it.",
     slugs: ["ai-development-automation"],
-    items: ["AI Development & Automation", "AI-Powered Application Development", "API Integration", "Third-Party Integrations"],
+    items: ["AI Development & Automation", "AI Powered Application Development", "API Integration", "Third Party Integrations"],
   },
   {
     id: "it",
@@ -95,5 +95,5 @@ export const processStages = [
   { name: "Discover", text: "We learn how your business works, who the users are and what the project has to achieve.", items: ["Goals and requirements summary", "Users and key journeys", "Risks and open questions"] },
   { name: "Plan", text: "We agree the scope, technical approach and timeline, so you know what will be delivered and when.", items: ["Scope and phased estimate", "Technical approach", "Timeline and milestones"] },
   { name: "Build", text: "We design, develop and test in stages, sharing working software for your feedback along the way.", items: ["Designs and prototypes", "Staged, reviewable releases", "Testing before every release"] },
-  { name: "Launch & Support", text: "We deploy, hand over what your team needs and provide the support we agreed at the start.", items: ["Deployment and go-live", "Documentation and access", "Agreed ongoing support"] },
+  { name: "Launch & Support", text: "We deploy, hand over what your team needs and provide the support we agreed at the start.", items: ["Deployment and go live", "Documentation and access", "Agreed ongoing support"] },
 ];

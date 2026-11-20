@@ -28,7 +28,7 @@ export default function Footer() {
         {/* Top CTA band */}
         <div className="flex flex-col gap-7 border-b border-white/10 pb-10 sm:gap-8 sm:pb-12 md:flex-row md:items-end md:justify-between md:pb-16">
           <Reveal variant="blur">
-            <Link href="/contact/" className="group inline-flex items-center gap-3 display text-[clamp(2.15rem,7vw,6rem)]" data-cursor="hover">
+            <Link href="/contact/" className="group inline-flex items-center gap-3 display text-[clamp(2.15rem,7vw,6rem)]">
               <span>Let&apos;s <span className="serif-i text-gradient">talk</span></span>
               <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-brand-gradient transition-transform duration-700 group-hover:rotate-45 sm:h-14 sm:w-14 md:h-20 md:w-20"><ArrowUpRight className="h-5 w-5 sm:h-6 sm:w-6 md:h-9 md:w-9" /></span>
             </Link>
